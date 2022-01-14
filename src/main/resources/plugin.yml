@@ -1,0 +1,7 @@
+name: KurisuCore
+version: '${project.version}'
+main: dev.vrremi.kurisucore.KurisuCore
+api-version: 1.17
+authors: [ vrremi ]
+description: KurisuCore - Fixed Copy of FubukiCore - Minecraft Plugin
+website: vrremi.xyz
