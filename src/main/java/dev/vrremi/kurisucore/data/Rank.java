@@ -19,5 +19,15 @@ public class Rank {
         return (color == null || color.isEmpty()) ? "&7" : color;
     }
 
+    public String toString() {
+        return "{" +
+                "name=" + name + "," +
+                "priority=" + priority + "," +
+                "prefix=" + prefix + "," +
+                "suffix=" + suffix + "," +
+                "color=" + color + "," +
+                "permissions=" + permissions + "," +
+                "defaultRank=" + defaultRank + "}";
+    }
     
 }
