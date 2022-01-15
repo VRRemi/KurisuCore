@@ -57,5 +57,8 @@ public class UserManager {
         return userMap.get(player.getUniqueId());
     }
 
-    
+    public User getUser(UUID uuid) {
+        if (uuid == null) return null;
+        return userMap.get(uuid);
+    }
 }
