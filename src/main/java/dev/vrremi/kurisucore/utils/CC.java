@@ -78,5 +78,54 @@ public class CC {
                     (int) (color1.getBlue() > color2.getBlue() ? color1.getBlue() - blueInc * i : color1.getBlue() + blueInc * i)
             ));
         }
-        
+        colorList.add(color2);
+        return colorList;
+    }
+
+    public static Material getMaterialFromColor(String color) {
+        if (color.isEmpty()) return Material.WHITE_WOOL;
+        color = color
+                .replace("&", "")
+                .replace("l", "")
+                .replace("m", "")
+                .replace("n", "")
+                .replace("o", "")
+                .replace("k", "")
+                .replace("r", "")
+                .toLowerCase();
+        if (color.isEmpty()) return Material.WHITE_WOOL;
+        switch (String.valueOf(color.charAt(0))) {
+            case "0":
+                return Material.BLACK_WOOL;
+            case "1":
+                return Material.BLUE_WOOL;
+            case "2":
+                return Material.GREEN_WOOL;
+            case "3":
+                return Material.CYAN_WOOL;
+            case "4":
+                return Material.RED_WOOL;
+            case "5":
+                return Material.PURPLE_WOOL;
+            case "6":
+                return Material.ORANGE_WOOL;
+            case "7":
+                return Material.LIGHT_GRAY_WOOL;
+            case "8":
+                return Material.GRAY_WOOL;
+            case "9":
+            case "a":
+                return Material.LIME_WOOL;
+            case "b":
+                return Material.LIGHT_BLUE_WOOL;
+            case "c":
+                return Material.PINK_WOOL;
+            case "d":
+                return Material.MAGENTA_WOOL;
+            case "e":
+                return Material.YELLOW_WOOL;
+        }
+        return Material.WHITE_WOOL;
+    }
+
 }
