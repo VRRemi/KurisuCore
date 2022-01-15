@@ -77,5 +77,18 @@ public class User {
         targetRank = null;
     }
 
+    public void openMenu(String menuName, int page, boolean keepData) {
+        Player player = Bukkit.getPlayer(uuid);
+        if (player != null) {
+            Player t = target;
+            Rank r = targetRank;
+            KurisuCore.getMenuManager().openMenu(player, menuName, page);
+            if (keepData) {
+                target = t;
+                targetRank = r;
+            }
+        }
+    }
+
     
 }
