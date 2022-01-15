@@ -13,5 +13,8 @@ public enum PunishmentType {
     KICK,
     WARN;
 
+    public String readableName() {
+        return WordUtils.capitalize(this.name().replace("_", "-").toLowerCase());
+    }
     
 }
