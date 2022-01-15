@@ -75,6 +75,8 @@ public class RankMap {
         return rankMap;
     }
 
-
-
+    public String toString() {
+        return "{RankMap=" + rankMap + "}";
+    }
+    
 }
