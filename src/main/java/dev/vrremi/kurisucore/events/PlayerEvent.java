@@ -118,4 +118,25 @@ public class PlayerEvent implements Listener {
                         event.setCancelled(true);
                         FubukiCore.getChatManager().sendStaffChat(player.getName(), event.getMessage().substring(1));
                         return;
-}
+                    }
+                }
+                Rank rank = user.getHighestRank();
+                Tag tag = user.getTag();
+                String name = "%s";
+                if (rank != null) {
+                    if (tag != null) {
+                        name = tag.getTag() + rank.getColor() + "%s" + rank.getSuffix();
+                    } else {
+                        name = rank.getPrefix() + rank.getColor() + "%s" + rank.getSuffix();
+                    }
+                } else {
+                    if (tag != null) {
+                        name = tag.getTag() + "%s";
+                    }
+                }
+                event.setFormat(CC.color(name + "&7: &r") + "%s");
+            }
+        } else {
+            event.setCancelled(true);
+        }
+    }
