@@ -116,5 +116,17 @@ public class KurisuCore extends JavaPlugin {
         return rankDataManager;
     }
 
+    public static PermissionManager getPermissionManager() {
+        return permissionManager;
+    }
+
+    public static PunishmentManager getPunishmentManager() {
+        return punishmentManager;
+    }
+
+    public static GameModeManager getGameModeManager() {
+        return gameModeManager;
+    }
+
 
 }
