@@ -34,5 +34,8 @@ public class Punishment {
         return System.currentTimeMillis() > timeout;
     }
 
+    private String getNewId() {
+        return UUID.randomUUID().toString().substring(0, 8).toUpperCase();
+    }
     
 }
