@@ -39,4 +39,10 @@ public class UserManager {
         userMap.put(player.getUniqueId(), new User(player, connection));
         KurisuCore.getLoopManager().add(player);
     }
+
+    public void cache(UUID uuid, Connection connection) throws SQLException {
+        userMap.put(uuid, new User(uuid, connection));
+    }
+
+    
 }
