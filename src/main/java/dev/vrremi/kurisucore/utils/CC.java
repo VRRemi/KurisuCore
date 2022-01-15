@@ -17,5 +17,11 @@ public class CC {
     public static String color(String string) {
         return ChatColor.translateAlternateColorCodes('&', string);
     }
+
+    public static List<String> color(List<String> lore) {
+        List<String> newLore = new ArrayList<>();
+        lore.forEach(line -> newLore.add(CC.color(line)));
+        return newLore;
+    }
     
 }
