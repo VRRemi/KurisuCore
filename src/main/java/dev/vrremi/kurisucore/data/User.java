@@ -27,6 +27,19 @@ public class User {
     private final List<Permission> permissions;
     private final List<Punishment> punishments;
 
+    @Setter
+    private String openMenuName;
+    @Setter
+    private int openMenuPage;
+    @Setter
+    private Player target;
+    @Setter
+    private Rank targetRank;
+    @Setter
+    private Player reply;
+    @Setter
+    private boolean staffChatHidden;
+
     
 
 }
