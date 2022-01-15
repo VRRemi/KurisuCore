@@ -140,3 +140,21 @@ public class PlayerEvent implements Listener {
             event.setCancelled(true);
         }
     }
+
+    @EventHandler
+    public void onClick(InventoryClickEvent event) {
+        if (event.getWhoClicked() instanceof Player) {
+            Player player = (Player) event.getWhoClicked();
+            User user = KurisuCore.getUserManager().getUser(player);
+            if (user == null) return;
+            if (event.getClick().equals(ClickType.DOUBLE_CLICK)) return;
+            if (event.getCurrentItem() == null) return;
+            if (event.getClickedInventory() == null) return;
+            if (!event.getClickedInventory().getType().equals(InventoryType.CHEST)) return;
+            Menu menu = user.getOpenMenu();
+            if (menu != null) {
+                event.setCancelled(true);
+                menu.getPage(user.getOpenMenuPage()).onClick(event);
+            }
+        }
+    }
