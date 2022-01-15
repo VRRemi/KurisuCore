@@ -21,7 +21,7 @@ public class RankMap {
     }
 
     public long getTime(String name) {
-        return rankMap.get(FubukiCore.getRankManager().getRank(name));
+        return rankMap.get(KurisuCore.getRankManager().getRank(name));
     }
 
     public String convertToString() {
@@ -78,5 +78,5 @@ public class RankMap {
     public String toString() {
         return "{RankMap=" + rankMap + "}";
     }
-    
+
 }
