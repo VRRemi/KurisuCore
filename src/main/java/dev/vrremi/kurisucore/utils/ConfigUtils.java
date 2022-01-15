@@ -40,5 +40,14 @@ public class ConfigUtils {
                     placeholders));
     }
 
-    
+    public static void staffChat(String path, String permission, HashMap<String, String> Placeholders) {
+        if (permission == null || permission.isEmpty())
+            Bukkit.getOnlinePlayers().forEach(player -> {
+                User user = KurisuCore.getUserManager().getUser(player);
+                if (user != null && !user.isStaffChatHidden())
+                    sendMessage(player, path, placeholders);
+            });
+        else
+            
+    }
 }
