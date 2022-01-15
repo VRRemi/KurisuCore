@@ -8,7 +8,9 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public final class KurisuCore extends JavaPlugin {
+public class KurisuCore extends JavaPlugin {
+
+    
 
     @Override
     public void onEnable() {
