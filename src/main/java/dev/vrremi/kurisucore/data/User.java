@@ -90,5 +90,9 @@ public class User {
         }
     }
 
+    public boolean canChat() {
+        return System.currentTimeMillis() >= lastChat;
+    }
+
     
 }
