@@ -66,5 +66,8 @@ public class KurisuCore extends JavaPlugin {
     @Override
     public void onDisable() {
         // Plugin shutdown logic
+        if (connectionPoolManager != null) {
+            Connection connection =
+        }
     }
 }
