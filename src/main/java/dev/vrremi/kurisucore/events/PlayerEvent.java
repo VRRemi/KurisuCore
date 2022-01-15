@@ -157,4 +157,14 @@ public class PlayerEvent implements Listener {
                 menu.getPage(user.getOpenMenuPage()).onClick(event);
             }
         }
+
+        @EventHandler
+        public void onClose(InventoryCloseEvent event) {
+            if (event.getPlayer() instanceof Player) {
+                Player player = (Player) event.getPlayer();
+                User user = KurisuCore.getUserManager().getUser(player);
+                if (user == null) return;
+                user.resetMenu();
+            }
+        }
     }
