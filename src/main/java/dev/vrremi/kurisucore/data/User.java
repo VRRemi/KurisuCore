@@ -94,5 +94,8 @@ public class User {
         return System.currentTimeMillis() >= lastChat;
     }
 
+    public void setLastChat(long delay) {
+        lastChat = System.currentTimeMillis() + delay;
+    }
     
 }
