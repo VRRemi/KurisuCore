@@ -180,6 +180,10 @@ public class User {
         }
     }
 
+    public void addPunishment(Punishment punishment) {
+        punishments.add(punishment);
+    }
 
+    
 
 }
