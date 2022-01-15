@@ -92,5 +92,13 @@ public class KurisuCore extends JavaPlugin {
         return configManager;
     }
 
+    public static ConnectionPoolManager getConnectionPoolManager() {
+        return connectionPoolManager;
+    }
 
+    public static RankManager getRankManager() {
+        return rankManager;
+    }
+
+ 
 }
