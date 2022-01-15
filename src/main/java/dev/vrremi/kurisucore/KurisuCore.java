@@ -83,5 +83,14 @@ public class KurisuCore extends JavaPlugin {
             }
         }
     }
-    
+
+    public static KurisuCore getInstance() {
+        return instance;
+    }
+
+    public static ConfigManager getConfigManager() {
+        return configManager;
+    }
+
+
 }
