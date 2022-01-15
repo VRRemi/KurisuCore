@@ -10,5 +10,9 @@ public class Permission {
     private final String node;
     private final long timeout;
 
+    public boolean hasTimedOut() {
+        return System.currentTimeMillis() > timeout;
+    }
+
     
 }
