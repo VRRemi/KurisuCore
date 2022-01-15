@@ -237,4 +237,10 @@ public class User {
         addPunishment(punishment);
     }
 
+    public void tempMute(String reason, String punisher, long timeout) {
+        Punishment punishment = new Punishment(PunishmentType.TEMP_MUTE, reason, punisher, System.currentTimeMillis(),
+                System.currentTimeMillis() + timeout);
+        addPunishment(punishment);
+    }
+
 }
