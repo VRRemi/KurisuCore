@@ -8,4 +8,12 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 
 public class CustomPermission {
+
+    private final Player player;
+
+    public CustomPermissible(Player player) {
+        super(player);
+        this.player = player;
+    }
+    
 }
