@@ -99,7 +99,7 @@ public class User {
     }
 
     public Menu getOpenMenu() {
-        return KurisuCore.getMenuManager().getMenu(openMenuName);
+        return FubukiCore.getMenuManager().getMenu(openMenuName);
     }
 
     public Rank getHighestRank() {
