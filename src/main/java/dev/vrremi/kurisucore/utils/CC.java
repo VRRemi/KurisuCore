@@ -23,7 +23,7 @@ public class CC {
         lore.forEach(line -> newLore.add(CC.color(line)));
         return newLore;
     }
-    
+
     public static String formatPlaceholders(String string, String light, String dark) {
         return string
                 .replace("/", dark + "/" + light)
@@ -32,5 +32,9 @@ public class CC {
                 .replace("[", dark + "[" + light)
                 .replace("]", dark + "]" + light)
                 .replace("-", dark + "-" + light);
+    }
+    
+    public static String format(int num) {
+        return NumberFormat.getInstance().format(num);
     }
 }
