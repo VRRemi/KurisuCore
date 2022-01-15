@@ -24,6 +24,15 @@ public class RankMap {
         return rankMap.get(FubukiCore.getRankManager().getRank(name));
     }
 
+    public String convertToString() {
+        StringBuilder sb = new StringBuilder();
+        rankMap.forEach((rank, time) -> {
+            if (time > System.currentTimeMillis())
+                sb.append(rank.getName()).append(":").append(time == Long.MAX_VALUE ? "0" : time).append(",");
+        });
+        return sb.substring(0, sb.length() - 1);
+    }
+
     
 
 }
