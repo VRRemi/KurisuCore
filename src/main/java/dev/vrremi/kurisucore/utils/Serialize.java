@@ -52,4 +52,18 @@ public class Serialize {
             throw new IllegalStateException("Unable to save item stacks.", e);
         }
     }
+
+    private static ItemStack[] from(String b) throws IOException {
+        try {
+            BukkitObjectInputStream d = new BukkitObjectInputStream(new ByteArrayInputStream(Base64Coder.decodeLines(b)));
+            ItemStack[] s = new ItemStack[d.readInt()];
+            for (int t = 0; t < s.length; t++) {
+                s[t] = (ItemStack) d.readObject();
+            }
+            d.close();
+            return s;
+        } catch (ClassNotFoundException e) {
+            throw new IOException("Unable to decode class type.", e);
+        }
+    }
 }
