@@ -196,6 +196,15 @@ public class User {
         }
     }
 
+    public boolean hasPunishment(String id) {
+        for (Punishment p : punishments) {
+            if (p.getId().equalsIgnoreCase(id)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     
 
 }
