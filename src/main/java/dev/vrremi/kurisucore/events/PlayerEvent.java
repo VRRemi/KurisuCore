@@ -29,7 +29,7 @@ import java.util.UUID;
 
 public class PlayerEvent implements Listener {
 
-    @Eventhandler
+    @EventHandler
     public void onAsyncJoin(AsyncPlayerPreLoginEvent event) {
         UUID uuid = event.getUniqueId();
         Connection connection = KurisuCore.getConnectionPoolManager().getConnection();
@@ -46,24 +46,24 @@ public class PlayerEvent implements Listener {
         } finally {
             ConnectionPoolManager.close(connection);
         }
+    }
 
-        @EventHandler
-        public void onJoin (PlayerJoinEvent event){
-            Player player = event.getPlayer();
-            Threading.runAsync(() -> {
-                Connection connection = KurisuCore.getConnectionPoolManager().getConnection();
-                try {
-                    KurisuCore.getUserDataManager().create(player, connection);
-                    KurisuCore.getUserManager().cache(player, connection);
-                    KurisuCore.getPermissionManager().add(player);
-                    KurisuCore.getNameManager().update(player);
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                } finally {
-                    ConnectionPoolManager.close(connection);
-                }
-            });
-        }
+    @EventHandler
+    public void onJoin(PlayerJoinEvent event) {
+        Player player = event.getPlayer();
+        Threading.runAsync(() -> {
+            Connection connection = KurisuCore.getConnectionPoolManager().getConnection();
+            try {
+                KurisuCore.getUserDataManager().create(player, connection);
+                KurisuCore.getUserManager().cache(player, connection);
+                KurisuCore.getPermissionManager().add(player);
+                KurisuCore.getNameManager().update(player);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } finally {
+                ConnectionPoolManager.close(connection);
+            }
+        });
     }
 
     @EventHandler
@@ -86,7 +86,7 @@ public class PlayerEvent implements Listener {
     @EventHandler
     public void onChat(AsyncPlayerChatEvent event) {
         Player player = event.getPlayer();
-        User user = KurisuCore.getUserManager().getUser(player);
+        User user = KurisuCore().getUser(player);
         if (user != null) {
             if (KurisuCore.getPunishmentManager().isUserMuted(player)) {
                 event.setCancelled(true);
@@ -110,13 +110,13 @@ public class PlayerEvent implements Listener {
                                 put("{time-left}", timeLeft);
                             }});
                             return;
-            }
-        }
-    }
+                        }
+                    }
+                }
                 if (event.getMessage().startsWith("!")) {
-                    if (player.hasPermission("fubki.staffchat")) {
+                    if (player.hasPermission("kurisu.staffchat")) {
                         event.setCancelled(true);
-                        FubukiCore.getChatManager().sendStaffChat(player.getName(), event.getMessage().substring(1));
+                        KurisuCore.getChatManager().sendStaffChat(player.getName(), event.getMessage().substring(1));
                         return;
                     }
                 }
@@ -157,14 +157,16 @@ public class PlayerEvent implements Listener {
                 menu.getPage(user.getOpenMenuPage()).onClick(event);
             }
         }
+    }
 
-        @EventHandler
-        public void onClose(InventoryCloseEvent event) {
-            if (event.getPlayer() instanceof Player) {
-                Player player = (Player) event.getPlayer();
-                User user = KurisuCore.getUserManager().getUser(player);
-                if (user == null) return;
-                user.resetMenu();
-            }
+    @EventHandler
+    public void onClose(InventoryCloseEvent event) {
+        if (event.getPlayer() instanceof Player) {
+            Player player = (Player) event.getPlayer();
+            User user = KurisuCore.getUserManager().getUser(player);
+            if (user == null) return;
+            user.resetMenu();
         }
     }
+
+}
