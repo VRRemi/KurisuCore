@@ -35,7 +35,8 @@ public class UserManager {
         });
     }
 
-    public void cache(Player player, connection) throws SQLException {
-        
+    public void cache(Player player, Connection connection) throws SQLException {
+        userMap.put(player.getUniqueId(), new User(player, connection));
+        KurisuCore.getLoopManager().add(player);
     }
 }
