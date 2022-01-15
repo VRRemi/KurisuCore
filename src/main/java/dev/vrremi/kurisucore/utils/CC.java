@@ -33,8 +33,12 @@ public class CC {
                 .replace("]", dark + "]" + light)
                 .replace("-", dark + "-" + light);
     }
-    
+
     public static String format(int num) {
+        return NumberFormat.getInstance().format(num);
+    }
+    
+    public static String format(double num) {
         return NumberFormat.getInstance().format(num);
     }
 }
