@@ -10,3 +10,8 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+public class CC {
+
+    private static final Pattern hexPattern = Pattern.compile("#[a-fA-F0-9]{6}");
+    
+}
