@@ -205,6 +205,16 @@ public class User {
         return false;
     }
 
+    public void ban(String reason, String punisher) {
+        Punishment punishment = new Punishment(PunishmentType.BAN, reason, punisher, System.currentTimeMillis(),
+                Long.MAX_VALUE);
+        addPunishment(punishment);
+        Player player = Bukkit.getPlayer(uuid);
+        if (player != null) {
+            player.kickPlayer(CC.color(ConfigUtils.getBanMessage(punishment)));
+        }
+    }
+
     
 
 }
