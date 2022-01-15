@@ -21,5 +21,5 @@ public class Permission {
     public String toString() {
         return "{Permission:node=" + node + ",timeout=" + timeout + "}";
     }
-    
+
 }
