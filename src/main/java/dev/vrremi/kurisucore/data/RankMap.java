@@ -20,6 +20,10 @@ public class RankMap {
         rankMap.remove(rank);
     }
 
+    public long getTime(String name) {
+        return rankMap.get(FubukiCore.getRankManager().getRank(name));
+    }
+
     
 
 }
