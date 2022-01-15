@@ -32,5 +32,13 @@ public class ConfigUtils {
                     path));
     }
 
+    public static void broadcast(String path, String permission, HashMap<String, String> placeholders) {
+        if (permission == null || permission.isEmpty())
+            Bukkit.getOnlinePlayers().forEach(player -> sendMessage(player, path, placeholders));
+        else
+            Bukkit.getOnlinePlayers().stream().filter(player -> player.hasPermission(permission)).forEach(player -> sendMessage(player, path,
+                    placeholders));
+    }
+
     
 }
