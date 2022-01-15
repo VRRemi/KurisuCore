@@ -273,6 +273,8 @@ public class User {
         punishments.clear();
     }
 
-    
+    public int getActivePermissionCount() {
+        return (int) permissions.stream().filter(Permission::isActive).count();
+    }
 
 }
