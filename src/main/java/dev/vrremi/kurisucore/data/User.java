@@ -184,6 +184,18 @@ public class User {
         punishments.add(punishment);
     }
 
+    public void removePunishment(String id) {
+        Punishment punishment = null;
+        for (Punishment p : punishments) {
+            if (p.getId().equalsIgnoreCase(id)) {
+                punishment = p;
+            }
+        }
+        if (punishment != null) {
+            punishments.remove(punishment);
+        }
+    }
+
     
 
 }
