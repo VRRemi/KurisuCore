@@ -27,6 +27,25 @@ import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.UUID;
 
-public class PlayerEvent {
+public class PlayerEvent implements Listener {
+
+    @Eventhandler
+    public void onAsyncJoin(AsyncPlayerPreLoginEvent event) {
+        UUID uuid = event.getUniqueId();
+        Connection connection = KurisuCore.getConnectionPoolManager().getConnection();
+        try {
+            if (KurisuCore.getUserDataManager().playerExists(uuid, connection)) {
+                User user = new User(uuid, connection);
+                if (KurisuCore.getPunishmentManager().isUserBanned(user)) {
+                    Punishment punishment = KurisuCore.getPunishmentManager().getLastBan(user);
+                    event.disallow(AsyncPlayerPreLoginEvent.Result.KICK_OTHER, CC.color(ConfigUtils.getBanMessage(punishment)));
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            ConnectionPoolManager.close(connection);
+        }
+    }
 
 }
