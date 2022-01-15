@@ -101,5 +101,10 @@ public class User {
     public Menu getOpenMenu() {
         return KurisuCore.getMenuManager().getMenu(openMenuName);
     }
+
+    public Rank getHighestRank() {
+        return rankMap == null ? RankMap.getDefault().getHighestRank() : rankMap.getHighestRank();
+    }
+
     
 }
