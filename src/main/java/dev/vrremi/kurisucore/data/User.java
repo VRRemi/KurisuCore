@@ -70,5 +70,12 @@ public class User {
         userDataManager.setPunishments(uuid, punishments, connection);
     }
 
+    public void resetMenu() {
+        openMenuName = null;
+        openMenuPage = -1;
+        target = null;
+        targetRank = null;
+    }
+
     
 }
