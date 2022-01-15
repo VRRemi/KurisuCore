@@ -128,4 +128,10 @@ public class User {
         return rankMap == null ? RankMap.getDefault().getActiveRanks() : rankMap.getActiveRanks();
     }
 
+    public List<Rank> getAllRanks() {
+        return rankMap == null ? RankMap.getDefault().getAll() : rankMap.getAll();
+    }
+
+    
+
 }
