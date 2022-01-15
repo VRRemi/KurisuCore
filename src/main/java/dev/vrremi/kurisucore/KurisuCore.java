@@ -67,7 +67,12 @@ public class KurisuCore extends JavaPlugin {
     public void onDisable() {
         // Plugin shutdown logic
         if (connectionPoolManager != null) {
-            Connection connection =
+            Connection connection = connectionPoolManager.getConnection();
+            try {
+                for (Player player : Bukkit.getOnlinePlayers()) {
+
+                }
+            }
         }
     }
 }
