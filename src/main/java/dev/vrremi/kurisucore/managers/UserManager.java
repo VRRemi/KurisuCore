@@ -44,5 +44,12 @@ public class UserManager {
         userMap.put(uuid, new User(uuid, connection));
     }
 
+    public void remove(Player player, Connection connection) throws SQLException {
+        User user = getUser(player);
+        if (user != null) {
+            user.save(connection);
+            userMap.remove(player.getUniqueId());
+        }
+    }
     
 }
