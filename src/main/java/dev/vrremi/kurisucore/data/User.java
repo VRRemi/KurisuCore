@@ -106,5 +106,13 @@ public class User {
         return rankMap == null ? RankMap.getDefault().getHighestRank() : rankMap.getHighestRank();
     }
 
+    public void addRank(Rank rank, long time) {
+        rankMap.addRank(rank, time);
+        Player player = Bukkit.getPlayer(uuid);
+        if (player != null) {
+            KurisuCore.getNameManager().update(player);
+            KurisuCore.getLoopManager().addRank(player, rank);
+        }
+    }
     
 }
