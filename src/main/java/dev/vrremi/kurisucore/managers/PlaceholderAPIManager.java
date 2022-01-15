@@ -38,6 +38,32 @@ public class PlaceholderAPIManager extends PlaceholderExpansion {
         return true;
     }
 
-    
+    @Override
+    public String onRequest(OfflinePlayer offlinePlayer, @NotNull String params) {
+        Player player = Bukkit.getPlayer(offlinePlayer.getUniqueId());
+        if (offlinePlayer.isOnline() && player != null) {
+            User user = KurisuCore.getUserManager().getUser(player);
+            if (user != null) {
+                Rank rank = user.getHighestRank();
+                Tag tag = user.getTag();
+                if (params.equalsIgnoreCase("tag_display")) {
+                    return tag == null ? "" : tag.getTag();
+                } else if (params.equalsIgnoreCase("tag_name")) {
+                    return tag == null ? "" : tag.getName();
+                } else if (params.equalsIgnoreCase("rank_prefix")) {
+                    return rank == null ? "" : rank.getPrefix();
+                } else if (params.equalsIgnoreCase("rank_suffix")) {
+                    return rank == null ? "" : rank.getSuffix();
+                } else if (params.equalsIgnoreCase("rank_color")) {
+                    return rank == null ? "" : rank.getColor();
+                } else if (params.equalsIgnoreCase("rank_priority")) {
+                    return rank == null ? "" : CC.format(rank.getPriority());
+                } else if (params.equalsIgnoreCase("rank_name")) {
+                    return rank == null ? "" : rank.getName();
+                }
+            }
+        }
+        return null;
+    }
 
 }
