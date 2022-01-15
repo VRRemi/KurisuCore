@@ -35,4 +35,7 @@ public class UserManager {
         });
     }
 
+    public void cache(Player player, connection) throws SQLException {
+        
+    }
 }
