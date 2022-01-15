@@ -29,5 +29,5 @@ public class Rank {
                 "permissions=" + permissions + "," +
                 "defaultRank=" + defaultRank + "}";
     }
-    
+
 }
