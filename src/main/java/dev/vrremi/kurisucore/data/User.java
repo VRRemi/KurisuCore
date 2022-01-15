@@ -114,5 +114,16 @@ public class User {
             KurisuCore.getLoopManager().addRank(player, rank);
         }
     }
+
+    public void removeRank(Rank rank) {
+        rankMap.removeRank(rank);
+        Player player = Bukkit.getPlayer(uuid);
+        if (player != null) {
+            KurisuCore.getNameManager().update(player);
+            KurisuCore.getLoopManager().removeRank(player, rank);
+        }
+    }
+
     
+
 }
