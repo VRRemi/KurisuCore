@@ -24,5 +24,13 @@ public class ConfigUtils {
         sender.sendMessage(CC.color(message.get()));
     }
 
+    public static void broadcast(String path, String permission) {
+        if (permission == null || permission.isEmpty())
+            Bukkit.getOnlinePlayers().forEach(player -> sendMessage(player, path));
+        else
+            Bukkit.getOnlinePlayers().stream().filter(player -> player.hasPermission(permission)).forEach(player -> sendMessage(player,
+                    path));
+    }
+
     
 }
