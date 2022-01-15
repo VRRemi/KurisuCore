@@ -24,4 +24,13 @@ public class CC {
         return newLore;
     }
     
+    public static String formatPlaceholders(String string, String light, String dark) {
+        return string
+                .replace("/", dark + "/" + light)
+                .replace("<", dark + "<" + light)
+                .replace(">", dark + ">" + light)
+                .replace("[", dark + "[" + light)
+                .replace("]", dark + "]" + light)
+                .replace("-", dark + "-" + light);
+    }
 }
