@@ -30,5 +30,9 @@ public class Punishment {
         this.timeout = timeout;
     }
 
+    public boolean hasExpired() {
+        return System.currentTimeMillis() > timeout;
+    }
+
     
 }
