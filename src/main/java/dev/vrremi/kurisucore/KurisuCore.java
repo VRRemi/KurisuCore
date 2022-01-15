@@ -54,6 +54,11 @@ public class KurisuCore extends JavaPlugin {
         loopManager = new LoopManager();
         menuManager = new MenuManager();
         chatManager = new ChatManager();
+        
+        new CommandManager();
+        new EventManager();
+        
+        
     }
 
     @Override
