@@ -215,6 +215,16 @@ public class User {
         }
     }
 
+    public void tempBan(String reason, String punisher, long timeout) {
+        Punishment punishment = new Punishment(PunishmentType.TEMP_BAN, reason, punisher, System.currentTimeMillis(),
+                System.currentTimeMillis() + timeout);
+        addPunishment(punishment);
+        Player player = Bukkit.getPlayer(uuid);
+        if (player != null) {
+            player.kickPlayer(CC.color(ConfigUtils.getBanMessage(punishment)));
+        }
+    }
+
     
 
 }
