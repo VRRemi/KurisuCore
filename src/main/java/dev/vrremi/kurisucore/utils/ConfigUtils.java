@@ -70,4 +70,27 @@ public class ConfigUtils {
     public static String getWarnMessage(Punishment punishment) {
         return getPunishmentMessage(punishment, "warn-format");
     }
+
+    private static String getPunishmentMessage(Punishment punishment, String path) {
+        List<String> lines = KurisuCore.getConfigManager().getMultiMessage(path);
+        StringBuilder sb = new StringBuilder();
+        int index = 0;
+        for (String line : lines) {
+            String expire = punishment.getTimeout() == Long.MAX_VALUE ? "Never" :
+                    Time.millisToTime(punishment.getTimeout());
+            sb.append(CC.color(
+                    line
+                            .replace("{expire}", expire)
+                            .replace("{reason}", punishment.getReason().isEmpty() ? "No reason provided" :
+                                    punishment.getReason())
+                            .replace("{punisher}", punishment.getPunisher())
+                            .replace("{id}", punishment.getId())
+            ));
+            if (index < lines.size()) {
+                sb.append("\n");
+            }
+            index++;
+        }
+        return sb.substring(0, sb.length() - 1);
+    }
 }
