@@ -154,6 +154,13 @@ public class User {
         return new LinkedList<>();
     }
 
-    
+    public void addPermission(Permission permission) {
+        permissions.add(permission);
+        Player player = Bukkit.getPlayer(uuid);
+        if (player != null) {
+            KurisuCore.getPermissionManager().update(player);
+            KurisuCore.getLoopManager().addPermission(player, permission);
+        }
+    }
 
 }
