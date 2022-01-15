@@ -33,6 +33,10 @@ public class RankMap {
         return sb.substring(0, sb.length() - 1);
     }
 
+    public List<Rank> getActiveRanks() {
+        return rankMap.keySet().stream().filter(rank -> rankMap.get(rank) > System.currentTimeMillis()).collect(Collectors.toList());
+    }
+
     
 
 }
