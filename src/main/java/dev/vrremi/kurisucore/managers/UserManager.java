@@ -19,6 +19,14 @@ public class UserManager {
         init();
     }
 
-    
+    private void init() {
+        userMap.clear();
+        Threading.runAsync(() -> {
+            Connection connection = KurisuCore.getConnectionPoolManager().getConnection();
+            try {
+                
+            }
+        });
+    }
 
 }
