@@ -39,5 +39,35 @@ public class Time {
         }
         return 0;
     }
-    
+
+    public static String millisToTime(long millis) {
+        long delay = millis - System.currentTimeMillis();
+        long seconds = delay / 1000;
+        long minutes = seconds / 60;
+        seconds -= minutes * 60;
+        long hours = minutes / 60;
+        minutes -= hours * 60;
+        long days = hours / 24;
+        hours -= days * 24;
+        long weeks = days / 7;
+        days -= weeks * 7;
+        StringBuilder time = new StringBuilder();
+        if (weeks > 0) {
+            time.append(weeks).append("w ");
+        }
+        if (days > 0) {
+            time.append(days).append("d ");
+        }
+        if (hours > 0) {
+            time.append(hours).append("h ");
+        }
+        if (minutes > 0) {
+            time.append(minutes).append("m ");
+        }
+        if (seconds > 0) {
+            time.append(seconds).append("s");
+        }
+        return time.toString().isEmpty() ? "0s" : time.toString();
+    }
+
 }
