@@ -163,4 +163,12 @@ public class User {
         }
     }
 
+    public void removePermission(String permission) {
+        List<Permission> permissions = new ArrayList<>();
+        for (Permission perm : this.permissions) {
+            if (perm.getNode().equalsIgnoreCase(permission)) {
+                permissions.add(perm);
+            }
+        }
+        this.permissions.removeAll(permissions);
 }
