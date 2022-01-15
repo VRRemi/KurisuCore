@@ -249,6 +249,16 @@ public class User {
         addPunishment(punishment);
     }
 
+    public void kick(String reason, String punisher) {
+        Punishment punishment = new Punishment(PunishmentType.KICK, reason, punisher, System.currentTimeMillis(),
+                Long.MAX_VALUE);
+        addPunishment(punishment);
+        Player player = Bukkit.getPlayer(uuid);
+        if (player != null) {
+            player.kickPlayer(CC.color(ConfigUtils.getKickMessage(punishment)));
+        }
+    }
+
     
 
 }
