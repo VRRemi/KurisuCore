@@ -41,6 +41,18 @@ public class RankMap {
         return new ArrayList<>(rankMap.keySet());
     }
 
+    public Rank getHighestRank() {
+        Rank highestRank = null;
+        int highestPriority = Integer.MIN_VALUE;
+        for (Rank rank : getActiveRanks()) {
+            if (rank.getPriority() > highestPriority) {
+                highestRank = rank;
+                highestPriority = rank.getPriority();
+            }
+        }
+        return highestRank;
+    }
+
     
 
 }
