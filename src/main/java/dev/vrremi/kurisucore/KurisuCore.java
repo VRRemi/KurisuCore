@@ -143,5 +143,5 @@ public class KurisuCore extends JavaPlugin {
     public static ChatManager getChatManager() {
         return chatManager;
     }
-    
+
 }
