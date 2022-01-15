@@ -13,5 +13,9 @@ import java.util.regex.Pattern;
 public class CC {
 
     private static final Pattern hexPattern = Pattern.compile("#[a-fA-F0-9]{6}");
+
+    public static String color(String string) {
+        return ChatColor.translateAlternateColorCodes('&', string);
+    }
     
 }
