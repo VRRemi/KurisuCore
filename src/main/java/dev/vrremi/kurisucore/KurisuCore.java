@@ -10,12 +10,38 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class KurisuCore extends JavaPlugin {
 
+    private static KurisuCore instance;
     
+    private static ConfigManager configManager;
+    private static ConnectionPoolManager connectionPoolManager;
+    
+    private static UserDataManager userDataManager;
+    private static RankDataManager rankDataManager;
+    
+    private static RankManager rankManager;
+    private static UserManager userManager;
+    private static TagManager tagManager;
+    
+    private static PermissionManager permissionManager;
+    private static PunishmentManager punishmentManager;
+    private static GameModeManager gameModeManager;
+    private static NameManager nameManager;
+    private static LoopManager loopManager;
+    private static MenuManager menuManager;
+    private static ChatManager chatManager;
 
     @Override
     public void onEnable() {
         // Plugin startup logic
+        instance = this;
+        
+        configManager = new ConfigManager();
+        connectionPoolManager = new ConnectionPoolManager;
+        
+        new TableManager(connectionPoolManager.getConnection());
 
+        userDataManager = new UserDataManager();
+        rankDataManager = new RankDataManager();
     }
 
     @Override
