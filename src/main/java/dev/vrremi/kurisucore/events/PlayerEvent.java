@@ -98,7 +98,18 @@ public class PlayerEvent implements Listener {
                         ConfigUtils.sendMessage(player, "chat-muted-user");
                         return;
                     }
-                }
+                } else if (KurisuCore.getChatManager().getDelay() > 0) {
+                    if (!player.hasPermission("kurisu.admin")) {
+                        if (user.canChat()) {
+                            user.setLastChat((long) (KurisuCore.getChatManager().getDelay() * 1000));
+                        } else {
+                            event.setCancelled(true);
+                            double delay = (user.getLastChat() - System.currentTimeMillis()) / 1000D;
+                            String timeLeft = String.format("%.1f", delay);
+                            ConfigUtils.sendMessage(player, "chat-delayed-user", new HashMap<String, String>() {{
+                                put("{time-left}", timeLeft);
+                            }});
+                            return;
             }
         }
     }
