@@ -22,13 +22,15 @@ public class UserManager {
     private void init() {
         userMap.clear();
         Threading.runAsync(() -> {
-            Connection connection = KurisuCore.getConnectionPoolManager().getConnection();
+            Connection connection = FubukiCore.getConnectionPoolManager().getConnection();
             try {
-                for (Player online : Bukkit.getOnlinePlayers())) {
+                for (Player online : Bukkit.getOnlinePlayers()) {
                     cache(online, connection);
                 }
-
-                        ))
+            } catch (SQLException e){
+                e.printStackTrace();
+            } finally {
+                ConnectionPoolManager.close(connection);
             }
         });
     }
