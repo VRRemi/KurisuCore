@@ -136,6 +136,11 @@ public class User {
         return rankMap.getTime(rank.getName());
     }
 
-    
+    public void setTag(Tag tag) {
+        this.tag = tag;
+        Player player = Bukkit.getPlayer(uuid);
+        if (player != null)
+            KurisuCore.getNameManager().update(player);
+    }
 
 }
