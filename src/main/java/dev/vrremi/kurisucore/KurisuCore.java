@@ -42,6 +42,10 @@ public class KurisuCore extends JavaPlugin {
 
         userDataManager = new UserDataManager();
         rankDataManager = new RankDataManager();
+        
+        rankManager = new RankManager();
+        userManager = new UserManager();
+        tagManager = new TagManager();
     }
 
     @Override
