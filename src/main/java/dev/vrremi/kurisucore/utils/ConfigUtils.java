@@ -48,6 +48,6 @@ public class ConfigUtils {
                     sendMessage(player, path, placeholders);
             });
         else
-            
+
     }
 }
