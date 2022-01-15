@@ -113,4 +113,9 @@ public class PlayerEvent implements Listener {
             }
         }
     }
+                if (event.getMessage().startsWith("!")) {
+                    if (player.hasPermission("fubki.staffchat")) {
+                        event.setCancelled(true);
+                        FubukiCore.getChatManager().sendStaffChat(player.getName(), event.getMessage().substring(1));
+                        return;
 }
