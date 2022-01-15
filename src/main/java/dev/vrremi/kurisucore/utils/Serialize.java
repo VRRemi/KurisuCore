@@ -13,5 +13,13 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 public class Serialize {
+
+    public static String get(Player player) {
+        String s = to(player.getInventory().getStorageContents());
+        String a = to(player.getInventory().getArmorContents());
+        String e = to(player.getInventory().getExtraContents());
+        return (s + "_" + a + "_" + e).replace("\r\\", "").replace("\r", "").replace("\n", "");
+    }
+
     
 }
