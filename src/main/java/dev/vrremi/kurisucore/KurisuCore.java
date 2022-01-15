@@ -46,6 +46,10 @@ public class KurisuCore extends JavaPlugin {
         rankManager = new RankManager();
         userManager = new UserManager();
         tagManager = new TagManager();
+        
+        permissionManager = new PermissionManager();
+        punishmentManager = new PunishmentManager();
+        gameModeManager = new GameModeManager();
     }
 
     @Override
