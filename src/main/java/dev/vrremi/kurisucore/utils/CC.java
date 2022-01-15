@@ -64,5 +64,19 @@ public class CC {
         }
         return formatHex(stringBuilder.toString());
     }
-    
+
+    public static ArrayList<Color> colorsBetween(Color color1, Color color2, int steps) {
+        steps--;
+        ArrayList<Color> colorList = new ArrayList<>();
+        double redInc = Math.abs((double) color1.getRed() - color2.getRed()) / steps;
+        double greenInc = Math.abs((double) color1.getGreen() - color2.getGreen()) / steps;
+        double blueInc = Math.abs((double) color1.getBlue() - color2.getBlue()) / steps;
+        for (int i = 0; i < steps; i++) {
+            colorList.add(new Color(
+                    (int) (color1.getRed() > color2.getRed() ? color1.getRed() - redInc * i : color1.getRed() + redInc * i),
+                    (int) (color1.getGreen() > color2.getGreen() ? color1.getGreen() - greenInc * i : color1.getGreen() + greenInc * i),
+                    (int) (color1.getBlue() > color2.getBlue() ? color1.getBlue() - blueInc * i : color1.getBlue() + blueInc * i)
+            ));
+        }
+        
 }
