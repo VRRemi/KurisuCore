@@ -66,4 +66,5 @@ public class Serialize {
             throw new IOException("Unable to decode class type.", e);
         }
     }
+
 }
