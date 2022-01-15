@@ -136,5 +136,11 @@ public class KurisuCore extends JavaPlugin {
         return loopManager;
     }
 
+    public static MenuManager getMenuManager() {
+        return menuManager;
+    }
 
+    public static ChatManager getChatManager() {
+        return chatManager;
+    }
 }
