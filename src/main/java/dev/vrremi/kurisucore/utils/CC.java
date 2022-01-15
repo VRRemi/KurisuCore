@@ -37,8 +37,32 @@ public class CC {
     public static String format(int num) {
         return NumberFormat.getInstance().format(num);
     }
-    
+
     public static String format(double num) {
         return NumberFormat.getInstance().format(num);
     }
+
+    public static String formatHex(String string) {
+        Matcher match = hexPattern.matcher(string);
+        while (match.find()) {
+            String color = string.substring(match.start(), match.end());
+            string = string.replace(color, net.md_5.bungee.api.ChatColor.of(color) + "");
+            match = hexPattern.matcher(string);
+        }
+        return string;
+    }
+
+    public static String getCustomAuthorName() {
+        String name = "vrremi";
+        List<String> colors = new ArrayList<>();
+        for (Color color : colorsBetween(new Color(0x01acff), new Color(0xffffff), name.length())) {
+            colors.add("#" + String.format("%02X%02X%02X", color.getRed(), color.getGreen(), color.getBlue()));
+        }
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < name.length(); i++) {
+            stringBuilder.append(colors.get(i)).append(name.charAt(i));
+        }
+        return formatHex(stringBuilder.toString());
+    }
+    
 }
