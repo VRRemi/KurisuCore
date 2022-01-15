@@ -23,4 +23,11 @@ public class PlaceholderAPIManager extends PlaceholderExpansion {
         return "VRRemi";
     }
 
+    @Override
+    public @NotNull String getVersion() {
+        return "1.0.0";
+    }
+
+    
+
 }
