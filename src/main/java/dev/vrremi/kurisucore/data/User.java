@@ -243,4 +243,12 @@ public class User {
         addPunishment(punishment);
     }
 
+    public void unmute(String reason, String punisher) {
+        Punishment punishment = new Punishment(PunishmentType.UNMUTE, reason, punisher, System.currentTimeMillis(),
+                Long.MAX_VALUE);
+        addPunishment(punishment);
+    }
+
+    
+
 }
