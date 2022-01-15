@@ -58,7 +58,9 @@ public class KurisuCore extends JavaPlugin {
         new CommandManager();
         new EventManager();
         
-        
+        if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
+            new PlaceholderAPIManager().register();
+        } 
     }
 
     @Override
