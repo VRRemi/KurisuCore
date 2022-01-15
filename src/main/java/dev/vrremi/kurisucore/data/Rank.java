@@ -9,5 +9,11 @@ import java.util.List;
 @Getter
 public class Rank {
 
+    private final String name;
+    private final int priority;
+    private final String prefix, suffix, color;
+    private final List<Permission> permissions;
+    private final boolean defaultRank;
+
     
 }
