@@ -66,5 +66,21 @@ public class PlayerEvent implements Listener {
         }
     }
 
-    
+    @EventHandler
+    public void onQuit(PlayerQuitEvent event) {
+        Player player = event.getPlayer();
+        Threading.runAsync(() -> {
+            Connection connection = KurisuCore.getConnectionPoolManager().getConnection();
+            try {
+                KurisuCore.getUserManager().remove(player, connection);
+                KurisuCore.getPermissionManager().remove(player);
+                KurisuCore.getLoopManager().remove(player);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } finally {
+                ConnectionPoolManager.close(connection);
+            }
+        });
+    }
+        
 }
