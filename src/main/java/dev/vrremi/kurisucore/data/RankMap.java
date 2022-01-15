@@ -68,6 +68,13 @@ public class RankMap {
         return rankMap;
     }
 
-    
+    public static RankMap getDefault() {
+        RankMap rankMap = new RankMap();
+        KurisuCore.getRankManager().getRanks().stream().filter(Rank::isDefaultRank).forEach(rank -> rankMap.addRank(rank,
+                Long.MAX_VALUE));
+        return rankMap;
+    }
+
+
 
 }
