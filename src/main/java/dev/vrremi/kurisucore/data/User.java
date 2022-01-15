@@ -171,4 +171,15 @@ public class User {
             }
         }
         this.permissions.removeAll(permissions);
+        Player player = Bukkit.getPlayer(uuid);
+        if (player != null) {
+            KurisuCore.getPermissionManager().update(player);
+            permissions.forEach(perm -> {
+                KurisuCore.getLoopManager().removePermission(player, perm);
+            });
+        }
+    }
+
+
+
 }
