@@ -132,6 +132,10 @@ public class User {
         return rankMap == null ? RankMap.getDefault().getAll() : rankMap.getAll();
     }
 
+    public long getRankExpireTime(Rank rank) {
+        return rankMap.getTime(rank.getName());
+    }
+
     
 
 }
