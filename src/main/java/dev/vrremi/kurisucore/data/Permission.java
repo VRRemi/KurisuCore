@@ -18,6 +18,8 @@ public class Permission {
         return System.currentTimeMillis() < timeout;
     }
 
-
+    public String toString() {
+        return "{Permission:node=" + node + ",timeout=" + timeout + "}";
+    }
     
 }
