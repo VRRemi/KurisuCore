@@ -14,5 +14,10 @@ public class Permission {
         return System.currentTimeMillis() > timeout;
     }
 
+    public boolean isActive() {
+        return System.currentTimeMillis() < timeout;
+    }
+
+
     
 }
