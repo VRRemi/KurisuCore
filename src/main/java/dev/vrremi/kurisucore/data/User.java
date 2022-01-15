@@ -231,6 +231,10 @@ public class User {
         addPunishment(punishment);
     }
 
-    
+    public void mute(String reason, String punisher) {
+        Punishment punishment = new Punishment(PunishmentType.MUTE, reason, punisher, System.currentTimeMillis(),
+                Long.MAX_VALUE);
+        addPunishment(punishment);
+    }
 
 }
