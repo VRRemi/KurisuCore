@@ -55,6 +55,12 @@ public class User {
     public User(UUID uuid, Connection connection) throws SQLException {
         this.uuid = uuid;
         this.name = null;
-        UserDataManager userDataManager = KurisuCore
+        UserDataManager userDataManager = KurisuCore.getUserDataManager();
+        this.rankMap = userDataManager.getRanks(uuid, connection);
+        this.tag = userDataManager.getTag(uuid, connection);
+        this.permissions = userDataManager.getPermissions(uuid, connection);
+        this.punishments = userDataManager.getPunishments(uuid, connection);
     }
+
+    
 }
