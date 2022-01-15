@@ -259,6 +259,16 @@ public class User {
         }
     }
 
+    public void warn(String reason, String punisher) {
+        Punishment punishment = new Punishment(PunishmentType.WARN, reason, punisher, System.currentTimeMillis(),
+                Long.MAX_VALUE);
+        addPunishment(punishment);
+        Player player = Bukkit.getPlayer(uuid);
+        if (player != null) {
+            player.sendMessage(CC.color(ConfigUtils.getWarnMessage(punishment)));
+        }
+    }
+
     
 
 }
