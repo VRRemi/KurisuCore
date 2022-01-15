@@ -58,4 +58,14 @@ public class ConfigUtils {
     public static String getBanMessage(Punishment punishment) {
         return getPunishmentMessage(punishment, "ban-format");
     }
+
+    public static String getMuteMessage(Punishment punishment) {
+        return getPunishmentMessage(punishment, "mute-format");
+    }
+
+    public static String getKickMessage(Punishment punishment) {
+        return getPunishmentMessage(punishment, "kick-format");
+    }
+
+    
 }
