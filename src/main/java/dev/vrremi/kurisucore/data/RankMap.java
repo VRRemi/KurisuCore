@@ -37,6 +37,10 @@ public class RankMap {
         return rankMap.keySet().stream().filter(rank -> rankMap.get(rank) > System.currentTimeMillis()).collect(Collectors.toList());
     }
 
+    public List<Rank> getAll() {
+        return new ArrayList<>(rankMap.keySet());
+    }
+
     
 
 }
