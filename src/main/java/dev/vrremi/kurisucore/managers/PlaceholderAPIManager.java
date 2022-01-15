@@ -18,6 +18,9 @@ public class PlaceholderAPIManager extends PlaceholderExpansion {
         return "kurisu";
     }
 
-    
+    @Override
+    public @NotNull String getAuthor() {
+        return "VRRemi";
+    }
 
 }
