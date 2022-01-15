@@ -128,5 +128,13 @@ public class KurisuCore extends JavaPlugin {
         return gameModeManager;
     }
 
+    public static NameManager getNameManager() {
+        return nameManager;
+    }
+
+    public static LoopManager getLoopManager() {
+        return loopManager;
+    }
+
 
 }
