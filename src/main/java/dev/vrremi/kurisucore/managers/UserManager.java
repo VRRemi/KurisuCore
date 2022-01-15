@@ -24,7 +24,11 @@ public class UserManager {
         Threading.runAsync(() -> {
             Connection connection = KurisuCore.getConnectionPoolManager().getConnection();
             try {
-                
+                for (Player online : Bukkit.getOnlinePlayers())) {
+                    cache(online, connection);
+                }
+
+                        ))
             }
         });
     }
