@@ -225,6 +225,12 @@ public class User {
         }
     }
 
+    public void unban(String reason, String punisher) {
+        Punishment punishment = new Punishment(PunishmentType.UNBAN, reason, punisher, System.currentTimeMillis(),
+                Long.MAX_VALUE);
+        addPunishment(punishment);
+    }
+
     
 
 }
