@@ -269,6 +269,10 @@ public class User {
         }
     }
 
+    public void clearPunishments() {
+        punishments.clear();
+    }
+
     
 
 }
