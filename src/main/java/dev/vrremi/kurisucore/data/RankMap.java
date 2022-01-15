@@ -16,4 +16,10 @@ public class RankMap {
         rankMap.put(rank, time);
     }
 
+    public void removeRank(Rank rank) {
+        rankMap.remove(rank);
+    }
+
+    
+
 }
