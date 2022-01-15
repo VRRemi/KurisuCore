@@ -124,7 +124,7 @@ public class User {
         }
     }
 
-    public list<Rank> getRanks() {
+    public List<Rank> getRanks() {
         return rankMap == null ? RankMap.getDefault().getActiveRanks() : rankMap.getActiveRanks();
     }
 
