@@ -15,5 +15,9 @@ public class Rank {
     private final List<Permission> permissions;
     private final boolean defaultRank;
 
+    public String getColor() {
+        return (color == null || color.isEmpty()) ? "&7" : color;
+    }
+
     
 }
