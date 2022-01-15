@@ -55,5 +55,7 @@ public class ConfigUtils {
             });
     }
 
+    public static String getBanMessage(Punishment punishment) {
+        return getPunishmentMessage(punishment, "ban-format");
     }
 }
