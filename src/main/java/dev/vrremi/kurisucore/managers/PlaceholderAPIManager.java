@@ -33,6 +33,11 @@ public class PlaceholderAPIManager extends PlaceholderExpansion {
         return true;
     }
 
+    @Override
+    public boolean persist() {
+        return true;
+    }
+
     
 
 }
