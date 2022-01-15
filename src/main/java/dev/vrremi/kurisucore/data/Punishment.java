@@ -16,5 +16,19 @@ public class Punishment {
         this(null, punishmentType, reason, punisher, created, timeout);
     }
 
+    public Punishment(String id, PunishmentType punishmentType, String reason, String punisher, long created,
+                      long timeout) {
+        String random = getNewId();
+        if (id == null)
+            this.id = random;
+        else
+            this.id = id;
+        this.punishmentType = punishmentType;
+        this.reason = reason;
+        this.punisher = punisher;
+        this.created = created;
+        this.timeout = timeout;
+    }
+
     
 }
