@@ -52,5 +52,9 @@ public class User {
         this.punishments = userDataManager.getPunishments(uuid, connection);
     }
 
-    
+    public User(UUID uuid, Connection connection) throws SQLException {
+        this.uuid = uuid;
+        this.name = null;
+        UserDataManager userDataManager = KurisuCore
+    }
 }
