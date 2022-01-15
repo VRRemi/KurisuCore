@@ -22,7 +22,7 @@ public class UserManager {
     private void init() {
         userMap.clear();
         Threading.runAsync(() -> {
-            Connection connection = FubukiCore.getConnectionPoolManager().getConnection();
+            Connection connection = KurisuCore.getConnectionPoolManager().getConnection();
             try {
                 for (Player online : Bukkit.getOnlinePlayers()) {
                     cache(online, connection);
