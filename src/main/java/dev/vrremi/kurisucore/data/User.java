@@ -20,6 +20,13 @@ import java.util.UUID;
 @Getter
 public class User {
 
+    private final UUID uuid;
+    private final String name;
+    private final RankMap rankMap;
+    private Tag tag;
+    private final List<Permission> permissions;
+    private final List<Punishment> punishments;
+
     
 
 }
