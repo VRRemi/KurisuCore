@@ -12,5 +12,13 @@ import java.util.HashMap;
 import java.util.UUID;
 
 public class UserManager {
+
+    private final HashMap<UUID, User> userMap = new HashMap<>();
+
+    public UserManager() {
+        init();
+    }
+
     
+
 }
