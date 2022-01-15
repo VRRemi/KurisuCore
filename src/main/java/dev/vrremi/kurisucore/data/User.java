@@ -62,5 +62,13 @@ public class User {
         this.punishments = userDataManager.getPunishments(uuid, connection);
     }
 
+    public void save(Connection connection) throws SQLException {
+        UserDataManager userDataManager = KurisuCore.getUserDataManager();
+        userDataManager.setRanks(uuid, rankMap, connection);
+        userDataManager.setTag(uuid, tag == null ? "" : tag.getName(), connection);
+        userDataManager.setPermissions(uuid, permissions, connection);
+        userDataManager.setPunishments(uuid, punishments, connection);
+    }
+
     
 }
