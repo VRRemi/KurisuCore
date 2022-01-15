@@ -40,6 +40,8 @@ public class User {
     @Setter
     private boolean staffChatHidden;
 
+    private long lastChat;
+
     
 
 }
