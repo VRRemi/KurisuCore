@@ -67,5 +67,7 @@ public class ConfigUtils {
         return getPunishmentMessage(punishment, "kick-format");
     }
 
-    
+    public static String getWarnMessage(Punishment punishment) {
+        return getPunishmentMessage(punishment, "warn-format");
+    }
 }
