@@ -46,6 +46,25 @@ public class PlayerEvent implements Listener {
         } finally {
             ConnectionPoolManager.close(connection);
         }
+
+        @EventHandler
+        public void onJoin(PlayerJoinEvent event) {
+            Player player = event.getPlayer();
+            Threading.runAsync(() -> {
+                Connection connection = KurisuCore.getConnectionPoolManager().getConnection();
+                try {
+                    KurisuCore.getUserDataManager().create(player, connection);
+                    KurisuCore.getUserManager().cache(player, connection);
+                    KurisuCore.getPermissionManager().add(player);
+                    KurisuCore.getNameManager().update(player);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                } finally {
+                    ConnectionPoolManager.close(connection);
+                }
+            });
+        }
     }
 
+    
 }
