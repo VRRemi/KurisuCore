@@ -42,6 +42,15 @@ public class User {
 
     private long lastChat;
 
-    
+    public User(Player player, Connection connection) throws SQLException {
+        this.uuid = player.getUniqueId();
+        this.name = player.getName();
+        UserDataManager userDataManager = KurisuCore.getUserDataManager();
+        this.rankMap = userDataManager.getRanks(uuid, connection);
+        this.tag = userDataManager.getTag(uuid, connection);
+        this.permissions = userDataManager.getPermissions(uuid, connection);
+        this.punishments = userDataManager.getPunishments(uuid, connection);
+    }
 
+    
 }
