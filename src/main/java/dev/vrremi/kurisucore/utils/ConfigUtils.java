@@ -48,6 +48,12 @@ public class ConfigUtils {
                     sendMessage(player, path, placeholders);
             });
         else
+            Bukkit.getOnlinePlayers().stream().filter(player -> player.hasPermission(permission)).forEach(player -> {
+                User user = KurisuCore.getUserManager().getUser(player);
+                if (user != null && !user.isStaffChatHidden())
+                    sendMessage(player, path, placeholders);
+            });
+    }
 
     }
 }
