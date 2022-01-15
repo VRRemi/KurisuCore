@@ -143,4 +143,17 @@ public class User {
             KurisuCore.getNameManager().update(player);
     }
 
+    public void resetTag() {
+        setTag(null);
+    }
+
+    public LinkedList<Tag> getAvailableTags() {
+        Player player = Bukkit.getPlayer(uuid);
+        if (player != null)
+            return KurisuCore.getTagManager().getAvailableTags(player);
+        return new LinkedList<>();
+    }
+
+    
+
 }
