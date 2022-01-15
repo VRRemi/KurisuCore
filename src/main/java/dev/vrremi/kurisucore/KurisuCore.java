@@ -70,7 +70,7 @@ public class KurisuCore extends JavaPlugin {
             Connection connection = connectionPoolManager.getConnection();
             try {
                 for (Player player : Bukkit.getOnlinePlayers()) {
-
+                    User user =
                 }
             }
         }
