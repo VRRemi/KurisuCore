@@ -75,7 +75,13 @@ public class KurisuCore extends JavaPlugin {
                         user.save(connection);
                     }
                 }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } finally {
+                ConnectionPoolManager.close(connection);
+                connectionPoolManager.closePool();
             }
         }
     }
+    
 }
