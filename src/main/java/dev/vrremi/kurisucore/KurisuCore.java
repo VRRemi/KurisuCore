@@ -50,6 +50,10 @@ public class KurisuCore extends JavaPlugin {
         permissionManager = new PermissionManager();
         punishmentManager = new PunishmentManager();
         gameModeManager = new GameModeManager();
+        nameManager = new NameManager();
+        loopManager = new LoopManager();
+        menuManager = new MenuManager();
+        chatManager = new ChatManager();
     }
 
     @Override
