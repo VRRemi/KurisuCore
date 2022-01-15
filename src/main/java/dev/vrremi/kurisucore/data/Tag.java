@@ -6,4 +6,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @Getter
 public class Tag {
+
+    public final String name, tag, permission;
+
 }
