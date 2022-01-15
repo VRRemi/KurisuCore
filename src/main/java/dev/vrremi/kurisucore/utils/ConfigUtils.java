@@ -15,5 +15,14 @@ public class ConfigUtils {
     public static void sendMessage(CommandSender sender, String path) {
         sender.sendMessage(CC.color(KurisuCore.getConfigManager().getMessage(path)));
     }
+
+    public static void sendMessage(CommandSender sender, String path, HashMap<String, String> placeholders) {
+        AtomicReference<String> message = new AtomicReference<>(FubukiCore.getConfigManager().getMessage(path));
+        placeholders.forEach((key, value) -> {
+            message.set(message.get().replace(key, value));
+        });
+        sender.sendMessage(CC.color(message.get()));
+    }
+
     
 }
