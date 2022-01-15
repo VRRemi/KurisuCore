@@ -108,5 +108,13 @@ public class KurisuCore extends JavaPlugin {
         return tagManager;
     }
 
- 
+    public static UserDataManager getUserDataManager() {
+        return userDataManager;
+    }
+
+    public static RankDataManager getRankDataManager() {
+        return rankDataManager;
+    }
+
+
 }
