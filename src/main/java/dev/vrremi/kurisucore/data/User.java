@@ -97,5 +97,9 @@ public class User {
     public void setLastChat(long delay) {
         lastChat = System.currentTimeMillis() + delay;
     }
+
+    public Menu getOpenMenu() {
+        return KurisuCore.getMenuManager().getMenu(openMenuName);
+    }
     
 }
