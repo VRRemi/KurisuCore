@@ -35,5 +35,21 @@ public class Serialize {
         }
     }
 
-    
+    private static String to(ItemStack[] i) throws IllegalStateException {
+        try {
+            ByteArrayOutputStream o = new ByteArrayOutputStream();
+            BukkitObjectOutputStream d = new BukkitObjectOutputStream(o);
+            d.writeInt(i.length);
+            for (ItemStack t : i.clone()) {
+                if (t == null) {
+                    t = new ItemStack(Material.AIR);
+                }
+                d.writeObject(t);
+            }
+            d.close();
+            return Base64Coder.encodeLines(o.toByteArray());
+        } catch (Exception e) {
+            throw new IllegalStateException("Unable to save item stacks.", e);
+        }
+    }
 }
