@@ -48,7 +48,7 @@ public class PlayerEvent implements Listener {
         }
 
         @EventHandler
-        public void onJoin(PlayerJoinEvent event) {
+        public void onJoin (PlayerJoinEvent event){
             Player player = event.getPlayer();
             Threading.runAsync(() -> {
                 Connection connection = KurisuCore.getConnectionPoolManager().getConnection();
@@ -82,5 +82,24 @@ public class PlayerEvent implements Listener {
             }
         });
     }
-        
+
+    @EventHandler
+    public void onChat(AsyncPlayerChatEvent event) {
+        Player player = event.getPlayer();
+        User user = KurisuCore.getUserManager().getUser(player);
+        if (user != null) {
+            if (KurisuCore.getPunishmentManager().isUserMuted(player)) {
+                event.setCancelled(true);
+                player.sendMessage(ConfigUtils.getMuteMessage(KurisuCore.getPunishmentManager().getLastMute(player)));
+            } else {
+                if (KurisuCore.getChatManager().isMuted()) {
+                    if (!player.hasPermission("kurisu.admin")) {
+                        event.setCancelled(true);
+                        ConfigUtils.sendMessage(player, "chat-muted-user");
+                        return;
+                    }
+                }
+            }
+        }
+    }
 }
