@@ -21,5 +21,19 @@ public class Serialize {
         return (s + "_" + a + "_" + e).replace("\r\\", "").replace("\r", "").replace("\n", "");
     }
 
+    public static void load(Player player, String data) {
+        player.getInventory().setStorageContents(null);
+        player.getInventory().setExtraContents(null);
+        player.getInventory().setArmorContents(null);
+        if (data == null || data.isEmpty()) return;
+        try {
+            player.getInventory().setStorageContents(from(data.split("_")[0]));
+            player.getInventory().setArmorContents(from(data.split("_")[1]));
+            player.getInventory().setExtraContents(from(data.split("_")[2]));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     
 }
