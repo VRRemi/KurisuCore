@@ -51,5 +51,11 @@ public class UserManager {
             userMap.remove(player.getUniqueId());
         }
     }
+
+    public User getUser(Player player) {
+        if (player == null) return null;
+        return userMap.get(player.getUniqueId());
+    }
+
     
 }
