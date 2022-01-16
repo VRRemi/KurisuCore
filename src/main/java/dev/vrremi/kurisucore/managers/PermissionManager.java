@@ -11,7 +11,11 @@ import org.bukkit.craftbukkit.v1_17_R1.entity.CraftHumanEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.permissions.PermissionAttachment;
 
-
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.UUID;
 
 public class PermissionManager {
 }
