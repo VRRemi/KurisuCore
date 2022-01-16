@@ -68,6 +68,11 @@ public class GameModeManager {
         return YamlConfiguration.loadConfiguration(getFile(player));
     }
 
+    private File getFile(Player player) {
+        return new File(FubukiCore.getInstance().getDataFolder() + File.separator + "data" + File.separator + player.getUniqueId() + ".yml");
+    }
+
+
     
 
 }
