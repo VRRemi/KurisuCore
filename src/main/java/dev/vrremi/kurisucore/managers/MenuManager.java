@@ -13,6 +13,7 @@ import java.util.Map;
 
 public class MenuManager {
 
+    private final Map<String, Menu> menuMap = new HashMap();
 
 
 }
