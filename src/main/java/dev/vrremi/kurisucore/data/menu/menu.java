@@ -8,6 +8,15 @@ import java.util.LinkedList;
 
 public abstract class menu {
 
-    
+    @Getter
+    private final String name;
+    private final LinkedList<Page> pages = new LinkedList<>();
+
+    public Menu(String name) {
+        this.name = name;
+        initMenu();
+    }
+
+
 
 }
