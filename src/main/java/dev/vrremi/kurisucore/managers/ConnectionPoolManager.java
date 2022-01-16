@@ -16,6 +16,11 @@ public class ConnectionPoolManager {
     private int minimumIdle, maximumPoolSize;
     private long connectionTimeout;
 
+    public ConnectionPoolManager() {
+        init();
+        setupPool();
+    }
+
     
 
 }
