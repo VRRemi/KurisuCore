@@ -71,6 +71,11 @@ public class ConnectionPoolManager {
         }
     }
 
-    
+    public static void close(Connection connection) {
+        if (connection != null) try {
+            connection.close();
+        } catch (SQLException ignored) {
+        }
+    }
 
 }
