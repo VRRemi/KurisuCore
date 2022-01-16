@@ -45,4 +45,13 @@ public class ConnectionPoolManager {
         dataSource = new HikariDataSource(config);
     }
 
+    public Connection getConnection() {
+        try {
+            return dataSource.getConnection();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new RuntimeException("Error getting connection");
+        }
+    }
+
 }
