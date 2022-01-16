@@ -65,6 +65,13 @@ public class RankManager {
         Bukkit.getOnlinePlayers().forEach(KurisuCore.getNameManager()::update);
     }
 
+    public void deleteRank(String name) {
+        Rank rank = getRank(name);
+        if (rank != null) {
+            rankList.remove(rank);
+        }
+    }
+
 
 
 }
