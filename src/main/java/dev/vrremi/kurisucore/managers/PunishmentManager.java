@@ -21,6 +21,20 @@ public class PunishmentManager {
         return isUserBanned(KurisuCore.getUserManager().getUser(uuid));
     }
 
+    public boolean isUserBanned(User user) {
+        if (user != null) {
+            List<Punishment> punishments = user.getPunishments().stream().filter(p -> !p.hasExpired()).collect(Collectors.toList());
+            for (int i = punishments.size() - 1; i >= 0; i--) {
+                if (Arrays.asList(PunishmentType.BAN, PunishmentType.TEMP_BAN).contains(punishments.get(i).getPunishmentType())) {
+                    return true;
+                } else if (punishments.get(i).getPunishmentType().equals(PunishmentType.UNBAN)) {
+                    return false;
+                }
+            }
+        }
+        return false;
+    }
+
     
 
 }
