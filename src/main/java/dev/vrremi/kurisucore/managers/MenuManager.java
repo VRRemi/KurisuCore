@@ -15,5 +15,10 @@ public class MenuManager {
 
     private final Map<String, Menu> menuMap = new HashMap();
 
+    public MenuManager() {
+        initMenus();
+    }
+
+    
 
 }
