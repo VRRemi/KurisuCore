@@ -35,6 +35,24 @@ public class PunishmentManager {
         return false;
     }
 
-    
+    public Punishment getLastBan(UUID uuid) {
+        return getLastBan(KurisuCore.getUserManager().getUser(uuid));
+    }
+
+    public Punishment getLastBan(Player player) {
+        return getLastBan(KurisuCore.getUserManager().getUser(player));
+    }
+
+    public Punishment getLastBan(User user) {
+        if (user != null) {
+            List<Punishment> punishments = user.getPunishments().stream().filter(p -> !p.hasExpired()).collect(Collectors.toList());
+            for (int i = punishments.size() - 1; i >= 0; i--) {
+                if (Arrays.asList(PunishmentType.BAN, PunishmentType.TEMP_BAN).contains(punishments.get(i).getPunishmentType())) {
+                    return punishments.get(i);
+                }
+            }
+        }
+        return null;
+    }
 
 }
