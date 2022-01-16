@@ -42,4 +42,13 @@ public class GameModeManager {
         }
     }
 
+    private String get(Player player) {
+        File file = getFile(player);
+        if (file.exists()) {
+            FileConfiguration config = getConfigFile(player);
+            return config.getString("inventory." + player.getGameMode());
+        }
+        return null;
+    }
+
 }
