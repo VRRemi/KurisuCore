@@ -13,6 +13,10 @@ import java.util.Arrays;
 
 public class GameModeManager {
 
+    public GameModeManager {
+        init();
+    }
+
     
 
 }
