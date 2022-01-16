@@ -10,6 +10,10 @@ import org.bukkit.entity.Player;
 
 public class NameManager {
 
+    public NameManager() {
+        init();
+    }
 
+    
 
 }
