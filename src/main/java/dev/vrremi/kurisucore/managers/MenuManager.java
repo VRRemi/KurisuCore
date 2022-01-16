@@ -34,4 +34,14 @@ public class MenuManager {
         return menuMap.get(name);
     }
 
+    public void openMenu(Player player, String name, int page) {
+        User user = KurisuCore.getUserManager().getUser(player);
+        if (user != null) {
+            if (getMenu(name) == null) return;
+            player.openInventory(getMenu(name).getPageInventory(player, page));
+            user.setOpenMenuName(name);
+            user.setOpenMenuPage(page);
+        }
+    }
+
 }
