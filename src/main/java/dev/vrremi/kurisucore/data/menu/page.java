@@ -15,6 +15,8 @@ public abstract class page {
 
     private final Map<Integer, SlotAction> slotActionMap = new HashMap<>();
 
+    private final ItemStack BACKGROUND;
+
     
 
 }
