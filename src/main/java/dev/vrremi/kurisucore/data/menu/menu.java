@@ -17,6 +17,11 @@ public abstract class menu {
         initMenu();
     }
 
+    public void setPage(Page page, int pageNumber) {
+        if (pages.size() >= pageNumber) pages.add(page);
+        else pages.set(pageNumber, page);
+    }
 
+    
 
 }
