@@ -35,5 +35,20 @@ public class LoopManager {
                 if (playerList.size() > 0) {
                     UserManager userManager = KurisuCore.getUserManager();
                     Connection connection = KurisuCore.getConnectionPoolManager().getConnection();
+                    try {
+                        for (Player player : playerList) {
+                            User user = userManager.getUser(player);
+                            if (user != null) {
+                                user.save(connection);
+                            }
+                        }
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    } finally {
+                        ConnectionPoolManager.close(connection);
+                    }
+                }
+                autoSaveTime = current + 60000L;
+            }
 
 }
