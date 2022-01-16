@@ -12,4 +12,9 @@ import java.util.Comparator;
 import java.util.List;
 
 public class RankManager {
+
+    private final List<Rank> rankList = new ArrayList<>();
+
+    
+
 }
