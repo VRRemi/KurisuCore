@@ -6,6 +6,10 @@ import java.sql.SQLException;
 
 public class TableManager {
 
+    public TableManager(Connection connection) {
+        createTable(connection);
+    }
+
     
 
 }
