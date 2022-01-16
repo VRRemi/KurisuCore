@@ -19,6 +19,9 @@ public class LoopManager {
 
     private long autoSaveTime;
 
+    private final Map<UUID, List<Permission>> permissionMap = new HashMap<>();
+    private final Map<UUID, List<Rank>> rankMap = new HashMap<>();
+
     
 
 }
