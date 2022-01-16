@@ -10,6 +10,8 @@ import java.sql.SQLException;
 
 public class ConnectionPoolManager {
 
+    private HikariDataSource dataSource;
+
     
 
 }
