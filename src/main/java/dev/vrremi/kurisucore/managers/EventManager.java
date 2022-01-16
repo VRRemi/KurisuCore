@@ -15,4 +15,7 @@ public class EventManager {
         registerEvents(new PlayerEvent());
     }
 
+    public void registerEvent(Listener listener) {
+        Bukkit.getServer().getPluginManager().registerEvents(listener, KurisuCore.getInstance());
+    }
 }
