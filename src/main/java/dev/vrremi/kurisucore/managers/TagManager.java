@@ -21,6 +21,16 @@ public class TagManager {
         loadTags();
     }
 
+    private void loadTags() {
+        FileConfiguration tagsFile = KurisuCore.getConfigManager().getTags();
+        for (String tagData : tagsFile.getStringList("tags")) {
+            String name = tagData.split(":")[0];
+            String tag = tagData.split(":")[1];
+            String permission = tagData.split(":")[2];
+            tagList.add(new Tag(name, tag, permission));
+        }
+    }
+
     
 
 }
