@@ -28,6 +28,8 @@ public abstract class page {
 
     public abstract Inventory getInventory(Player player);
 
+    public abstract void onClick(InventoryClickEvent event);
+
     
 
 }
