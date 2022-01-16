@@ -28,6 +28,18 @@ public class GameModeManager {
         Serialize.load(player, get(player));
     }
 
-    
+    private void create(Player player) {
+        File file = getFile(player);
+        if (!file.exists()) {
+            try {
+                file.createNewFile();
+                FileConfiguration config = getConfigFile(player);
+                Arrays.stream(GameMode.values()).filter(gameMode -> !gameMode.equals(GameMode.SPECTATOR)).forEach(gameMode -> config.set("inventory." + gameMode, ""));
+                config.save(file);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
 }
