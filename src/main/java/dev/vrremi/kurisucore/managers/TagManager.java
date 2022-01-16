@@ -35,4 +35,15 @@ public class TagManager {
         return tagList.stream().filter(tag -> player.hasPermission(tag.getPermission())).collect(Collectors.toCollection(LinkedList::new));
     }
 
+    public Tag getTag(String name) {
+        if (name == null || name.isEmpty()) return null;
+        Tag tag = null;
+        for (Tag t : tagList) {
+            if (t.getName().equalsIgnoreCase(name)) {
+                tag = t;
+            }
+        }
+        return tag;
+    }
+
 }
