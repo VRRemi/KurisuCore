@@ -24,4 +24,20 @@ public class RankManager {
         loadRanks();
     }
 
+    private void loadRanks() {
+        rankList.clear();
+        Threading.runAsync(() -> {
+            Connection connection = FubukiCore.getConnectionPoolManager().getConnection();
+            try {
+                rankList.addAll(FubukiCore.getRankDataManager().getAllRanks(connection));
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } finally {
+                ConnectionPoolManager.close(connection);
+            }
+        });
+    }
+
+    
+
 }
