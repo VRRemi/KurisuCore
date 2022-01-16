@@ -19,6 +19,9 @@ public class RankManager {
         init();
     }
 
-    
+    private void init() {
+        rankList.clear();
+        loadRanks();
+    }
 
 }
