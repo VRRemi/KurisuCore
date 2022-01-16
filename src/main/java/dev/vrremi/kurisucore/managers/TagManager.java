@@ -16,6 +16,11 @@ public class TagManager {
         init();
     }
 
+    private void init() {
+        tagList.clear();
+        loadTags();
+    }
+
     
 
 }
