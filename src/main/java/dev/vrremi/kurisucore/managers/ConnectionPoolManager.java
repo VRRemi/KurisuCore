@@ -27,7 +27,12 @@ public class ConnectionPoolManager {
         password = KurisuCore.getConfigManager().getConfig().getString("sql-configuration.password");
         database = KurisuCore.getConfigManager().getConfig().getString("sql-configuration.database");
         port = KurisuCore.getConfigManager().getConfig().getString("sql-configuration.port");
-        
+
+        minimumIdle = KurisuCore.getConfigManager().getConfig().getInt("sql-configuration.hikariCP-configuration.minimum-idle");
+        maximumPoolSize = KurisuCore.getConfigManager().getConfig().getInt("sql-configuration.hikariCP-configuration.maximum-pool-size");
+        connectionTimeout = KurisuCore.getConfigManager().getConfig().getLong("sql-configuration.hikariCP-configuration.connection-timeout");
     }
+
+    
 
 }
