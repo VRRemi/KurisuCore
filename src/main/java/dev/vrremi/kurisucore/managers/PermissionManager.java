@@ -26,4 +26,16 @@ public class PermissionManager {
         init();
     }
 
+    private void init() {
+        permissionMap.clear();
+        Bukkit.getOnlinePlayers().forEach(this::add);
+    }
+
+    public void add(Player player) {
+        injectPermissible(player);
+        PermissionAttachment permissionAttachment = player.addAttachment(KurisuCore.getInstance());
+        permissionMap.put(player.getUniqueId(), permissionAttachment);
+        update(player);
+    }
+
 }
