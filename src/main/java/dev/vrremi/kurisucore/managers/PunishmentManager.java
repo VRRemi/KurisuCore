@@ -55,4 +55,33 @@ public class PunishmentManager {
         return null;
     }
 
+    public boolean isUserMuted(Player player) {
+        User user = KurisuCore.getUserManager().getUser(player);
+        if (user != null) {
+            List<Punishment> punishments = user.getPunishments().stream().filter(p -> !p.hasExpired()).collect(Collectors.toList());
+            for (int i = punishments.size() - 1; i >= 0; i--) {
+                if (Arrays.asList(PunishmentType.MUTE, PunishmentType.TEMP_MUTE).contains(punishments.get(i).getPunishmentType())) {
+                    return true;
+                } else if (punishments.get(i).getPunishmentType().equals(PunishmentType.UNMUTE)) {
+                    return false;
+                }
+            }
+        }
+        return false;
+    }
+
+    public Punishment getLastMute(Player player) {
+        User user = KurisuCore.getUserManager().getUser(player);
+        if (user != null) {
+            List<Punishment> punishments = user.getPunishments().stream().filter(p -> !p.hasExpired()).collect(Collectors.toList());
+            for (int i = punishments.size() - 1; i >= 0; i--) {
+                if (Arrays.asList(PunishmentType.MUTE, PunishmentType.TEMP_MUTE).contains(punishments.get(i).getPunishmentType())) {
+                    return punishments.get(i);
+                }
+            }
+        }
+        return null;
+    }
+
+
 }
