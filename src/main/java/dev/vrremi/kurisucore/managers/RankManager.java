@@ -53,6 +53,10 @@ public class RankManager {
         return rankList;
     }
 
-    
+    public List<Rank> getSortedRanks() {
+        List<Rank> sortedList = new ArrayList<>(rankList);
+        sortedList.sort(Comparator.comparingInt(Rank::getPriority).reversed());
+        return sortedList;
+    }
 
 }
