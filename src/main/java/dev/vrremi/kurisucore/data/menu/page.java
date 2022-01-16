@@ -17,6 +17,15 @@ public abstract class page {
 
     private final ItemStack BACKGROUND;
 
+    public Page() {
+        ItemStack background = new ItemStack(Material.BLACK_STAINED_GLASS_PANE);
+        ItemMeta backgroundMeta = background.getItemMeta();
+        assert backgroundMeta != null;
+        backgroundMeta.setDisplayName(CC.color("&0"));
+        background.setItemMeta(backgroundMeta);
+        BACKGROUND = background;
+    }
+
     
 
 }
