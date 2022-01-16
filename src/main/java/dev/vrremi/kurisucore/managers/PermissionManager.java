@@ -47,9 +47,10 @@ public class PermissionManager {
         User user = KurisuCore.getUserManager().getUser(player);
         permissionAttachment.getPermissions().forEach((perm, active) -> permissionAttachment.unsetPermission(perm));
         for (Permission permission : user.getPermissions()) {
-        if (permission.isActive()) {
-            permissionAttachment.setPermission(permission.getNode(), true);
-            permissions.add(permission.getNode());
+            if (permission.isActive()) {
+                permissionAttachment.setPermission(permission.getNode(), true);
+                permissions.add(permission.getNode());
+            }
         }
     }
 
