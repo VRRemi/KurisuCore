@@ -12,6 +12,10 @@ public class TagManager {
 
     private final LinkedList<Tag> tagList = new LinkedList<>();
 
+    public TagManager() {
+        init();
+    }
+
     
 
 }
