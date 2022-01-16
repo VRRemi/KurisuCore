@@ -21,6 +21,13 @@ public class ConnectionPoolManager {
         setupPool();
     }
 
-    
+    private void init() {
+        hostname = KurisuCore.getConfigManager().getConfig().getString("sql-configuration.hostname");
+        username = KurisuCore.getConfigManager().getConfig().getString("sql-configuration.username");
+        password = KurisuCore.getConfigManager().getConfig().getString("sql-configuration.password");
+        database = KurisuCore.getConfigManager().getConfig().getString("sql-configuration.database");
+        port = KurisuCore.getConfigManager().getConfig().getString("sql-configuration.port");
+        
+    }
 
 }
