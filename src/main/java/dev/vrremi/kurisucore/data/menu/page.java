@@ -36,6 +36,10 @@ public abstract class page {
         }
     }
 
+    public void setAction(int slot, SlotAction action) {
+        slotActionMap.put(slot, action);
+    }
+
     
 
 }
