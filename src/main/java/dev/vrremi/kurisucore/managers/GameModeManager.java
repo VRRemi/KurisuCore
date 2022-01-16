@@ -51,4 +51,23 @@ public class GameModeManager {
         return null;
     }
 
+    private void save(Player player) {
+        File file = getFile(player);
+        if (file.exists()) {
+            FileConfiguration config = getConfigFile(player);
+            config.set("inventory." + player.getGameMode(), Serialize.get(player));
+            try {
+                config.save(file);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private FileConfiguration getConfigFile(Player player) {
+        return YamlConfiguration.loadConfiguration(getFile(player));
+    }
+
+    
+
 }
