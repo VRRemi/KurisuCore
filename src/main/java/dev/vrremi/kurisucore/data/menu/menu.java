@@ -26,6 +26,10 @@ public abstract class menu {
         return pages.get(pageNumber);
     }
 
+    public Inventory getPageInventory(Player player, int pageNumber) {
+        return pages.get(pageNumber).getInventory(player);
+    }
+
     
 
 }
