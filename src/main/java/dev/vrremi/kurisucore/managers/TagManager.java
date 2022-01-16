@@ -31,6 +31,8 @@ public class TagManager {
         }
     }
 
-    
+    public LinkedList<Tag> getAvailableTags(Player player) {
+        return tagList.stream().filter(tag -> player.hasPermission(tag.getPermission())).collect(Collectors.toCollection(LinkedList::new));
+    }
 
 }
