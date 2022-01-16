@@ -30,6 +30,12 @@ public abstract class page {
 
     public abstract void onClick(InventoryClickEvent event);
 
+    public void fill(Inventory inventory) {
+        for (int i = 0; i < inventory.getSize(); i++) {
+            inventory.setItem(i, BACKGROUND);
+        }
+    }
+
     
 
 }
