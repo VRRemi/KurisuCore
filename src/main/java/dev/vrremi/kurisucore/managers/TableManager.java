@@ -10,6 +10,19 @@ public class TableManager {
         createTable(connection);
     }
 
-    
+    private void createTable(Connection connection) {
+        PreparedStatement statement = null;
+        try {
+            statement = connection.prepareStatement(
+                    "CREATE TABLE IF NOT EXISTS `kurisu_users` " +
+                            "(" +
+                            "uuid VARCHAR(40)," +
+                            "name VARCHAR(16)," +
+                            "rank LONGTEXT," +
+                            "permissions LONGTEXT," +
+                            "tag TEXT," +
+                            "punishments LONGTEXT" +
+                            ");"
+            );
 
 }
