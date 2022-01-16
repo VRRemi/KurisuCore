@@ -54,6 +54,12 @@ public class ConnectionPoolManager {
         }
     }
 
+    public void closePool() {
+        if (dataSource != null && !dataSource.isClosed()) {
+            dataSource.close();
+        }
+    }
+
     
 
 }
