@@ -19,6 +19,13 @@ public class MenuManager {
         initMenus();
     }
 
+    private void initMenus() {
+        menuMap.clear();
+        register(new TagsMenu());
+        register(new GrantMainMenu());
+        register(new GrantDurationMenu());
+    }
+
     
 
 }
