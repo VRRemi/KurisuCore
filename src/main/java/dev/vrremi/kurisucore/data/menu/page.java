@@ -13,6 +13,8 @@ import java.util.Map;
 
 public abstract class page {
 
+    private final Map<Integer, SlotAction> slotActionMap = new HashMap<>();
 
+    
 
 }
