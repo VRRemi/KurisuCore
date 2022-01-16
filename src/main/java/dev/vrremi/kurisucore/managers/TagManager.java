@@ -10,6 +10,8 @@ import java.util.stream.Collectors;
 
 public class TagManager {
 
+    private final LinkedList<Tag> tagList = new LinkedList<>();
+
     
 
 }
