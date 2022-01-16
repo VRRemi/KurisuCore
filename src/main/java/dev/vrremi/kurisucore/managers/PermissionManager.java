@@ -37,8 +37,14 @@ public class PermissionManager {
         permissionMap.put(player.getUniqueId(), permissionAttachment);
         update(player);
     }
-    PermissionAttachment permissionAttachment = permissionMap.get(player.getUniqueId());
-    User user = KurisuCore.getUserManager().getUser(player);
+
+    public void update(Player player) {
+        List<String> permissions = new ArrayList<>();
+        if (permissionMap.get(player.getUniqueId()) == null) {
+            add(player);
+        }
+        PermissionAttachment permissionAttachment = permissionMap.get(player.getUniqueId());
+        User user = KurisuCore.getUserManager().getUser(player);
         permissionAttachment.getPermissions().forEach((perm, active) -> permissionAttachment.unsetPermission(perm));
         for (Permission permission : user.getPermissions()) {
         if (permission.isActive()) {
