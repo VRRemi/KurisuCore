@@ -33,6 +33,16 @@ public class ConnectionPoolManager {
         connectionTimeout = KurisuCore.getConfigManager().getConfig().getLong("sql-configuration.hikariCP-configuration.connection-timeout");
     }
 
-    
+    private void setupPool() {
+        HikariConfig config = new HikariConfig();
+        config.setJdbcUrl("jdbc:mysql://" + hostname + ":" + port + "/" + database);
+        config.setDriverClassName("com.mysql.jdbc.Driver");
+        config.setUsername(username);
+        config.setPassword(password);
+        config.setMinimumIdle(minimumIdle);
+        config.setMaximumPoolSize(maximumPoolSize);
+        config.setConnectionTimeout(connectionTimeout);
+        dataSource = new HikariDataSource(config);
+    }
 
 }
