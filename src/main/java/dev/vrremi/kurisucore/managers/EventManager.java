@@ -11,5 +11,8 @@ public class EventManager {
         registerEvents();
     }
 
-    
+    public void registerEvents() {
+        registerEvents(new PlayerEvent());
+    }
+
 }
