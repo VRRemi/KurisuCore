@@ -13,6 +13,10 @@ import java.util.stream.Collectors;
 
 public class PunishmentManager {
 
+    public boolean isUserBanned(Player player) {
+        return isUserBanned(KurisuCore.getUserManager().getUser(player));
+    }
 
+    
 
 }
