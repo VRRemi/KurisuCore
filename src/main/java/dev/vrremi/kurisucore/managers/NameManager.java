@@ -14,6 +14,10 @@ public class NameManager {
         init();
     }
 
+    private void init() {
+        Bukkit.getOnlinePlayers().forEach(this::update);
+    }
+
     
 
 }
