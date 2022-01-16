@@ -19,6 +19,7 @@ import java.util.UUID;
 
 public class PermissionManager {
 
+    private final HashMap<UUID, PermissionAttachment> permissionMap = new HashMap<>();
     
 
 }
