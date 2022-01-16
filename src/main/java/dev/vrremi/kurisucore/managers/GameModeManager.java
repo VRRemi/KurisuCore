@@ -21,4 +21,13 @@ public class GameModeManager {
         createBase();
     }
 
+    public void setGameMode(Player player, GameMode gameMode) {
+        create(player);
+        save(player);
+        player.setGameMode(gameMode);
+        Serialize.load(player, get(player));
+    }
+
+    
+
 }
