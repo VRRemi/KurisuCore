@@ -26,6 +26,8 @@ public abstract class page {
         BACKGROUND = background;
     }
 
+    public abstract Inventory getInventory(Player player);
+
     
 
 }
