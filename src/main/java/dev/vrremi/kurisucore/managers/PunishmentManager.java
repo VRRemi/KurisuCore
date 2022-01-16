@@ -17,6 +17,10 @@ public class PunishmentManager {
         return isUserBanned(KurisuCore.getUserManager().getUser(player));
     }
 
+    public boolean isUserBanned(UUID uuid) {
+        return isUserBanned(KurisuCore.getUserManager().getUser(uuid));
+    }
+
     
 
 }
