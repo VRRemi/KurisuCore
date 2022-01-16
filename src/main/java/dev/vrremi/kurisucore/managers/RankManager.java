@@ -15,6 +15,10 @@ public class RankManager {
 
     private final List<Rank> rankList = new ArrayList<>();
 
+    public RankManager() {
+        init();
+    }
+
     
 
 }
