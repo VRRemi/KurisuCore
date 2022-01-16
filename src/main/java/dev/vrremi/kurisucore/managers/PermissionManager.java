@@ -6,6 +6,12 @@ import dev.vrremi.kurisucore.data.Permission;
 import dev.vrremi.kurisucore.data.Rank;
 import dev.vrremi.kurisucore.data.User;
 import dev.vrremi.kurisucore.utils.Threading;
+import org.bukkit.Bukkit;
+import org.bukkit.craftbukkit.v1_17_R1.entity.CraftHumanEntity;
+import org.bukkit.entity.Player;
+import org.bukkit.permissions.PermissionAttachment;
+
+
 
 public class PermissionManager {
 }
