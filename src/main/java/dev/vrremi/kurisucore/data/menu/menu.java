@@ -30,6 +30,6 @@ public abstract class menu {
         return pages.get(pageNumber).getInventory(player);
     }
 
-    
+    public abstract void initMenu();
 
 }
