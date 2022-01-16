@@ -22,6 +22,10 @@ public abstract class menu {
         else pages.set(pageNumber, page);
     }
 
+    public Page getPage(int pageNumber) {
+        return pages.get(pageNumber);
+    }
+
     
 
 }
