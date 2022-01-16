@@ -12,6 +12,10 @@ public class ConnectionPoolManager {
 
     private HikariDataSource dataSource;
 
+    private String hostname, port, database, username, password;
+    private int minimumIdle, maximumPoolSize;
+    private long connectionTimeout;
+
     
 
 }
