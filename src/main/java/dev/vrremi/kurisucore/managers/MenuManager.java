@@ -26,6 +26,10 @@ public class MenuManager {
         register(new GrantDurationMenu());
     }
 
+    public void register(Menu menu) {
+        menuMap.put(menu.getName(), menu);
+    }
+
     
 
 }
