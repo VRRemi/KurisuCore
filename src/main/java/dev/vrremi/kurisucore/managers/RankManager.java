@@ -59,4 +59,12 @@ public class RankManager {
         return sortedList;
     }
 
+    public void updateRank(String name, Connection connection) throws SQLException {
+        deleteRank(name);
+        rankList.add(KurisuCore.getRankDataManager().getRank(name, connection));
+        Bukkit.getOnlinePlayers().forEach(KurisuCore.getNameManager()::update);
+    }
+
+
+
 }
