@@ -60,6 +60,17 @@ public class ConnectionPoolManager {
         }
     }
 
+    public static void close(Connection connection, PreparedStatement statement) {
+        if (connection != null) try {
+            connection.close();
+        } catch (SQLException ignored) {
+        }
+        if (statement != null) try {
+            statement.close();
+        } catch (SQLException ignored) {
+        }
+    }
+
     
 
 }
