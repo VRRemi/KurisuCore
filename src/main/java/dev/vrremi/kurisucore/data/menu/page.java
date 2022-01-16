@@ -40,6 +40,8 @@ public abstract class page {
         slotActionMap.put(slot, action);
     }
 
-    
+    public SlotAction getAction(int slot) {
+        return slotActionMap.get(slot);
+    }
 
 }
