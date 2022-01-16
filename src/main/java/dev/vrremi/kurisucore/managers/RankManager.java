@@ -38,6 +38,17 @@ public class RankManager {
         });
     }
 
+    public Rank getRank(String name) {
+        if (name == null || name.isEmpty()) return null;
+        Rank rank = null;
+        for (Rank r : rankList) {
+            if (r.getName().equalsIgnoreCase(name)) {
+                rank = r;
+            }
+        }
+        return rank;
+    }
 
+    
 
 }
