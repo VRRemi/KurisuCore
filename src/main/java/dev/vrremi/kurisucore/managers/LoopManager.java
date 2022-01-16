@@ -50,5 +50,29 @@ public class LoopManager {
                 }
                 autoSaveTime = current + 60000L;
             }
+            for (Player online : Bukkit.getOnlinePlayers()) {
+                User user = KurisuCore.getUserManager().getUser(online);
+                if (permissionMap.containsKey(online.getUniqueId())) {
+                    List<Permission> finalPermissions =
+                            permissionMap.get(online.getUniqueId()).stream().filter(Permission::isActive).collect(Collectors.toList());
+                    if (finalPermissions.size() != permissionMap.get(online.getUniqueId()).size()) {
+                        KurisuCore.getPermissionManager().update(online);
+                        KurisuCore.getNameManager().update(online);
+                    }
+                    permissionMap.put(online.getUniqueId(), finalPermissions);
+                }
+                if (rankMap.containsKey(online.getUniqueId())) {
+                    List<Rank> finalRanks =
+                            rankMap.get(online.getUniqueId()).stream().filter(rank -> user.getRankExpireTime(rank) > System.currentTimeMillis()).collect(Collectors.toList());
+                    if (finalRanks.size() != rankMap.get(online.getUniqueId()).size()) {
+                        KurisuCore.getPermissionManager().update(online);
+                        KurisuCore.getNameManager().update(online);
+                    }
+                    rankMap.put(online.getUniqueId(), finalRanks);
+                }
+            }
+        }, 0, 10, TimeUnit.MILLISECONDS);
+    }
+
 
 }
