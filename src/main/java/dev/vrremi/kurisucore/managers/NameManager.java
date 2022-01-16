@@ -18,6 +18,15 @@ public class NameManager {
         Bukkit.getOnlinePlayers().forEach(this::update);
     }
 
-    
+    public void update(Player player) {
+        User user = KurisuCore.getUserManager().getUser(player);
+        if (user != null) {
+            Rank rank = user.getHighestRank();
+            Tag tag = user.getTag();
+            String listName = player.getName();
+            if (rank != null) {
+
+                if (tag != null) {
+                    listName = tag.getTag() + rank.getColor() + player.getName() + rank.getSuffix();
 
 }
