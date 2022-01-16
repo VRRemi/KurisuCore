@@ -49,6 +49,10 @@ public class RankManager {
         return rank;
     }
 
+    public List<Rank> getRanks() {
+        return rankList;
+    }
+
     
 
 }
