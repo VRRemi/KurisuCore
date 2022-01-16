@@ -17,6 +17,8 @@ public class GameModeManager {
         init();
     }
 
-    
+    private void init() {
+        createBase();
+    }
 
 }
