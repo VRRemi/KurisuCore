@@ -52,6 +52,42 @@ public class PermissionManager {
                 permissions.add(permission.getNode());
             }
         }
+        for (Rank rank : user.getRanks()) {
+            for (Permission permission : rank.getPermissions()) {
+                permissionAttachment.setPermission(permission.getNode(), true);
+                permissions.add(permission.getNode());
+            }
+        }
+        permissionNodeMap.put(player.getUniqueId(), permissions);
+        permissionMap.put(player.getUniqueId(), permissionAttachment);
+        recalculate(player);
+    }
+
+    public void remove(Player player) {
+        permissionMap.remove(player.getUniqueId());
+        permissionNodeMap.remove(player.getUniqueId());
+    }
+
+    private void recalculate(Player player) {
+        Threading.runSync(() -> {
+            player.recalculatePermissions();
+            player.updateCommands();
+        });
+    }
+
+    public List<String> getPermissions(Player player) {
+        return permissionNodeMap.get(player.getUniqueId());
+    }
+
+    private void injectPermissible(Player player) {
+        try {
+            Field field = CraftHumanEntity.class.getDeclaredField("perm");
+            field.setAccessible(true);
+            field.set(player, new CustomPermissible(player));
+            field.setAccessible(false);
+        } catch (NoSuchFieldException | IllegalAccessException e) {
+            e.printStackTrace();
+        }
     }
 
 
