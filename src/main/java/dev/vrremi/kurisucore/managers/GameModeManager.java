@@ -72,7 +72,11 @@ public class GameModeManager {
         return new File(FubukiCore.getInstance().getDataFolder() + File.separator + "data" + File.separator + player.getUniqueId() + ".yml");
     }
 
-
-    
+    private void createBase() {
+        File file = new File(FubukiCore.getInstance().getDataFolder() + File.separator + "data");
+        if (!file.exists()) {
+            file.mkdirs();
+        }
+    }
 
 }
