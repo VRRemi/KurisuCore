@@ -22,4 +22,8 @@ public class PermissionManager {
     private final HashMap<UUID, PermissionAttachment> permissionMap = new HashMap<>();
     private final HashMap<UUID, List<String>> permissionNodeMap = new HashMap<>();
 
+    public PermissionManager() {
+        init();
+    }
+
 }
