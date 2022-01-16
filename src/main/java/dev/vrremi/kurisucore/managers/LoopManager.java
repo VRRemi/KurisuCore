@@ -22,6 +22,18 @@ public class LoopManager {
     private final Map<UUID, List<Permission>> permissionMap = new HashMap<>();
     private final Map<UUID, List<Rank>> rankMap = new HashMap<>();
 
-    
+    public LoopManager() {
+        startLoop();
+    }
+
+    private void startLoop() {
+        ScheduledExecutorService service = Executors.newSingleThreadScheduledExecutor();
+        service.scheduleAtFixedRate(() -> {
+            long current = System.currentTimeMillis();
+            if (autoSaveTime <= current) {
+                Collection<? extends Player> playerList = Bukkit.getOnlinePlayers();
+                if (playerList.size() > 0) {
+                    UserManager userManager = KurisuCore.getUserManager();
+                    Connection connection = KurisuCore.getConnectionPoolManager().getConnection();
 
 }
