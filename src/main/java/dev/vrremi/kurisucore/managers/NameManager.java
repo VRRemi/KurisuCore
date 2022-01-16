@@ -30,5 +30,14 @@ public class NameManager {
                     listName = tag.getTag() + rank.getColor() + player.getName() + rank.getSuffix();
                 } else {
                     listName = rank.getPrefix() + rank.getColor() + player.getName() + rank.getSuffix();
+                }
+            } else {
+                if (tag != null) {
+                    listName = tag.getTag() + player.getName();
+                }
+            }
+            player.setPlayerListName(CC.color(listName));
+        }
+    }
 
 }
