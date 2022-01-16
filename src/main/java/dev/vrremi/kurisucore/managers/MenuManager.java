@@ -30,6 +30,8 @@ public class MenuManager {
         menuMap.put(menu.getName(), menu);
     }
 
-    
+    public Menu getMenu(String name) {
+        return menuMap.get(name);
+    }
 
 }
