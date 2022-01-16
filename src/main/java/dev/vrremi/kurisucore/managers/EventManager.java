@@ -6,4 +6,10 @@ import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
 
 public class EventManager {
+
+    public EventManager() {
+        registerEvents();
+    }
+
+    
 }
