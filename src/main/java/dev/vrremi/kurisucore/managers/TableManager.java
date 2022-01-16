@@ -24,5 +24,26 @@ public class TableManager {
                             "punishments LONGTEXT" +
                             ");"
             );
+            statement.execute();
+            statement = connection.prepareStatement(
+                    "CREATE TABLE IF NOT EXISTS `kurisu_ranks` " +
+                            "(" +
+                            "name VARCHAR(60)," +
+                            "priority INT," +
+                            "prefix VARCHAR(64)," +
+                            "suffix VARCHAR(64)," +
+                            "color VARCHAR(16)," +
+                            "permissions LONGTEXT," +
+                            "default_rank BOOLEAN" +
+                            ");"
+            );
+            statement.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new RuntimeException("Error creating table schema");
+        } finally {
+            ConnectionPoolManager.close(connection, statement);
+        }
+    }
 
 }
