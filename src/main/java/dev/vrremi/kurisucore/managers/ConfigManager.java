@@ -1,2 +1,6 @@
-package dev.vrremi.kurisucore.managers;public class ConfigManager {
+package dev.vrremi.kurisucore.managers;
+
+
+
+public class ConfigManager {
 }
