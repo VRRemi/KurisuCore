@@ -63,6 +63,12 @@ public class RankDataManager {
         }
     }
 
-    
+    public String getSuffix(String name, Connection connection) throws SQLException {
+        if (rankExists(name, connection)) {
+            return getString(name, "suffix", connection);
+        }
+        return null;
+    }
+
 
 }
