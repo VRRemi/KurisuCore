@@ -19,6 +19,9 @@ public class ChatManager {
         init();
     }
 
-    
+    private void init() {
+        muted = false;
+        delay = 0;
+    }
 
 }
