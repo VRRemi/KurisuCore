@@ -198,6 +198,17 @@ public class RankDataManager {
         return null;
     }
 
+    public void setBoolean(String name, String dataValue, boolean value, Connection connection) throws SQLException {
+        if (rankExists(name, connection)) {
+            PreparedStatement statement = connection
+                    .prepareStatement("UPDATE `kurisu_ranks` SET " + dataValue + "=? WHERE LOWER(name)=?");
+            statement.setBoolean(1, value);
+            statement.setString(2, name.toLowerCase());
+            statement.executeUpdate();
+
+        }
+    }
+
 
 
 }
