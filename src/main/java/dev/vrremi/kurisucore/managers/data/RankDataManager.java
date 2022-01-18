@@ -185,5 +185,19 @@ public class RankDataManager {
         }
     }
 
+    public String getString(String name, String dataValue, Connection connection) throws SQLException {
+        if (rankExists(name, connection)) {
+            PreparedStatement statement = connection
+                    .prepareStatement("SELECT * FROM `kurisu_ranks` WHERE LOWER(name)=?");
+            statement.setString(1, name.toLowerCase());
+            ResultSet results = statement.executeQuery();
+            results.next();
+            return results.getString(dataValue);
+
+        }
+        return null;
+    }
+
+
 
 }
