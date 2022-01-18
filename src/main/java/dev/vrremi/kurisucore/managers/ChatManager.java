@@ -28,4 +28,11 @@ public class ChatManager {
         Bukkit.broadcastMessage(StringUtils.repeat(" \n", 1000));
     }
 
+    public void sendStaffChat(String sender, String message) {
+        ConfigUtils.staffChat("staff-chat-format", "fubuki.staffchat", new HashMap<String, String>() {{
+            put("{sender}", sender);
+            put("{message}", message);
+        }});
+    }
+
 }
