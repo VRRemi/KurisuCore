@@ -89,7 +89,18 @@ public class RankDataManager {
         }
     }
 
-    
+    public List<Permission> getPermissions(String name, Connection connection) throws SQLException {
+        if (rankExists(name, connection)) {
+            String permissionData = getString(name, "permissions", connection);
+            List<Permission> permissions = new ArrayList<>();
+            for (String perm : permissionData.split(",")) {
+                if (perm.isEmpty()) continue;
+                permissions.add(new Permission(perm, Long.MAX_VALUE));
+            }
+            return permissions;
+        }
+        return null;
+    }
 
 
 }
