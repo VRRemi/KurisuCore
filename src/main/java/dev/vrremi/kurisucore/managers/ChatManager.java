@@ -8,5 +8,7 @@ import org.bukkit.Bukkit;
 
 import java.util.HashMap;
 
+@Getter
+@Setter
 public class ChatManager {
 }
