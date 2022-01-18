@@ -12,6 +12,6 @@ import java.util.HashMap;
 @Setter
 public class ChatManager {
 
-    
+    private boolean muted;
 
 }
