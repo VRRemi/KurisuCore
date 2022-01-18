@@ -254,7 +254,5 @@ public class RankDataManager {
         ResultSet results = statement.executeQuery();
         return results.next();
     }
-
-
-
+    
 }
