@@ -17,6 +17,7 @@ public class ConfigManager {
     private File configFile, messageFile, tagsFile;
     private FileConfiguration config, messages, tags;
 
+    private Map<String, String> messageMap = new HashMap<>();
     
 
 }
