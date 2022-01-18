@@ -27,7 +27,14 @@ public class ConfigManager {
 
     private void loadConfigs() {
         KurisuCore plugin = KurisuCore.getInstance();
-        
+        if (!plugin.getDataFolder().exists())
+            plugin.getDataFolder().mkdir();
+        configFile = new File(plugin.getDataFolder(), "config.yml");
+        messagesFile = new File(plugin.getDataFolder(), "messages.yml");
+        tagsFile = new File(plugin.getDataFolder(), "tags.yml");
+        InputStream configStream = plugin.getResource("config.yml");
+        InputStream messagesStream = plugin.getResource("messages.yml");
+        InputStream tagsStream = plugin.getResource("tags.yml");
     }
 
 
