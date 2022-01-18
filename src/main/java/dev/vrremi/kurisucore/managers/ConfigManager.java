@@ -43,6 +43,10 @@ public class ConfigManager {
             if (!messagesFile.exists()) {
                 assert messagesStream != null;
                 Files.copy(messagesStream, messagesFile.toPath());
+            }
+            if (!tagsFile.exists()) {
+                assert tagsStream != null;
+                Files.copy(tagsStream, tagsFile.toPath());
             
 
     }
