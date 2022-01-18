@@ -52,6 +52,9 @@ public class ConfigManager {
             e.printStackTrace();
         }
 
+        config = YamlConfiguration.loadConfiguration(configFile);
+        messages = YamlConfiguration.loadConfiguration(messagesFile);
+        tags = YamlConfiguration.loadConfiguration(tagsFile);
     }
 
     public void saveConfig() {
