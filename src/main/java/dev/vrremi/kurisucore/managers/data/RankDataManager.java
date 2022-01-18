@@ -12,6 +12,21 @@ import java.util.List;
 
 public class RankDataManager {
 
-    
+    public void createRank(String name, Connection connection) throws SQLException {
+        if (!rankExists(name, connection)) {
+            PreparedStatement statement = connection
+                    .prepareStatement("INSERT INTO `kurisu_ranks` (name, priority, prefix, suffix, color, " +
+                            "permissions, default_rank) " +
+                            "VALUES (?, ?, ?, ?, ?, ?, ?)");
+            statement.setString(1, name);
+            statement.setInt(2, -1);
+            statement.setString(3, "");
+            statement.setString(4, "");
+            statement.setString(5, "");
+            statement.setString(6, "");
+            statement.setBoolean(7, false);
+            statement.executeUpdate();
+        }
+    }
 
 }
