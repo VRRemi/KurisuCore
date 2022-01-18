@@ -102,5 +102,17 @@ public class RankDataManager {
         return null;
     }
 
+    public void setPermissions(String name, List<Permission> permissions, Connection connection) throws SQLException {
+        if (rankExists(name, connection)) {
+            StringBuilder permissionString = new StringBuilder();
+            for (Permission permission : permissions) {
+                permissionString
+                        .append(permission.getNode())
+                        .append(",");
+            }
+            setString(name, "permissions", permissionString.substring(0, permissionString.length() - 1), connection);
+        }
+    }
+
 
 }
