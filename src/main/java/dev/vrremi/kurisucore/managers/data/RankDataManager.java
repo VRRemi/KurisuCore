@@ -37,6 +37,11 @@ public class RankDataManager {
         }
     }
 
-    
+    public int getPriority(String name, Connection connection) throws SQLException {
+        if (rankExists(name, connection)) {
+            return getInteger(name, "priority", connection);
+        }
+        return 0;
+    }
 
 }
