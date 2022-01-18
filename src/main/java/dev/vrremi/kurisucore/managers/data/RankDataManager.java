@@ -127,6 +127,20 @@ public class RankDataManager {
         }
     }
 
+    public List<Rank> getAllRanks(Connection connection) throws SQLException {
+        List<Rank> ranks = new ArrayList<>();
+        PreparedStatement statement = connection.prepareStatement("SELECT * FROM `fubuki_ranks`");
+        ResultSet results = statement.executeQuery();
+        while (results.next()) {
+            String permissionData = results.getString("permissions");
+            List<Permission> permissions = new ArrayList<>();
+            for (String perm : permissionData.split(",")) {
+                if (perm.isEmpty()) continue;
+                permissions.add(new Permission(perm, Long.MAX_VALUE));
+            }
+            ranks.add(new Rank(results.getString("name"),
+    }
+
     
 
 
