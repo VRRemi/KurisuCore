@@ -150,7 +150,29 @@ public class RankDataManager {
         return ranks;
     }
 
-    
+    public Rank getRank(String name, Connection connection) throws SQLException {
+        if (rankExists(name, connection)) {
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM `fubuki_ranks` WHERE LOWER(name)" +
+                    "=?");
+            statement.setString(1, name);
+            ResultSet results = statement.executeQuery();
+            results.next();
+            String realName = results.getString("name");
+            int priority = results.getInt("priority");
+            String prefix = results.getString("prefix");
+            String suffix = results.getString("suffix");
+            String color = results.getString("color");
+            String permissionData = results.getString("permissions");
+            List<Permission> permissions = new ArrayList<>();
+            for (String perm : permissionData.split(",")) {
+                if (perm.isEmpty()) continue;
+                permissions.add(new Permission(perm, Long.MAX_VALUE));
+            }
+            boolean defaultRank = results.getBoolean("default_rank");
+            return new Rank(realName, priority, prefix, suffix, color, permissions, defaultRank);
+        }
+        return null;
+    }
 
 
 }
