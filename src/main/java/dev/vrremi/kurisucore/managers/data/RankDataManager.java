@@ -57,6 +57,10 @@ public class RankDataManager {
         return null;
     }
 
-    
+    public void setPrefix(String name, String prefix, Connection connection) throws SQLException {
+        if (rankExists(name, connection)) {
+            setString(name, "prefix", prefix, connection);
+        }
+    }
 
 }
