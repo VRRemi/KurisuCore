@@ -24,4 +24,8 @@ public class ChatManager {
         delay = 0;
     }
 
+    public void clear() {
+        Bukkit.broadcastMessage(StringUtils.repeat(" \n", 1000));
+    }
+
 }
