@@ -15,4 +15,6 @@ public class ChatManager {
     private boolean muted;
     private double delay;
 
+    
+
 }
