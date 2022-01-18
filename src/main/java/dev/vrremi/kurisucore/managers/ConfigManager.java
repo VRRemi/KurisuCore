@@ -102,5 +102,5 @@ public class ConfigManager {
     public List<String> getMultiMessage(String path) {
         return multiMessageMap.get(path);
     }
-    
+
 }
