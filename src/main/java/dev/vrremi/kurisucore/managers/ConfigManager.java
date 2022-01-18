@@ -17,7 +17,7 @@ public class ConfigManager {
     private File configFile, messageFile, tagsFile;
     private FileConfiguration config, messages, tags;
 
-    private Map<String, String> messageMap = new HashMap<>();
+    private final Map<String, String> messageMap = new HashMap<>();
     private final Map<String, List<String>> multiMessageMap = new HashMap<>();
 
     public ConfigManager() {
@@ -25,6 +25,10 @@ public class ConfigManager {
         loadMessages();
     }
 
-    
+    private void loadConfigs() {
+        KurisuCore.
+    }
+
+
 
 }
