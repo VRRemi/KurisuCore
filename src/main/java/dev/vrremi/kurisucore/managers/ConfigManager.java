@@ -14,6 +14,9 @@ import java.util.Map;
 
 public class ConfigManager {
 
+    private File configFile, messageFile, tagsFile;
+    private FileConfiguration config, messages, tags;
+
     
 
 }
