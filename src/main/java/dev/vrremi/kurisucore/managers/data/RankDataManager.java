@@ -139,6 +139,15 @@ public class RankDataManager {
                 permissions.add(new Permission(perm, Long.MAX_VALUE));
             }
             ranks.add(new Rank(results.getString("name"),
+                    results.getInt("priority"),
+                    results.getString("prefix"),
+                    results.getString("suffix"),
+                    results.getString("color"),
+                    permissions,
+                    results.getBoolean("default_rank")
+            ));
+        }
+        return ranks;
     }
 
     
