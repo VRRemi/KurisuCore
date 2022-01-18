@@ -78,8 +78,11 @@ public class ConfigManager {
         return config;
     }
 
-    
+    public FileConfiguration getMessages() {
+        return messages;
+    }
 
+    
 
 
 }
