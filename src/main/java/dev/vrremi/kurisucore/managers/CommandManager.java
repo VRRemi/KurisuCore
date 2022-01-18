@@ -32,6 +32,18 @@ public class CommandManager {
 
     }
 
-    public void registerCommand()
+    public void registerCommand(Command command) {
+        final Field bukkitCommandMap;
+        try {
+            bukkitCommandMap = Bukkit.getServer().getClass().getDeclaredField("commandMap");
+            bukkitCommandMap.setAccessible(true);
+
+            CommandMap commandMap = (CommandMap) bukkitCommandMap.get(Bukkit.getServer());
+
+            commandMap.register(command.getName(), command);
+        } catch (NoSuchFieldException | IllegalAccessException e) {
+            e.printStackTrace();
+        }
+    }
 
 }
