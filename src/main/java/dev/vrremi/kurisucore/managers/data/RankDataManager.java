@@ -50,6 +50,13 @@ public class RankDataManager {
         }
     }
 
+    public String getPrefix(String name, Connection connection) throws SQLException {
+        if (rankExists(name, connection)) {
+            return getString(name, "prefix", connection);
+        }
+        return null;
+    }
+
     
 
 }
