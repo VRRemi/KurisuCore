@@ -20,6 +20,11 @@ public class ConfigManager {
     private Map<String, String> messageMap = new HashMap<>();
     private final Map<String, List<String>> multiMessageMap = new HashMap<>();
 
+    public ConfigManager() {
+        loadConfigs();
+        loadMessages();
+    }
+
     
 
 }
