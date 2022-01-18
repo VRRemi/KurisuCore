@@ -82,7 +82,12 @@ public class ConfigManager {
         return messages;
     }
 
+    public FileConfiguration getTags() {
+        return tags;
+    }
+
     
+
 
 
 }
