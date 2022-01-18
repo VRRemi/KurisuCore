@@ -67,6 +67,13 @@ public class ConfigManager {
         }
     }
 
+    public void reloadConfig() {
+        config = YamlConfiguration.loadConfiguration(configFile);
+        messages = YamlConfiguration.loadConfiguration(messagesFile);
+        tags = YamlConfiguration.loadConfiguration(tagsFile);
+        loadMessages();
+    }
+
 
 
 }
