@@ -99,8 +99,8 @@ public class ConfigManager {
         return messageMap.get(path);
     }
 
+    public List<String> getMultiMessage(String path) {
+        return multiMessageMap.get(path);
+    }
     
-
-
-
 }
