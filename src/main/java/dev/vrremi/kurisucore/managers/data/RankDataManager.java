@@ -70,5 +70,11 @@ public class RankDataManager {
         return null;
     }
 
+    public void setSuffix(String name, String suffix, Connection connection) throws SQLException {
+        if (rankExists(name, connection)) {
+            setString(name, "suffix", suffix, connection);
+        }
+    }
+
 
 }
