@@ -129,7 +129,7 @@ public class RankDataManager {
 
     public List<Rank> getAllRanks(Connection connection) throws SQLException {
         List<Rank> ranks = new ArrayList<>();
-        PreparedStatement statement = connection.prepareStatement("SELECT * FROM `fubuki_ranks`");
+        PreparedStatement statement = connection.prepareStatement("SELECT * FROM `kurisu_ranks`");
         ResultSet results = statement.executeQuery();
         while (results.next()) {
             String permissionData = results.getString("permissions");
