@@ -26,7 +26,8 @@ public class ConfigManager {
     }
 
     private void loadConfigs() {
-        KurisuCore.
+        KurisuCore plugin = KurisuCore.getInstance();
+        
     }
 
 
