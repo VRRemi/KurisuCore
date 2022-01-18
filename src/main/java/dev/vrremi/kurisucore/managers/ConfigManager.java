@@ -95,6 +95,10 @@ public class ConfigManager {
         }
     }
 
+    public String getMessage(String path) {
+        return messageMap.get(path);
+    }
+
     
 
 
