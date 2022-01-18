@@ -76,5 +76,12 @@ public class RankDataManager {
         }
     }
 
+    public String getColor(String name, Connection connection) throws SQLException {
+        if (rankExists(name, connection)) {
+            return getString(name, "color", connection);
+        }
+        return null;
+    }
+
 
 }
