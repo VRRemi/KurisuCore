@@ -54,6 +54,16 @@ public class ConfigManager {
 
     }
 
+    public void saveConfig() {
+        try {
+            config.save(configFile);
+            messages.save(messagesFile);
+            tags.save(tagsFile);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 
 }
