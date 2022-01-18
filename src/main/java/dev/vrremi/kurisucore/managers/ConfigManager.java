@@ -18,6 +18,8 @@ public class ConfigManager {
     private FileConfiguration config, messages, tags;
 
     private Map<String, String> messageMap = new HashMap<>();
+    private final Map<String, List<String>> multiMessageMap = new HashMap<>();
+
     
 
 }
