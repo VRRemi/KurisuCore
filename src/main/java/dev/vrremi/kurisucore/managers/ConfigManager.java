@@ -74,6 +74,12 @@ public class ConfigManager {
         loadMessages();
     }
 
+    public FileConfiguration getConfig() {
+        return config;
+    }
+
+    
+
 
 
 }
