@@ -86,6 +86,15 @@ public class ConfigManager {
         return tags;
     }
 
+    private void loadMessages() {
+        for (String path : messages.getKeys(false)) {
+            if (messages.isString(path))
+                messageMap.put(path, messages.getString(path));
+            else if (messages.isList(path))
+                multiMessageMap.put(path, messages.getStringList(path));
+        }
+    }
+
     
 
 
