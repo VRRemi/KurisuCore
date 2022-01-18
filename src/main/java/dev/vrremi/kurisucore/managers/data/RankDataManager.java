@@ -44,6 +44,12 @@ public class RankDataManager {
         return 0;
     }
 
+    public void setPriority(String name, int priority, Connection connection) throws SQLException {
+        if (rankExists(name, connection)) {
+            setInteger(name, "priority", priority, connection);
+        }
+    }
+
     
 
 }
