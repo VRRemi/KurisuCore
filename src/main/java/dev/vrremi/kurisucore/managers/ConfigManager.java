@@ -40,7 +40,11 @@ public class ConfigManager {
                 assert configStream != null;
                 Files.copy(configStream, configFile.toPath());
             }
+            if (!messagesFile.exists()) {
+                assert messagesStream != null;
+                Files.copy(messagesStream, messagesFile.toPath());
             
+
     }
 
 
