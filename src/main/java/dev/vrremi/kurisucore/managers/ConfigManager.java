@@ -35,6 +35,12 @@ public class ConfigManager {
         InputStream configStream = plugin.getResource("config.yml");
         InputStream messagesStream = plugin.getResource("messages.yml");
         InputStream tagsStream = plugin.getResource("tags.yml");
+        try {
+            if (!configFile.exists()) {
+                assert configStream != null;
+                Files.copy(configStream, configFile.toPath());
+            }
+            
     }
 
 
