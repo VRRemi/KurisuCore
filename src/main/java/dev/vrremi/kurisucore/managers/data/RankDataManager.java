@@ -121,7 +121,11 @@ public class RankDataManager {
         return false;
     }
 
-    
+    public void setDefault(String name, boolean defaultRank, Connection connection) throws SQLException {
+        if (rankExists(name, connection)) {
+            setBoolean(name, "default_rank", defaultRank, connection);
+        }
+    }
 
 
 }
