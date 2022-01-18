@@ -114,7 +114,12 @@ public class RankDataManager {
         }
     }
 
-    
+    public boolean getDefault(String name, Connection connection) throws SQLException {
+        if (rankExists(name, connection)) {
+            return getBoolean(name, "default_rank", connection);
+        }
+        return false;
+    }
 
 
 }
