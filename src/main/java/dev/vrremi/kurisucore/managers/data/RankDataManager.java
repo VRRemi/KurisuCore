@@ -152,7 +152,7 @@ public class RankDataManager {
 
     public Rank getRank(String name, Connection connection) throws SQLException {
         if (rankExists(name, connection)) {
-            PreparedStatement statement = connection.prepareStatement("SELECT * FROM `fubuki_ranks` WHERE LOWER(name)" +
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM `kurisu_ranks` WHERE LOWER(name)" +
                     "=?");
             statement.setString(1, name);
             ResultSet results = statement.executeQuery();
