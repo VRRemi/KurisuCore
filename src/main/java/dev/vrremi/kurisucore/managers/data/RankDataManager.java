@@ -29,4 +29,12 @@ public class RankDataManager {
         }
     }
 
+    public void deleteRank(String name, Connection connection) throws SQLException {
+        if (rankExists(name, connection)) {
+            PreparedStatement statement = connection.prepareStatement("DELETE FROM `kurisu_ranks` WHERE LOWER(name)=?");
+            statement.setString(1, name.toLowerCase());
+            statement.execute();
+        }
+    }
+
 }
