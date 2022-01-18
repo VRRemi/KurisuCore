@@ -13,5 +13,6 @@ import java.util.HashMap;
 public class ChatManager {
 
     private boolean muted;
+    private double delay;
 
 }
