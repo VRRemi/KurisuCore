@@ -47,7 +47,10 @@ public class ConfigManager {
             if (!tagsFile.exists()) {
                 assert tagsStream != null;
                 Files.copy(tagsStream, tagsFile.toPath());
-            
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
