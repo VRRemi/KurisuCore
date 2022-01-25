@@ -45,4 +45,6 @@ public class GrantDurationMenu extends Menu {
                         Material.YELLOW_WOOL, Material.RED_WOOL);
                 List<Integer> slots = Arrays.asList(10, 12, 14, 16);
                 List<SlotAction> slotActions = Arrays.asList(SlotAction.APPLY_PERMANENT, SlotAction.APPLY_7_DAYS,
+                        SlotAction.APPLY_1_MONTH, SlotAction.APPLY_3_MONTH);
+                for (int i = 0; i < 4; i++) {
 }
