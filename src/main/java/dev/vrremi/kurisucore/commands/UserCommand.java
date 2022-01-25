@@ -83,3 +83,6 @@ public class UserCommand {
                                 UUID uuid = userDataManager.getUUID(args[1], connection);
                                 String name = userDataManager.getName(uuid, connection);
                                 Rank rank = userDataManager.getRanks(uuid, connection).getHighestRank();
+                                List<Permission> permissions =
+                                        userDataManager.getPermissions(uuid, connection).stream().filter(Permission::isActive).collect(Collectors.toList());
+                                List<String> lines = new ArrayList<>();
