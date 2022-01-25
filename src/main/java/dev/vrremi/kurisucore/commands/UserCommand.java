@@ -217,3 +217,7 @@ public class UserCommand {
                                     put("{player}", target.getName());
                                 }});
                             }
+                        } else {
+                            ConfigUtils.sendMessage(sender, "rank-not-found", new HashMap<String, String>() {{
+                                put("{rank}", args[2]);
+                            }});
