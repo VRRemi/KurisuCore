@@ -44,3 +44,4 @@ public class TagsMenu extends Menu {
                     }
                     ItemStack item = new ItemStack(Material.NAME_TAG);
                     ItemMeta meta = item.getItemMeta();
+                    assert meta != null;
