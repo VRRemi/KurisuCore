@@ -270,3 +270,5 @@ public class UserCommand {
                                 "&4"));
                     }});
                 }
+            } else if (args[0].equalsIgnoreCase("delrank")) {
+                if (args.length > 2) {
