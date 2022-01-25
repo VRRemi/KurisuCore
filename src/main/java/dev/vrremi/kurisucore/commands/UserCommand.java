@@ -112,3 +112,7 @@ public class UserCommand {
                                 LineUtils.addHeader(lines, sender);
                                 lines.forEach(line -> sender.sendMessage(CC.color(line)));
                             } else {
+                                ConfigUtils.sendMessage(sender, "player-doesnt-exist", new HashMap<String, String>() {{
+                                    put("{player}", args[1]);
+                                }});
+                            }
