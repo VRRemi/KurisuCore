@@ -25,5 +25,5 @@ public class TagsMenu extends Menu {
     public TagsMenu() {
         super(Menus.TAGS_MENU);
     }
-    
-}
+
+    @Override
