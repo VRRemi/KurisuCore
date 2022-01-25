@@ -277,3 +277,5 @@ public class UserCommand {
                         Rank rank = KurisuCore.getRankManager().getRank(args[2]);
                         if (rank != null) {
                             User user = KurisuCore.getUserManager().getUser(target);
+                            if (user != null) {
+                                user.removeRank(rank);
