@@ -82,6 +82,7 @@ public class GrantDurationMenu extends Menu {
                             put("{player}", target.getName());
                             put("{rank}", user.getTargetRank().getName());
                             put("{time}", time == Long.MAX_VALUE ? "permanent" : Time.millisToTime(time));
+                        }});
     }
 
 }
