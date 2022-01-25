@@ -78,3 +78,5 @@ public class UserCommand {
                     } else {
                         Connection connection = KurisuCore.getConnectionPoolManager().getConnection();
                         try {
+                            UserDataManager userDataManager = KurisuCore.getUserDataManager();
+                            if (userDataManager.playerExists(args[1], connection)) {
