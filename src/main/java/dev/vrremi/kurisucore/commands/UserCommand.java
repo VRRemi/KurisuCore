@@ -273,3 +273,6 @@ public class UserCommand {
             } else if (args[0].equalsIgnoreCase("delrank")) {
                 if (args.length > 2) {
                     Player target = Server.getOnline(args[1]);
+                    if (target != null) {
+                        Rank rank = KurisuCore.getRankManager().getRank(args[2]);
+                        if (rank != null) {
