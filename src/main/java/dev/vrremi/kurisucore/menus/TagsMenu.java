@@ -56,3 +56,4 @@ public class TagsMenu extends Menu {
                     }
                     meta.addItemFlags(ItemFlag.values());
                     item.setItemMeta(meta);
+                    inventory.setItem(index, item);
