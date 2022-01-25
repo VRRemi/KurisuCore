@@ -50,4 +50,6 @@ public class GrantDurationMenu extends Menu {
                     ItemStack item = new ItemStack(materials.get(i));
                     ItemMeta meta = item.getItemMeta();
                     assert meta != null;
+                    meta.setDisplayName(CC.color(names.get(i)));
+                    List<String> lines = new ArrayList<>();
 }
