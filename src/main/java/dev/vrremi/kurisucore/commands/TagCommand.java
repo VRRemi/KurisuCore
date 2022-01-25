@@ -30,4 +30,11 @@ public class TagCommand extends Command {
                 }
             } else {
                 ConfigUtils.sendMessage(sender, "must-be-player");
+            }
+        } else {
+            ConfigUtils.sendMessage(sender, "no-permission");
+        }
+        return true;
+    }
+
 }
