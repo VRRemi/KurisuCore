@@ -34,3 +34,4 @@ public class TagsMenu extends Menu {
                 Inventory inventory = Bukkit.createInventory(null, 54, CC.color("&b&lTAGS"));
                 fill(inventory);
                 User user  = KurisuCore.getUserManager().getUser(player);
+                if (user == null) return inventory;
