@@ -234,3 +234,16 @@ public class UserCommand {
                                 "&4"));
                     }});
                 }
+            } else if (args[0].equalsIgnoreCase("delrankperm")) {
+                if (args.length > 2) {
+                    Player target = Server.getOnline(args[1]);
+                    if (target != null) {
+                        Rank rank = KurisuCore.getRankManager().getRank(args[2]);
+                        if (rank != null) {
+                            User user = KurisuCore.getUserManager().getUser(target);
+                            if (user != null) {
+                                rank.getPermissions().stream().map(Permission::getNode).forEach(user::removePermission);
+                                ConfigUtils.sendMessage(sender, "user-rank-permission-removed",
+                                        new HashMap<String, String>() {{
+                                            put("{player}", target.getName());
+                                            put("{rank}", rank.getName());
