@@ -59,6 +59,7 @@ public class GrantMainMenu extends Menu {
             @Override
             public void onClick(InventoryClickEvent event) {
                 Player player = (Player) event.getWhoClicked();
+                User user = KurisuCore.getUserManager().getUser(player);
                 }
             }
         }, 0);
