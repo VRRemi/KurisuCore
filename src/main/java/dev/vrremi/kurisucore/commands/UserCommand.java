@@ -22,4 +22,6 @@ public class UserCommand {
     public UserCommand() {
         super("user", "User command", "/user", Collections.singletonList("user"));
     }
+
+    @Override
 }
