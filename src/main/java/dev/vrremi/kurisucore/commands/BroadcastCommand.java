@@ -6,5 +6,6 @@ import dev.vrremi.kurisucore.utils.CC;
 import dev.vrremi.kurisucore.utils.ConfigUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
 public class BroadcastCommand {
 }
