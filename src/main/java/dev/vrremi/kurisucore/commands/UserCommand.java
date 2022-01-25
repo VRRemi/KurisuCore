@@ -298,3 +298,10 @@ public class UserCommand {
                         ConfigUtils.sendMessage(sender, "player-not-online", new HashMap<String, String>() {{
                             put("{player}", args[1]);
                         }});
+                    }
+                } else {
+                    ConfigUtils.sendMessage(sender, "invalid-usage", new HashMap<String, String>() {{
+                        put("{usage}", CC.formatPlaceholders("/" + label + " delrank <player> <rank>",
+                                "&c",
+                                "&4"));
+                    }});
