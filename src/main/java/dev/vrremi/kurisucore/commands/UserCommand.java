@@ -24,4 +24,4 @@ public class UserCommand {
     }
 
     @Override
-}
+    public boolean execute(CommandSender sender, String label, String[] args) {
