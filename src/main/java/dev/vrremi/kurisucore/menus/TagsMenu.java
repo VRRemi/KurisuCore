@@ -46,3 +46,4 @@ public class TagsMenu extends Menu {
                     ItemMeta meta = item.getItemMeta();
                     assert meta != null;
                     meta.setDisplayName(CC.color(tag.getTag()));
+                    List<String> lines = new ArrayList<>();
