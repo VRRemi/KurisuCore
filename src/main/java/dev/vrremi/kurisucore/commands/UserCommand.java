@@ -129,3 +129,9 @@ public class UserCommand {
                     }});
                 }
             } else if (args[0].equalsIgnoreCase("addperm")) {
+                if (args.length > 2) {
+                    Player target = Server.getOnline(args[1]);
+                    if (target != null) {
+                        User user = KurisuCore.getUserManager().getUser(target);
+                        if (user != null) {
+                            if (args.length > 3) {
