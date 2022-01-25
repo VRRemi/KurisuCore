@@ -50,3 +50,5 @@ public class UserCommand {
                             lines.add("&fRanks&7: &b" + ranks.substring(0, ranks.length() - 4));
                             if (user.getActivePermissionCount() > 0) {
                                 lines.add(CC.color("&fPermissions&7: (&f" + user.getActivePermissionCount() + "&7)"));
+                                StringBuilder permissions = new StringBuilder();
+                                for (Permission permission : user.getPermissions()) {
