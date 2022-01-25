@@ -198,3 +198,5 @@ public class UserCommand {
                                 "&c",
                                 "&4"));
                     }});
+                }
+            } else if (args[0].equalsIgnoreCase("addrankperm")) {
