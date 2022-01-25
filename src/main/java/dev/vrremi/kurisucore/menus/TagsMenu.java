@@ -47,3 +47,4 @@ public class TagsMenu extends Menu {
                     assert meta != null;
                     meta.setDisplayName(CC.color(tag.getTag()));
                     List<String> lines = new ArrayList<>();
+                    LineUtils.addHeader(lines, player);
