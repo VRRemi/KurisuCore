@@ -16,5 +16,6 @@ public class BroadcastCommand extends Command {
     public BroadcastCommand() {
         super("broadcast", "Broadcast command", "/broadcast", Arrays.asList("broadcast", "bc"));
     }
+
     }
 }
