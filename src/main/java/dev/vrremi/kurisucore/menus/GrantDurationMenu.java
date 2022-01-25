@@ -59,4 +59,6 @@ public class GrantDurationMenu extends Menu {
                     meta.setLore(CC.color(lines));
                     item.setItemMeta(meta);
                     inventory.setItem(slots.get(i), item);
+                    setAction(slots.get(i), slotActions.get(i));
+                }
 }
