@@ -24,4 +24,4 @@ public class GrantMainMenu extends Menu {
     public GrantMainMenu() {
         super(Menus.GRANT_MAIN_MENU);
     }
-}
+
