@@ -25,3 +25,6 @@ public class GrantMainMenu extends Menu {
         super(Menus.GRANT_MAIN_MENU);
     }
 
+    @Override
+    public void initMenu() {
+        setPage(new Page() {
