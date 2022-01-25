@@ -57,3 +57,9 @@ public class GrantMainMenu extends Menu {
             }
 
             @Override
+            public void onClick(InventoryClickEvent event) {
+            }
+        }, 0);
+    }
+
+}
