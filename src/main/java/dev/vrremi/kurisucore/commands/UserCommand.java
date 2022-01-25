@@ -55,3 +55,4 @@ public class UserCommand {
                                     if (!permission.hasTimedOut()) {
                                         permissions
                                                 .append("&b")
+                                                .append(permission.getNode());
