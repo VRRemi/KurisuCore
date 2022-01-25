@@ -143,3 +143,9 @@ public class UserCommand {
                                         put("{permission}", args[2]);
                                         put("{time}", Time.millisToTime(System.currentTimeMillis() + Time.timeToMillis(args[3])));
                                     }});
+                                } else {
+                                    ConfigUtils.sendMessage(sender, "invalid-format", new HashMap<String, String>() {{
+                                        put("{format}", "7d24h60m60s");
+                                    }});
+                                }
+                            } else {
