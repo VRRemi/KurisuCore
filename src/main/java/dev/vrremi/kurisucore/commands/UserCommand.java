@@ -252,3 +252,8 @@ public class UserCommand {
                                 ConfigUtils.sendMessage(sender, "still-loading", new HashMap<String, String>() {{
                                     put("{player}", target.getName());
                                 }});
+                            }
+                        } else {
+                            ConfigUtils.sendMessage(sender, "rank-not-found", new HashMap<String, String>() {{
+                                put("{rank}", args[2]);
+                            }});
