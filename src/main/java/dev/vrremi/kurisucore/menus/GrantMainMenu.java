@@ -40,3 +40,4 @@ public class GrantMainMenu extends Menu {
                     ItemStack item = new ItemStack(CC.getMaterialFromColor(rank.getColor()));
                     ItemMeta meta = item.getItemMeta();
                     assert meta != null;
+                    meta.setDisplayName(CC.color(rank.getColor() + rank.getName()));
