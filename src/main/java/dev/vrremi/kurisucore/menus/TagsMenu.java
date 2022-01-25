@@ -82,3 +82,8 @@ public class TagsMenu extends Menu {
                 if (user == null) return;
                 SlotAction slotAction = getAction(event.getSlot());
                 if (slotAction == SlotAction.APPLY_TAG) {
+                    Tag tag = user.getAvailableTags().get(event.getSlot());
+                    user.setTag(tag);
+                    ConfigUtils.sendMessage(player, "tag-applied", new HashMap<String, String>() {{
+                        put("{tag}", tag.getName());
+                    }});
