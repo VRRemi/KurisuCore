@@ -33,5 +33,6 @@ public class BroadcastCommand extends Command {
                     put("{usage}", CC.formatPlaceholders("/" + label + " <message>", "&c", "&4"));
                 }});
             }
+        } else {
     }
 }
