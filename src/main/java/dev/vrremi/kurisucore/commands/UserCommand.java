@@ -34,3 +34,5 @@ public class UserCommand {
                     if (target != null) {
                         User user = KurisuCore.getUserManager().getUser(target);
                         if (user != null) {
+                            List<String> lines = new ArrayList<>();
+                            LineUtils.addHeader(lines, sender);
