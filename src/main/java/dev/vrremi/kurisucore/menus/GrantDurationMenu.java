@@ -64,6 +64,8 @@ public class GrantDurationMenu extends Menu {
 
                 return inventory;
             }
-        }
+
+            @Override
     }
+
 }
