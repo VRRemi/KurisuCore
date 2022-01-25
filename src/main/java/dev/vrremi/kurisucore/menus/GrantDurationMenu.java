@@ -23,5 +23,11 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-public class GrantDurationMenu {
+public class GrantDurationMenu extends Menu {
+
+    public GrantDurationMenu() {
+        super(Menus.GRANT_DURATION_MENU);
+    }
+
+    
 }
