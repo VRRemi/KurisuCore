@@ -36,3 +36,9 @@ public class TagsMenu extends Menu {
                 User user  = KurisuCore.getUserManager().getUser(player);
                 if (user == null) return inventory;
                 LinkedList<Tag> tags = user.getAvailableTags();
+                int index = 0;
+                for (Tag tag : tags) {
+                    if (index == 49) {
+                        index++;
+                        continue;
+                    }
