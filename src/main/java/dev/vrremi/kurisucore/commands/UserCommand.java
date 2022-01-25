@@ -44,3 +44,6 @@ public class UserCommand {
                                     ranks.append("&7 (expires in: &b")
                                             .append(Time.millisToTime(user.getRankExpireTime(rank)))
                                             .append("&7)");
+                                }
+                                ranks.append("&7, ");
+                            }
