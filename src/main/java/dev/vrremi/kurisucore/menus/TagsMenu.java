@@ -81,3 +81,4 @@ public class TagsMenu extends Menu {
                 User user = KurisuCore.getUserManager().getUser(player);
                 if (user == null) return;
                 SlotAction slotAction = getAction(event.getSlot());
+                if (slotAction == SlotAction.APPLY_TAG) {
