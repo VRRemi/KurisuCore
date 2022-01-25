@@ -305,3 +305,12 @@ public class UserCommand {
                                 "&c",
                                 "&4"));
                     }});
+                }
+            } else {
+                sendHelp(sender, label);
+            }
+        } else {
+            ConfigUtils.sendMessage(sender, "no-permission");
+        }
+        return true;
+    }
