@@ -72,6 +72,8 @@ public class GrantDurationMenu extends Menu {
                 if (user == null) return;
                 if (user.getTarget() == null) return;
                 if (user.getTargetRank() == null) return;
+                SlotAction slotAction = getAction(event.getSlot());
+                long time = slotAction.getTime();
     }
 
 }
