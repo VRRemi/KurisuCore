@@ -284,3 +284,7 @@ public class UserCommand {
                                             put("{player}", target.getName());
                                             put("{rank}", rank.getName());
                                         }});
+                            } else {
+                                ConfigUtils.sendMessage(sender, "still-loading", new HashMap<String, String>() {{
+                                    put("{player}", target.getName());
+                                }});
