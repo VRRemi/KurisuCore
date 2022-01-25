@@ -9,5 +9,7 @@ import dev.vrremi.kurisucore.data.menu.Page;
 import dev.vrremi.kurisucore.data.menu.SlotAction;
 import dev.vrremi.kurisucore.utils.CC;
 import dev.vrremi.kurisucore.utils.LineUtils;
+import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
 public class GrantMainMenu {
 }
