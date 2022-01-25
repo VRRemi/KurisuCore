@@ -76,3 +76,4 @@ public class TagsMenu extends Menu {
             }
 
             @Override
+            public void onClick(InventoryClickEvent event) {
