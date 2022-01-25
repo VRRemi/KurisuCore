@@ -67,3 +67,4 @@ public class TagsMenu extends Menu {
                 List<String> lines = new ArrayList<>();
                 LineUtils.addHeader(lines, player);
                 lines.add("&7Click reset your tag");
+                LineUtils.addHeader(lines, player);
