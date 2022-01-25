@@ -328,3 +328,5 @@ public class UserCommand {
         LineUtils.addHeader(lines, sender);
         lines.stream().map(line -> CC.color(CC.formatPlaceholders(line.replace("{label}", label), "&f", "&7"))).forEach(sender::sendMessage);
     }
+
+}
