@@ -30,5 +30,6 @@ public class BroadcastCommand extends Command {
                 Bukkit.getOnlinePlayers().forEach(player -> player.sendMessage(CC.color(format)));
             } else {
                 ConfigUtils.sendMessage(sender, "invalid-usage", new HashMap<String, String>() {{
+                    put("{usage}", CC.formatPlaceholders("/" + label + " <message>", "&c", "&4"));
     }
 }
