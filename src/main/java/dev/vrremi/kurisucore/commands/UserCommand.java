@@ -191,3 +191,4 @@ public class UserCommand {
                         ConfigUtils.sendMessage(sender, "player-not-online", new HashMap<String, String>() {{
                             put("{player}", args[1]);
                         }});
+                    }
