@@ -71,3 +71,4 @@ public class TagsMenu extends Menu {
                 resetMeta.setLore(CC.color(lines));
                 reset.setItemMeta(resetMeta);
                 inventory.setItem(49, reset);
+                setAction(49, SlotAction.RESET_TAG);
