@@ -276,3 +276,4 @@ public class UserCommand {
                     if (target != null) {
                         Rank rank = KurisuCore.getRankManager().getRank(args[2]);
                         if (rank != null) {
+                            User user = KurisuCore.getUserManager().getUser(target);
