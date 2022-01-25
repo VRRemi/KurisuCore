@@ -50,3 +50,8 @@ public class GrantMainMenu extends Menu {
                     item.setItemMeta(meta);
                     inventory.setItem(index, item);
                     setAction(index, SlotAction.APPLY_RANK);
+                    index++;
+                }
+
+                return inventory;
+            }
