@@ -55,3 +55,4 @@ public class TagsMenu extends Menu {
                         meta.addEnchant(Enchantment.DURABILITY, 1, true);
                     }
                     meta.addItemFlags(ItemFlag.values());
+                    item.setItemMeta(meta);
