@@ -18,4 +18,5 @@ public class TagCommand extends Command {
 
     @Override
     public boolean execute(CommandSender sender, String label, String[] args) {
+        if (sender.hasPermission("kurisu.tags")) {
 }
