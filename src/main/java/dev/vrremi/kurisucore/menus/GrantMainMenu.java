@@ -49,3 +49,4 @@ public class GrantMainMenu extends Menu {
                     meta.setLore(CC.color(lines));
                     item.setItemMeta(meta);
                     inventory.setItem(index, item);
+                    setAction(index, SlotAction.APPLY_RANK);
