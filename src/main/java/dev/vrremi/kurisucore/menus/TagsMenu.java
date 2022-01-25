@@ -68,3 +68,4 @@ public class TagsMenu extends Menu {
                 LineUtils.addHeader(lines, player);
                 lines.add("&7Click reset your tag");
                 LineUtils.addHeader(lines, player);
+                resetMeta.setLore(CC.color(lines));
