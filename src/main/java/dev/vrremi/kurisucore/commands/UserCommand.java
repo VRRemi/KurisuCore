@@ -38,3 +38,4 @@ public class UserCommand {
                             LineUtils.addHeader(lines, sender);
                             lines.add("&bUser Information &7(&b" + target.getName() + "&7)");
                             StringBuilder ranks = new StringBuilder();
+                                ranks.append("&b").append(rank.getName());
