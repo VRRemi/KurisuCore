@@ -89,3 +89,23 @@ public class UserCommand {
                                 LineUtils.addHeader(lines, sender);
                                 lines.add("&bUser Information &7(&b" + name + "&7)");
                                 lines.add("&fRank&7: &b" + (rank == null ? "None" : rank.getName()));
+                                if (permissions.size() > 0) {
+                                    lines.add(CC.color("&fPermissions&7: (&f" + permissions.size() + "&7)"));
+                                    StringBuilder permString = new StringBuilder();
+                                    for (Permission permission : permissions) {
+                                        if (!permission.hasTimedOut()) {
+                                            permString
+                                                    .append("&b")
+                                                    .append(permission.getNode());
+                                            if (permission.getTimeout() != Long.MAX_VALUE) {
+                                                permString.append("&7 (expires in: &b")
+                                                        .append(Time.millisToTime(permission.getTimeout()))
+                                                        .append("&7)");
+                                            }
+                                            permString.append("&7, ");
+                                        }
+                                    }
+                                    lines.add(CC.color(permString.substring(0, permString.length() - 4)));
+                                } else {
+                                    lines.add("&fPermissions&7: &fNone");
+                                }
