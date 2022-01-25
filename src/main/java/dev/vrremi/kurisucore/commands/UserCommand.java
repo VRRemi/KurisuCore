@@ -53,3 +53,5 @@ public class UserCommand {
                                 StringBuilder permissions = new StringBuilder();
                                 for (Permission permission : user.getPermissions()) {
                                     if (!permission.hasTimedOut()) {
+                                        permissions
+                                                .append("&b")
