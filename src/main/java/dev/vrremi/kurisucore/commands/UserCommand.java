@@ -184,3 +184,7 @@ public class UserCommand {
                             }});
                         } else {
                             ConfigUtils.sendMessage(sender, "still-loading", new HashMap<String, String>() {{
+                                put("{player}", target.getName());
+                            }});
+                        }
+                    } else {
