@@ -127,3 +127,5 @@ public class UserCommand {
                         put("{usage}", CC.formatPlaceholders("/" + label + " info <player>", "&c",
                                 "&4"));
                     }});
+                }
+            } else if (args[0].equalsIgnoreCase("addperm")) {
