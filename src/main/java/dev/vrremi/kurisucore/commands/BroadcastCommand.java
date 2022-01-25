@@ -22,5 +22,6 @@ public class BroadcastCommand extends Command {
         if (sender.hasPermission("kurisu.broadcast")) {
             if (args.length > 0) {
                 StringBuilder messageSB = new StringBuilder();
+                for (String arg : args) {
     }
 }
