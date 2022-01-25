@@ -74,3 +74,4 @@ public class TagsMenu extends Menu {
                 setAction(49, SlotAction.RESET_TAG);
                 return inventory;
             }
+
