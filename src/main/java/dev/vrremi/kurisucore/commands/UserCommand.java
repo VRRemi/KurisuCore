@@ -88,3 +88,4 @@ public class UserCommand {
                                 List<String> lines = new ArrayList<>();
                                 LineUtils.addHeader(lines, sender);
                                 lines.add("&bUser Information &7(&b" + name + "&7)");
+                                lines.add("&fRank&7: &b" + (rank == null ? "None" : rank.getName()));
