@@ -52,3 +52,4 @@ public class UserCommand {
                                 lines.add(CC.color("&fPermissions&7: (&f" + user.getActivePermissionCount() + "&7)"));
                                 StringBuilder permissions = new StringBuilder();
                                 for (Permission permission : user.getPermissions()) {
+                                    if (!permission.hasTimedOut()) {
