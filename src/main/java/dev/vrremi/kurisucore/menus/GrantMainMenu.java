@@ -37,3 +37,4 @@ public class GrantMainMenu extends Menu {
                 int index = 0;
                 List<Rank> rankList = KurisuCore.getRankManager().getSortedRanks();
                 for (Rank rank : rankList) {
+                    ItemStack item = new ItemStack(CC.getMaterialFromColor(rank.getColor()));
