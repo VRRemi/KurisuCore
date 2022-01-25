@@ -80,3 +80,4 @@ public class TagsMenu extends Menu {
                 Player player = (Player) event.getWhoClicked();
                 User user = KurisuCore.getUserManager().getUser(player);
                 if (user == null) return;
+                SlotAction slotAction = getAction(event.getSlot());
