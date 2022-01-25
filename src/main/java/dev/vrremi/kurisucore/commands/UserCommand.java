@@ -71,3 +71,6 @@ public class UserCommand {
                             LineUtils.addHeader(lines, sender);
                             lines.forEach(line -> sender.sendMessage(CC.color(line)));
                         } else {
+                            ConfigUtils.sendMessage(sender, "still-loading", new HashMap<String, String>() {{
+                                put("{player}", target.getName());
+                            }});
