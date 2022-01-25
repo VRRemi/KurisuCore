@@ -57,3 +57,4 @@ public class UserCommand {
                                                 .append("&b")
                                                 .append(permission.getNode());
                                         if (permission.getTimeout() != Long.MAX_VALUE) {
+                                            permissions.append("&7 (expires in: &b")
