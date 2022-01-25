@@ -20,5 +20,10 @@ import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-public class TagsMenu {
+public class TagsMenu extends Menu {
+
+    public TagsMenu() {
+        super(Menus.TAGS_MENU);
+    }
+    
 }
