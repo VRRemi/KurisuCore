@@ -59,3 +59,4 @@ public class TagsMenu extends Menu {
                     inventory.setItem(index, item);
                     setAction(index, SlotAction.APPLY_TAG);
                     index++;
+                }
