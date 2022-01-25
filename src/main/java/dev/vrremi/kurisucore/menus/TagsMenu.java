@@ -91,3 +91,4 @@ public class TagsMenu extends Menu {
                 } else if (slotAction == SlotAction.RESET_TAG) {
                     user.resetTag();
                     ConfigUtils.sendMessage(player, "tag-reset");
+                    user.openMenu(Menus.TAGS_MENU, 0, false);
