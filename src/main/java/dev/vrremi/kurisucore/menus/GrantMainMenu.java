@@ -48,3 +48,4 @@ public class GrantMainMenu extends Menu {
                     LineUtils.addHeader(lines, player);
                     meta.setLore(CC.color(lines));
                     item.setItemMeta(meta);
+                    inventory.setItem(index, item);
