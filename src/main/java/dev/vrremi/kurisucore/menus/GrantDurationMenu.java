@@ -79,6 +79,7 @@ public class GrantDurationMenu extends Menu {
                     if (target != null) {
                         target.addRank(user.getTargetRank(), time);
                         ConfigUtils.sendMessage(player, "granted-rank", new HashMap<String, String>() {{
+                            put("{player}", target.getName());
     }
 
 }
