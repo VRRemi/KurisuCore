@@ -32,3 +32,5 @@ public class GrantMainMenu extends Menu {
             public Inventory getInventory(Player player) {
                 Inventory inventory = Bukkit.createInventory(null, 54, CC.color("&b&lGRANT MENU"));
                 User user = KurisuCore.getUserManager().getUser(player);
+                if (user == null) return inventory;
+                fill(inventory);
