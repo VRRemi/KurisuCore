@@ -85,6 +85,7 @@ public class GrantDurationMenu extends Menu {
                         }});
                         player.closeInventory();
                     } else {
+                        ConfigUtils.sendMessage(player, "player-not-online", new HashMap<String, String>() {{
     }
 
 }
