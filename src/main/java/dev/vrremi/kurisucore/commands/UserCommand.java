@@ -279,3 +279,8 @@ public class UserCommand {
                             User user = KurisuCore.getUserManager().getUser(target);
                             if (user != null) {
                                 user.removeRank(rank);
+                                ConfigUtils.sendMessage(sender, "user-rank-removed",
+                                        new HashMap<String, String>() {{
+                                            put("{player}", target.getName());
+                                            put("{rank}", rank.getName());
+                                        }});
