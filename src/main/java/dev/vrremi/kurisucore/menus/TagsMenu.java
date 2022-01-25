@@ -64,3 +64,4 @@ public class TagsMenu extends Menu {
                 ItemMeta resetMeta = reset.getItemMeta();
                 assert resetMeta != null;
                 resetMeta.setDisplayName(CC.color("&b&lRESET TAG"));
+                List<String> lines = new ArrayList<>();
