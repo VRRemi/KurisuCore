@@ -47,4 +47,5 @@ public class GrantDurationMenu extends Menu {
                 List<SlotAction> slotActions = Arrays.asList(SlotAction.APPLY_PERMANENT, SlotAction.APPLY_7_DAYS,
                         SlotAction.APPLY_1_MONTH, SlotAction.APPLY_3_MONTH);
                 for (int i = 0; i < 4; i++) {
+                    ItemStack item = new ItemStack(materials.get(i));
 }
