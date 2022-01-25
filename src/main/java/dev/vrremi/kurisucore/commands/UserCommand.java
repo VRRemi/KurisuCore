@@ -42,3 +42,4 @@ public class UserCommand {
                                 ranks.append("&b").append(rank.getName());
                                 if (user.getRankExpireTime(rank) != Long.MAX_VALUE) {
                                     ranks.append("&7 (expires in: &b")
+                                            .append(Time.millisToTime(user.getRankExpireTime(rank)))
