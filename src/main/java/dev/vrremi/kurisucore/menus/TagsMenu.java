@@ -58,3 +58,4 @@ public class TagsMenu extends Menu {
                     item.setItemMeta(meta);
                     inventory.setItem(index, item);
                     setAction(index, SlotAction.APPLY_TAG);
+                    index++;
