@@ -17,5 +17,6 @@ public class BroadcastCommand extends Command {
         super("broadcast", "Broadcast command", "/broadcast", Arrays.asList("broadcast", "bc"));
     }
 
+    @Override
     }
 }
