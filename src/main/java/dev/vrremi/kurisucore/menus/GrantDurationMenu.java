@@ -91,6 +91,7 @@ public class GrantDurationMenu extends Menu {
                     }
                 }
             }
+        }, 0);
     }
 
 }
