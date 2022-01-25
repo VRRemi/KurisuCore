@@ -28,3 +28,5 @@ public class GrantMainMenu extends Menu {
     @Override
     public void initMenu() {
         setPage(new Page() {
+            @Override
+            public Inventory getInventory(Player player) {
