@@ -40,4 +40,5 @@ public class GrantDurationMenu extends Menu {
                 if (user.getTarget() == null) return inventory;
                 if (user.getTargetRank() == null) return inventory;
                 fill(inventory);
+                List<String> names = Arrays.asList("&4Permanent", "&a7 days", "&e1 month", "&c3 months");
 }
