@@ -47,3 +47,4 @@ public class UserCommand {
                                 }
                                 ranks.append("&7, ");
                             }
+                            lines.add("&fRanks&7: &b" + ranks.substring(0, ranks.length() - 4));
