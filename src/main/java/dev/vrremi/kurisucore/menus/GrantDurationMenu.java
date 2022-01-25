@@ -48,4 +48,6 @@ public class GrantDurationMenu extends Menu {
                         SlotAction.APPLY_1_MONTH, SlotAction.APPLY_3_MONTH);
                 for (int i = 0; i < 4; i++) {
                     ItemStack item = new ItemStack(materials.get(i));
+                    ItemMeta meta = item.getItemMeta();
+                    assert meta != null;
 }
