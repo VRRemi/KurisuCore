@@ -32,3 +32,5 @@ public class UserCommand {
                 if (args.length > 1) {
                     Player target = Server.getOnline(args[1]);
                     if (target != null) {
+                        User user = KurisuCore.getUserManager().getUser(target);
+                        if (user != null) {
