@@ -63,6 +63,7 @@ public class GrantMainMenu extends Menu {
                 if (user == null) return;
                 SlotAction slotAction = getAction(event.getSlot());
                 if (slotAction == SlotAction.APPLY_RANK) {
+                    List<Rank> rankList = KurisuCore.getRankManager().getSortedRanks();
                 }
             }
         }, 0);
