@@ -30,3 +30,5 @@ public class UserCommand {
                 sendHelp(sender, label);
             } else if (args[0].equalsIgnoreCase("info")) {
                 if (args.length > 1) {
+                    Player target = Server.getOnline(args[1]);
+                    if (target != null) {
