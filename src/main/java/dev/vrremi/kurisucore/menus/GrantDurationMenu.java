@@ -76,6 +76,7 @@ public class GrantDurationMenu extends Menu {
                 long time = slotAction.getTime();
                 if (time > 0) {
                     User target = KurisuCore.getUserManager().getUser(user.getTarget());
+                    if (target != null) {
     }
 
 }
