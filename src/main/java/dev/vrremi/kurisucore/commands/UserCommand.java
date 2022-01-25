@@ -27,3 +27,4 @@ public class UserCommand {
     public boolean execute(CommandSender sender, String label, String[] args) {
         if (sender.hasPermission("kurisu.user")) {
             if (args.length == 0 || args[0].equalsIgnoreCase("help")) {
+                sendHelp(sender, label);
