@@ -60,3 +60,4 @@ public class TagsMenu extends Menu {
                     setAction(index, SlotAction.APPLY_TAG);
                     index++;
                 }
+                ItemStack reset = new ItemStack(Material.ANVIL);
