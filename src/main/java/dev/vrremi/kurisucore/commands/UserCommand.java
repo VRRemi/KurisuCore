@@ -36,3 +36,5 @@ public class UserCommand {
                         if (user != null) {
                             List<String> lines = new ArrayList<>();
                             LineUtils.addHeader(lines, sender);
+                            lines.add("&bUser Information &7(&b" + target.getName() + "&7)");
+                            StringBuilder ranks = new StringBuilder();
