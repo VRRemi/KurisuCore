@@ -43,3 +43,4 @@ public class GrantMainMenu extends Menu {
                     meta.setDisplayName(CC.color(rank.getColor() + rank.getName()));
                     List<String> lines = new ArrayList<>();
                     LineUtils.addHeader(lines, player);
+                    String name = user.getTarget() == null ? "null" : user.getTarget().getName();
