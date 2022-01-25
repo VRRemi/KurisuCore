@@ -19,5 +19,9 @@ import org.bukkit.inventory.meta.ItemMeta;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GrantMainMenu {
+public class GrantMainMenu extends Menu {
+
+    public GrantMainMenu() {
+        super(Menus.GRANT_MAIN_MENU);
+    }
 }
