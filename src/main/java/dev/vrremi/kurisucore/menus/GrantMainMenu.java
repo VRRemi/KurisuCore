@@ -66,6 +66,7 @@ public class GrantMainMenu extends Menu {
                     List<Rank> rankList = KurisuCore.getRankManager().getSortedRanks();
                     Rank rank = rankList.get(event.getSlot());
                     user.setTargetRank(rank);
+                    user.openMenu(Menus.GRANT_DURATION_MENU, 0, true);
                 }
             }
         }, 0);
