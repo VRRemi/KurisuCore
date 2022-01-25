@@ -75,3 +75,4 @@ public class TagsMenu extends Menu {
                 return inventory;
             }
 
+            @Override
