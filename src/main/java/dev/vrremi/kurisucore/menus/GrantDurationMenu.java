@@ -89,6 +89,7 @@ public class GrantDurationMenu extends Menu {
                             put("{player}", user.getTarget() == null ? "null" : user.getTarget().getName());
                         }});
                     }
+                }
     }
 
 }
