@@ -54,3 +54,4 @@ public class TagsMenu extends Menu {
                     if (user.getTag() == tag) {
                         meta.addEnchant(Enchantment.DURABILITY, 1, true);
                     }
+                    meta.addItemFlags(ItemFlag.values());
