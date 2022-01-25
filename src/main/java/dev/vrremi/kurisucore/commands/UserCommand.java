@@ -40,3 +40,5 @@ public class UserCommand {
                             StringBuilder ranks = new StringBuilder();
                             for (Rank rank : user.getRanks()) {
                                 ranks.append("&b").append(rank.getName());
+                                if (user.getRankExpireTime(rank) != Long.MAX_VALUE) {
+                                    ranks.append("&7 (expires in: &b")
