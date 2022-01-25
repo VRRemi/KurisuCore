@@ -66,6 +66,8 @@ public class GrantDurationMenu extends Menu {
             }
 
             @Override
+            public void onClick(InventoryClickEvent event) {
+                Player player = (Player) event.getWhoClicked();
     }
 
 }
