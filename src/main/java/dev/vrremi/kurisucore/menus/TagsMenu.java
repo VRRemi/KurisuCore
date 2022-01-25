@@ -66,3 +66,4 @@ public class TagsMenu extends Menu {
                 resetMeta.setDisplayName(CC.color("&b&lRESET TAG"));
                 List<String> lines = new ArrayList<>();
                 LineUtils.addHeader(lines, player);
+                lines.add("&7Click reset your tag");
