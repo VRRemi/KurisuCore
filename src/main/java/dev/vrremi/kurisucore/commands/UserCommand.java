@@ -56,3 +56,4 @@ public class UserCommand {
                                         permissions
                                                 .append("&b")
                                                 .append(permission.getNode());
+                                        if (permission.getTimeout() != Long.MAX_VALUE) {
