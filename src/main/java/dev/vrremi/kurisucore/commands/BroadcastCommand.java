@@ -11,5 +11,6 @@ import org.bukkit.command.CommandSender;
 import java.util.Arrays;
 import java.util.HashMap;
 
-public class BroadcastCommand {
+public class BroadcastCommand extends Command {
+    }
 }
