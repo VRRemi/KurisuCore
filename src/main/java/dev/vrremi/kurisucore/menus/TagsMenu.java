@@ -35,3 +35,4 @@ public class TagsMenu extends Menu {
                 fill(inventory);
                 User user  = KurisuCore.getUserManager().getUser(player);
                 if (user == null) return inventory;
+                LinkedList<Tag> tags = user.getAvailableTags();
