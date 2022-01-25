@@ -12,5 +12,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import java.sql.Connection;
+import java.sql.SQLException;
 public class UserCommand {
 }
