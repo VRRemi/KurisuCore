@@ -135,3 +135,7 @@ public class UserCommand {
                         User user = KurisuCore.getUserManager().getUser(target);
                         if (user != null) {
                             if (args.length > 3) {
+                                if (Pattern.compile("(\\d*w)?(\\d*d)?(\\d*h)?(\\d*m)?(\\d*s)?").matcher(args[3]).matches()) {
+                                    user.addPermission(new Permission(args[2],
+                                            System.currentTimeMillis() + Time.timeToMillis(args[3])));
+                                    ConfigUtils.sendMessage(sender, "user-timed-permission-added", new HashMap<String, String>() {{
