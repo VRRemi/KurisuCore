@@ -34,3 +34,5 @@ public class GrantMainMenu extends Menu {
                 User user = KurisuCore.getUserManager().getUser(player);
                 if (user == null) return inventory;
                 fill(inventory);
+                int index = 0;
+                List<Rank> rankList = KurisuCore.getRankManager().getSortedRanks();
