@@ -82,3 +82,4 @@ public class UserCommand {
                             if (userDataManager.playerExists(args[1], connection)) {
                                 UUID uuid = userDataManager.getUUID(args[1], connection);
                                 String name = userDataManager.getName(uuid, connection);
+                                Rank rank = userDataManager.getRanks(uuid, connection).getHighestRank();
