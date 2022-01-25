@@ -52,3 +52,5 @@ public class TagsMenu extends Menu {
                     LineUtils.addHeader(lines, player);
                     meta.setLore(CC.color(lines));
                     if (user.getTag() == tag) {
+                        meta.addEnchant(Enchantment.DURABILITY, 1, true);
+                    }
