@@ -28,5 +28,6 @@ public class BroadcastCommand extends Command {
                 String message = messageSB.substring(0, messageSB.length() - 1);
                 String format = KurisuCore.getConfigManager().getMessage("broadcast-format").replace("{message}", message);
                 Bukkit.getOnlinePlayers().forEach(player -> player.sendMessage(CC.color(format)));
+            } else {
     }
 }
