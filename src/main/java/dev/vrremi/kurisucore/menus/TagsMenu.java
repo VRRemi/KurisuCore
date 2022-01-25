@@ -87,3 +87,4 @@ public class TagsMenu extends Menu {
                     ConfigUtils.sendMessage(player, "tag-applied", new HashMap<String, String>() {{
                         put("{tag}", tag.getName());
                     }});
+                    user.openMenu(Menus.TAGS_MENU, 0, false);
