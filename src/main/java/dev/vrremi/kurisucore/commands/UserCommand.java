@@ -86,3 +86,5 @@ public class UserCommand {
                                 List<Permission> permissions =
                                         userDataManager.getPermissions(uuid, connection).stream().filter(Permission::isActive).collect(Collectors.toList());
                                 List<String> lines = new ArrayList<>();
+                                LineUtils.addHeader(lines, sender);
+                                lines.add("&bUser Information &7(&b" + name + "&7)");
