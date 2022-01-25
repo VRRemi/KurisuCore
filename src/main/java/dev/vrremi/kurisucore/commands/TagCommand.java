@@ -6,6 +6,7 @@ import dev.vrremi.kurisucore.data.menu.Menus;
 import dev.vrremi.kurisucore.utils.ConfigUtils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 
 public class TagCommand {
 }
