@@ -26,4 +26,5 @@ public class TagCommand extends Command {
                         user.openMenu(Menus.TAGS_MENU, 0, false);
                     } else {
                         ConfigUtils.sendMessage(sender, "no-tags-available");
+                    }
 }
