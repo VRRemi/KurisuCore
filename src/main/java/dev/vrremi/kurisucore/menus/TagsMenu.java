@@ -92,3 +92,9 @@ public class TagsMenu extends Menu {
                     user.resetTag();
                     ConfigUtils.sendMessage(player, "tag-reset");
                     user.openMenu(Menus.TAGS_MENU, 0, false);
+                }
+            }
+        }, 0);
+    }
+
+}
