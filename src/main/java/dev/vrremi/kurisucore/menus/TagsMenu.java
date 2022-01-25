@@ -62,3 +62,4 @@ public class TagsMenu extends Menu {
                 }
                 ItemStack reset = new ItemStack(Material.ANVIL);
                 ItemMeta resetMeta = reset.getItemMeta();
+                assert resetMeta != null;
