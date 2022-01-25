@@ -21,5 +21,6 @@ public class BroadcastCommand extends Command {
     public boolean execute(CommandSender sender, String label, String[] args) {
         if (sender.hasPermission("kurisu.broadcast")) {
             if (args.length > 0) {
+                StringBuilder messageSB = new StringBuilder();
     }
 }
