@@ -42,4 +42,5 @@ public class GrantDurationMenu extends Menu {
                 fill(inventory);
                 List<String> names = Arrays.asList("&4Permanent", "&a7 days", "&e1 month", "&c3 months");
                 List<Material> materials = Arrays.asList(Material.REDSTONE_BLOCK, Material.GREEN_WOOL,
+                        Material.YELLOW_WOOL, Material.RED_WOOL);
 }
