@@ -16,4 +16,6 @@ public class TagCommand extends Command {
         super("tag", "Tag command", "/tag", Arrays.asList("tag", "tags", "prefix", "prefixes"));
     }
 
+    @Override
+    public boolean execute(CommandSender sender, String label, String[] args) {
 }
