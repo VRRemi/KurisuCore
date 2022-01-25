@@ -88,6 +88,7 @@ public class GrantDurationMenu extends Menu {
                         ConfigUtils.sendMessage(player, "player-not-online", new HashMap<String, String>() {{
                             put("{player}", user.getTarget() == null ? "null" : user.getTarget().getName());
                         }});
+                    }
     }
 
 }
