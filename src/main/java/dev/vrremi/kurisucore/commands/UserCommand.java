@@ -178,3 +178,9 @@ public class UserCommand {
                         User user = KurisuCore.getUserManager().getUser(target);
                         if (user != null) {
                             user.removePermission(args[2]);
+                            ConfigUtils.sendMessage(sender, "user-permission-removed", new HashMap<String, String>() {{
+                                put("{player}", target.getName());
+                                put("{permission}", args[2]);
+                            }});
+                        } else {
+                            ConfigUtils.sendMessage(sender, "still-loading", new HashMap<String, String>() {{
