@@ -36,3 +36,4 @@ public class GrantMainMenu extends Menu {
                 fill(inventory);
                 int index = 0;
                 List<Rank> rankList = KurisuCore.getRankManager().getSortedRanks();
+                for (Rank rank : rankList) {
