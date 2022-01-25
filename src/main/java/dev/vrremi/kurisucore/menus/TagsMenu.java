@@ -31,3 +31,4 @@ public class TagsMenu extends Menu {
         setPage(new Page() {
             @Override
             public Inventory getInventory(Player player) {
+                Inventory inventory = Bukkit.createInventory(null, 54, CC.color("&b&lTAGS"));
