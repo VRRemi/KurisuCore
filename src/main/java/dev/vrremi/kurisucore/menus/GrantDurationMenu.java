@@ -52,4 +52,6 @@ public class GrantDurationMenu extends Menu {
                     assert meta != null;
                     meta.setDisplayName(CC.color(names.get(i)));
                     List<String> lines = new ArrayList<>();
+                    LineUtils.addHeader(lines, player);
+                    String name = user.getTarget() == null ? "null" : user.getTarget().getName();
 }
