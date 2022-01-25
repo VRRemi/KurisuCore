@@ -88,3 +88,4 @@ public class TagsMenu extends Menu {
                         put("{tag}", tag.getName());
                     }});
                     user.openMenu(Menus.TAGS_MENU, 0, false);
+                } else if (slotAction == SlotAction.RESET_TAG) {
