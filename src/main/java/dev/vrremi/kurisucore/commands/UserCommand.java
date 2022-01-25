@@ -139,3 +139,7 @@ public class UserCommand {
                                     user.addPermission(new Permission(args[2],
                                             System.currentTimeMillis() + Time.timeToMillis(args[3])));
                                     ConfigUtils.sendMessage(sender, "user-timed-permission-added", new HashMap<String, String>() {{
+                                        put("{player}", target.getName());
+                                        put("{permission}", args[2]);
+                                        put("{time}", Time.millisToTime(System.currentTimeMillis() + Time.timeToMillis(args[3])));
+                                    }});
