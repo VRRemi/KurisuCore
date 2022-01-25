@@ -166,3 +166,9 @@ public class UserCommand {
                         }});
                     }
                 } else {
+                    ConfigUtils.sendMessage(sender, "invalid-usage", new HashMap<String, String>() {{
+                        put("{usage}", CC.formatPlaceholders("/" + label + " addperm <player> <permission> [timespec]", "&c",
+                                "&4"));
+                    }});
+                }
+            } else if (args[0].equalsIgnoreCase("delperm")) {
