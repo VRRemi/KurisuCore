@@ -24,4 +24,5 @@ public class TagCommand extends Command {
                 if (user != null) {
                     if (user.getAvailableTags().size() > 0) {
                         user.openMenu(Menus.TAGS_MENU, 0, false);
+                    } else {
 }
