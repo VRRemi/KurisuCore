@@ -4,5 +4,6 @@ import dev.vrremi.kurisucore.KurisuCore;
 import dev.vrremi.kurisucore.data.Permission;
 import dev.vrremi.kurisucore.data.Rank;
 import dev.vrremi.kurisucore.data.User;
+import dev.vrremi.kurisucore.managers.ConnectionPoolManager;
 public class UserCommand {
 }
