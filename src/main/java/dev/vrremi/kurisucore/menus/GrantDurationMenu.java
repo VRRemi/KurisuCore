@@ -84,6 +84,7 @@ public class GrantDurationMenu extends Menu {
                             put("{time}", time == Long.MAX_VALUE ? "permanent" : Time.millisToTime(time));
                         }});
                         player.closeInventory();
+                    } else {
     }
 
 }
