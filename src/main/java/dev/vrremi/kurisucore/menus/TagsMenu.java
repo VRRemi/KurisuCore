@@ -65,3 +65,4 @@ public class TagsMenu extends Menu {
                 assert resetMeta != null;
                 resetMeta.setDisplayName(CC.color("&b&lRESET TAG"));
                 List<String> lines = new ArrayList<>();
+                LineUtils.addHeader(lines, player);
