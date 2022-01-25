@@ -5,6 +5,7 @@ import dev.vrremi.kurisucore.data.User;
 import dev.vrremi.kurisucore.data.menu.Menus;
 import dev.vrremi.kurisucore.utils.ConfigUtils;
 import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
 
 public class TagCommand {
 }
