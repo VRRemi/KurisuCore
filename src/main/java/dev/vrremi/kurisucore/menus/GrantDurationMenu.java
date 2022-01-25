@@ -35,4 +35,9 @@ public class GrantDurationMenu extends Menu {
             @Override
             public Inventory getInventory(Player player) {
                 Inventory inventory = Bukkit.createInventory(null, 27, CC.color("&b&lGRANT DURATION"));
+                User user = KurisuCore.getUserManager().getUser(player);
+                if (user == null) return inventory;
+                if (user.getTarget() == null) return inventory;
+                if (user.getTargetRank() == null) return inventory;
+                fill(inventory);
 }
