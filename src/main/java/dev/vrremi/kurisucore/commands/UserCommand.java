@@ -61,3 +61,4 @@ public class UserCommand {
                                                     .append(Time.millisToTime(permission.getTimeout()))
                                                     .append("&7)");
                                         }
+                                        permissions.append("&7, ");
