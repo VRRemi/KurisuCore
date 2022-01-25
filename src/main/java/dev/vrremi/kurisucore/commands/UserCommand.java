@@ -80,3 +80,5 @@ public class UserCommand {
                         try {
                             UserDataManager userDataManager = KurisuCore.getUserDataManager();
                             if (userDataManager.playerExists(args[1], connection)) {
+                                UUID uuid = userDataManager.getUUID(args[1], connection);
+                                String name = userDataManager.getName(uuid, connection);
