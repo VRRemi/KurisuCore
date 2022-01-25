@@ -72,3 +72,5 @@ public class TagsMenu extends Menu {
                 reset.setItemMeta(resetMeta);
                 inventory.setItem(49, reset);
                 setAction(49, SlotAction.RESET_TAG);
+                return inventory;
+            }
