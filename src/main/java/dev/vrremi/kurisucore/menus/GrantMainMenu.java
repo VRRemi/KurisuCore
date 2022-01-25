@@ -11,5 +11,6 @@ import dev.vrremi.kurisucore.utils.CC;
 import dev.vrremi.kurisucore.utils.LineUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
+import org.bukkit.event.inventory.InventoryClickEvent;
 public class GrantMainMenu {
 }
