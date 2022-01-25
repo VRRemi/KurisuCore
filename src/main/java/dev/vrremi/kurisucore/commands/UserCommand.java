@@ -149,3 +149,7 @@ public class UserCommand {
                                     }});
                                 }
                             } else {
+                                user.addPermission(new Permission(args[2], Long.MAX_VALUE));
+                                ConfigUtils.sendMessage(sender, "user-permission-added", new HashMap<String, String>() {{
+                                    put("{player}", target.getName());
+                                    put("{permission}", args[2]);
