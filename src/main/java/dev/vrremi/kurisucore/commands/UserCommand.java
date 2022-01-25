@@ -7,5 +7,6 @@ import dev.vrremi.kurisucore.data.User;
 import dev.vrremi.kurisucore.managers.ConnectionPoolManager;
 import dev.vrremi.kurisucore.managers.data.UserDataManager;
 import dev.vrremi.kurisucore.utils.*;
+import org.bukkit.command.Command;
 public class UserCommand {
 }
