@@ -7,5 +7,6 @@ import dev.vrremi.kurisucore.utils.Server;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
 public class GameModeCommand {
 }
