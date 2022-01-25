@@ -62,3 +62,5 @@ public class UserCommand {
                                                     .append("&7)");
                                         }
                                         permissions.append("&7, ");
+                                    }
+                                }
