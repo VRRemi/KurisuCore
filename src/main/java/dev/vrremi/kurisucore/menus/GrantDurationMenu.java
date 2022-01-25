@@ -81,6 +81,7 @@ public class GrantDurationMenu extends Menu {
                         ConfigUtils.sendMessage(player, "granted-rank", new HashMap<String, String>() {{
                             put("{player}", target.getName());
                             put("{rank}", user.getTargetRank().getName());
+                            put("{time}", time == Long.MAX_VALUE ? "permanent" : Time.millisToTime(time));
     }
 
 }
