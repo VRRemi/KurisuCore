@@ -12,5 +12,9 @@ import java.util.Arrays;
 import java.util.HashMap;
 
 public class BroadcastCommand extends Command {
+
+    public BroadcastCommand() {
+        super("broadcast", "Broadcast command", "/broadcast", Arrays.asList("broadcast", "bc"));
+    }
     }
 }
