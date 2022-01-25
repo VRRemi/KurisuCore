@@ -90,6 +90,7 @@ public class GrantDurationMenu extends Menu {
                         }});
                     }
                 }
+            }
     }
 
 }
