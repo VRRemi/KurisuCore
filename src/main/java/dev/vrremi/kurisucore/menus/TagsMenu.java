@@ -30,3 +30,4 @@ public class TagsMenu extends Menu {
     public void initMenu() {
         setPage(new Page() {
             @Override
+            public Inventory getInventory(Player player) {
