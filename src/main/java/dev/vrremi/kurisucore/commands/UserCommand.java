@@ -192,3 +192,9 @@ public class UserCommand {
                             put("{player}", args[1]);
                         }});
                     }
+                } else {
+                    ConfigUtils.sendMessage(sender, "invalid-usage", new HashMap<String, String>() {{
+                        put("{usage}", CC.formatPlaceholders("/" + label + " delperm <player> <permission>",
+                                "&c",
+                                "&4"));
+                    }});
