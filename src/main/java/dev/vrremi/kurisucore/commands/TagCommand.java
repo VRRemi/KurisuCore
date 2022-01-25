@@ -20,4 +20,5 @@ public class TagCommand extends Command {
     public boolean execute(CommandSender sender, String label, String[] args) {
         if (sender.hasPermission("kurisu.tags")) {
             if (sender instanceof Player) {
+                User user = FubukiCore.getUserManager().getUser((Player) sender);
 }
