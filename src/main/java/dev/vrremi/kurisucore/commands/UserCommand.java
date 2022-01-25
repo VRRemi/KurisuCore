@@ -75,3 +75,6 @@ public class UserCommand {
                                 put("{player}", target.getName());
                             }});
                         }
+                    } else {
+                        Connection connection = KurisuCore.getConnectionPoolManager().getConnection();
+                        try {
