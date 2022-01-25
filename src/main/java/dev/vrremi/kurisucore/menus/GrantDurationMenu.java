@@ -70,6 +70,8 @@ public class GrantDurationMenu extends Menu {
                 Player player = (Player) event.getWhoClicked();
                 User user = KurisuCore.getUserManager().getUser(player);
                 if (user == null) return;
+                if (user.getTarget() == null) return;
+                if (user.getTargetRank() == null) return;
     }
 
 }
