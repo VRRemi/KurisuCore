@@ -116,3 +116,14 @@ public class UserCommand {
                                     put("{player}", args[1]);
                                 }});
                             }
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        } finally {
+                            ConnectionPoolManager.close(connection);
+                        }
+                    }
+                } else {
+                    ConfigUtils.sendMessage(sender, "invalid-usage", new HashMap<String, String>() {{
+                        put("{usage}", CC.formatPlaceholders("/" + label + " info <player>", "&c",
+                                "&4"));
+                    }});
