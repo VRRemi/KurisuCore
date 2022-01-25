@@ -54,4 +54,5 @@ public class GrantDurationMenu extends Menu {
                     List<String> lines = new ArrayList<>();
                     LineUtils.addHeader(lines, player);
                     String name = user.getTarget() == null ? "null" : user.getTarget().getName();
+                    lines.add("&7Click to grant &b&n" + name + "&r &7with " + user.getTargetRank().getColor() + user.getTargetRank().getName());
 }
