@@ -272,3 +272,4 @@ public class UserCommand {
                 }
             } else if (args[0].equalsIgnoreCase("delrank")) {
                 if (args.length > 2) {
+                    Player target = Server.getOnline(args[1]);
