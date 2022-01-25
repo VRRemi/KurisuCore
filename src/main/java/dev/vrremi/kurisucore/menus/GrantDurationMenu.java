@@ -29,5 +29,9 @@ public class GrantDurationMenu extends Menu {
         super(Menus.GRANT_DURATION_MENU);
     }
 
-    
+    @Override
+    public void initMenu() {
+        setPage(new Page() {
+            @Override
+            public Inventory getInventory(Player player) {
 }
