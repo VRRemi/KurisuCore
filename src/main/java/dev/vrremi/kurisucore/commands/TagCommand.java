@@ -22,4 +22,5 @@ public class TagCommand extends Command {
             if (sender instanceof Player) {
                 User user = FubukiCore.getUserManager().getUser((Player) sender);
                 if (user != null) {
+                    if (user.getAvailableTags().size() > 0) {
 }
