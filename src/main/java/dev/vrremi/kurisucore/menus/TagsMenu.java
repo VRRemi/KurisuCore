@@ -27,3 +27,5 @@ public class TagsMenu extends Menu {
     }
 
     @Override
+    public void initMenu() {
+        setPage(new Page() {
