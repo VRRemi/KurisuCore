@@ -24,5 +24,6 @@ public class BroadcastCommand extends Command {
                 StringBuilder messageSB = new StringBuilder();
                 for (String arg : args) {
                     messageSB.append(arg).append(" ");
+                }
     }
 }
