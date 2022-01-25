@@ -315,3 +315,16 @@ public class UserCommand {
         return true;
     }
 
+    private void sendHelp(CommandSender sender, String label) {
+        List<String> lines = new ArrayList<>();
+        LineUtils.addHeader(lines, sender);
+        lines.add("&bUser Help:");
+        lines.add(" /{label} info <player>");
+        lines.add(" /{label} addperm <player> <permission> [timespec]");
+        lines.add(" /{label} delperm <player> <permission>");
+        lines.add(" /{label} addrankperm <player> <rank>");
+        lines.add(" /{label} delrankperm <player> <rank>");
+        lines.add(" /{label} delrank <player> <rank>");
+        LineUtils.addHeader(lines, sender);
+        lines.stream().map(line -> CC.color(CC.formatPlaceholders(line.replace("{label}", label), "&f", "&7"))).forEach(sender::sendMessage);
+    }
