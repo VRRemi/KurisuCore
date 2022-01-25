@@ -15,4 +15,5 @@ public class TagCommand extends Command {
     public TagCommand() {
         super("tag", "Tag command", "/tag", Arrays.asList("tag", "tags", "prefix", "prefixes"));
     }
+
 }
