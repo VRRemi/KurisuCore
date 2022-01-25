@@ -18,4 +18,8 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class UserCommand {
+
+    public UserCommand() {
+        super("user", "User command", "/user", Collections.singletonList("user"));
+    }
 }
