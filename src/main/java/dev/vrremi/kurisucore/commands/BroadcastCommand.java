@@ -26,5 +26,6 @@ public class BroadcastCommand extends Command {
                     messageSB.append(arg).append(" ");
                 }
                 String message = messageSB.substring(0, messageSB.length() - 1);
+                String format = KurisuCore.getConfigManager().getMessage("broadcast-format").replace("{message}", message);
     }
 }
