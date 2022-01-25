@@ -109,3 +109,6 @@ public class UserCommand {
                                 } else {
                                     lines.add("&fPermissions&7: &fNone");
                                 }
+                                LineUtils.addHeader(lines, sender);
+                                lines.forEach(line -> sender.sendMessage(CC.color(line)));
+                            } else {
