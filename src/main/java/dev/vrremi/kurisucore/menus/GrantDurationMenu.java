@@ -77,6 +77,7 @@ public class GrantDurationMenu extends Menu {
                 if (time > 0) {
                     User target = KurisuCore.getUserManager().getUser(user.getTarget());
                     if (target != null) {
+                        target.addRank(user.getTargetRank(), time);
     }
 
 }
