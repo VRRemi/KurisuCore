@@ -47,3 +47,4 @@ public class GrantMainMenu extends Menu {
                     lines.add("&7Click to grant &b&n" + name + "&r &7with " + rank.getColor() + rank.getName());
                     LineUtils.addHeader(lines, player);
                     meta.setLore(CC.color(lines));
+                    item.setItemMeta(meta);
