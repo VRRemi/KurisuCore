@@ -160,3 +160,9 @@ public class UserCommand {
                                 put("{player}", target.getName());
                             }});
                         }
+                    } else {
+                        ConfigUtils.sendMessage(sender, "player-not-online", new HashMap<String, String>() {{
+                            put("{player}", args[1]);
+                        }});
+                    }
+                } else {
