@@ -8,5 +8,6 @@ import dev.vrremi.kurisucore.managers.ConnectionPoolManager;
 import dev.vrremi.kurisucore.managers.data.UserDataManager;
 import dev.vrremi.kurisucore.utils.*;
 import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
 public class UserCommand {
 }
