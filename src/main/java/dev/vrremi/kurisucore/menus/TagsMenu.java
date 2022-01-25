@@ -50,3 +50,4 @@ public class TagsMenu extends Menu {
                     LineUtils.addHeader(lines, player);
                     lines.add("&7Click to apply the &b&n" + tag.getName() + "&7 tag");
                     LineUtils.addHeader(lines, player);
+                    meta.setLore(CC.color(lines));
