@@ -65,3 +65,4 @@ public class UserCommand {
                                     }
                                 }
                                 lines.add(CC.color(permissions.substring(0, permissions.length() - 4)));
+                            } else {
