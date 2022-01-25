@@ -28,3 +28,5 @@ public class UserCommand {
         if (sender.hasPermission("kurisu.user")) {
             if (args.length == 0 || args[0].equalsIgnoreCase("help")) {
                 sendHelp(sender, label);
+            } else if (args[0].equalsIgnoreCase("info")) {
+                if (args.length > 1) {
