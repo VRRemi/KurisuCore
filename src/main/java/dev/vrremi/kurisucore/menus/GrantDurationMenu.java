@@ -61,4 +61,6 @@ public class GrantDurationMenu extends Menu {
                     inventory.setItem(slots.get(i), item);
                     setAction(slots.get(i), slotActions.get(i));
                 }
+
+                return inventory;
 }
