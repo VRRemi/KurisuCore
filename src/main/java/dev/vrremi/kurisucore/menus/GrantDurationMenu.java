@@ -34,4 +34,5 @@ public class GrantDurationMenu extends Menu {
         setPage(new Page() {
             @Override
             public Inventory getInventory(Player player) {
+                Inventory inventory = Bukkit.createInventory(null, 27, CC.color("&b&lGRANT DURATION"));
 }
