@@ -200,3 +200,15 @@ public class UserCommand {
                     }});
                 }
             } else if (args[0].equalsIgnoreCase("addrankperm")) {
+                if (args.length > 2) {
+                    Player target = Server.getOnline(args[1]);
+                    if (target != null) {
+                        Rank rank = KurisuCore.getRankManager().getRank(args[2]);
+                        if (rank != null) {
+                            User user = KurisuCore.getUserManager().getUser(target);
+                            if (user != null) {
+                                rank.getPermissions().forEach(user::addPermission);
+                                ConfigUtils.sendMessage(sender, "user-rank-permission-added", new HashMap<String, String>() {{
+                                    put("{player}", target.getName());
+                                    put("{rank}", rank.getName());
+                                }});
