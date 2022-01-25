@@ -42,3 +42,4 @@ public class TagsMenu extends Menu {
                         index++;
                         continue;
                     }
+                    ItemStack item = new ItemStack(Material.NAME_TAG);
