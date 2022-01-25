@@ -153,3 +153,8 @@ public class UserCommand {
                                 ConfigUtils.sendMessage(sender, "user-permission-added", new HashMap<String, String>() {{
                                     put("{player}", target.getName());
                                     put("{permission}", args[2]);
+                                }});
+                            }
+                        } else {
+                            ConfigUtils.sendMessage(sender, "still-loading", new HashMap<String, String>() {{
+                                put("{player}", target.getName());
