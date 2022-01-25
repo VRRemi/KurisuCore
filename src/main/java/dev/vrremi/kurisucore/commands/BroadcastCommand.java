@@ -20,5 +20,6 @@ public class BroadcastCommand extends Command {
     @Override
     public boolean execute(CommandSender sender, String label, String[] args) {
         if (sender.hasPermission("kurisu.broadcast")) {
+            if (args.length > 0) {
     }
 }
