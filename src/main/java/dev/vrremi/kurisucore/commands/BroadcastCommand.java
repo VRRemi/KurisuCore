@@ -35,5 +35,6 @@ public class BroadcastCommand extends Command {
             }
         } else {
             ConfigUtils.sendMessage(sender, "no-permission");
+        }
     }
 }
