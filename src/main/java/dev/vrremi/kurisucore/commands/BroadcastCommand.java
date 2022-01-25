@@ -29,5 +29,6 @@ public class BroadcastCommand extends Command {
                 String format = KurisuCore.getConfigManager().getMessage("broadcast-format").replace("{message}", message);
                 Bukkit.getOnlinePlayers().forEach(player -> player.sendMessage(CC.color(format)));
             } else {
+                ConfigUtils.sendMessage(sender, "invalid-usage", new HashMap<String, String>() {{
     }
 }
