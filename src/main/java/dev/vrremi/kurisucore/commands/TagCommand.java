@@ -27,4 +27,7 @@ public class TagCommand extends Command {
                     } else {
                         ConfigUtils.sendMessage(sender, "no-tags-available");
                     }
+                }
+            } else {
+                ConfigUtils.sendMessage(sender, "must-be-player");
 }
