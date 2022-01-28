@@ -165,3 +165,8 @@ public class BanCommand extends Command {
                     }
                     if (target != null) {
                         User user = KurisuCore.getUserManager().getUser(target);
+                        if (user != null) {
+                            user.unban(reason, punisher);
+                            ConfigUtils.sendMessage(sender, "user-unbanned", new HashMap<String, String>() {{
+                                put("{player}", target.getName());
+                            }});
