@@ -39,3 +39,8 @@ public class BanCommand extends Command {
                         }
                         reason = reasonSB.substring(0, reasonSB.length() - 1);
                     }
+                    String finalReason = reason;
+                    if (target != null) {
+                        User user = KurisuCore.getUserManager().getUser(target);
+                        if (user != null) {
+                            user.ban(reason, punisher);
