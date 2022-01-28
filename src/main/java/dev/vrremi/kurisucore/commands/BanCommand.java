@@ -31,3 +31,9 @@ public class BanCommand extends Command {
             if (label.equalsIgnoreCase("ban")) {
                 if (args.length > 0) {
                     Player target = Server.getOnline(args[0]);
+                    String reason = "";
+                    if (args.length > 1) {
+                        StringBuilder reasonSB = new StringBuilder();
+                        for (int i = 1; i < args.length; i++) {
+                            reasonSB.append(args[i]).append(" ");
+                        }
