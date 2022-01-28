@@ -29,6 +29,13 @@ public class GameModeCommand extends Command{
                 if (args.length > 0) {
                     if (Arrays.stream(GameMode.values()).anyMatch(gameMode -> gameMode.toString().equalsIgnoreCase(args[0]))) {
                         GameMode gameMode = GameMode.valueOf(args[0].toUpperCase());
+                        if (sender instanceof Player) {
+                            Player player = (Player) sender;
+                            KurisuCore.getGameModeManager().setGameMode(player, gameMode);
+                            ConfigUtils.sendMessage(sender, "set-gamemode", new HashMap<String,String>() {{
+                                put("{player}", player.getName());
+                                put("{gamemode}", gameMode.toString().toLowerCase());
+                            }});
                     }
                 }
             }
