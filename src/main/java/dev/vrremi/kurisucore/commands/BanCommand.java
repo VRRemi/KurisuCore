@@ -145,3 +145,8 @@ public class BanCommand extends Command {
                         ConfigUtils.sendMessage(sender, "invalid-format", new HashMap<String, String>() {{
                             put("{format}", "7d24h60m60s");
                         }});
+                    }
+                } else {
+                    ConfigUtils.sendMessage(sender, "invalid-usage", new HashMap<String, String>() {{
+                        put("{usage}", CC.formatPlaceholders("/" + label + " <player> <duration> [reason]", "&c",
+                                "&4"));
