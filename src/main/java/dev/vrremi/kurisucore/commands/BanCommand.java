@@ -62,3 +62,9 @@ public class BanCommand extends Command {
                                         KurisuCore.getUserDataManager().getPunishments(uuid, connection);
                                 punishments.add(new Punishment(PunishmentType.BAN, reason, punisher, System.currentTimeMillis(),
                                         Long.MAX_VALUE));
+                                KurisuCore.getUserDataManager().setPunishments(uuid, punishments, connection);
+                                String realName = KurisuCore.getUserDataManager().getName(uuid, connection);
+                                ConfigUtils.sendMessage(sender, "user-banned", new HashMap<String, String>() {{
+                                    put("{player}", realName);
+                                    put("{reason}", finalReason.isEmpty() ? "No reason provided" : finalReason);
+                                }});
