@@ -93,6 +93,8 @@ public class GameModeCommand extends Command {
                                 put("{player}", target.getName());
                                 put("{gamemode}", finalGameMode.toString().toLowerCase());
                             }});
+                        } else {
+                            ConfigUtils.sendMessage(sender, "player-not-online", new HashMap<String, String>() {{
                 }
             }
         } else {
