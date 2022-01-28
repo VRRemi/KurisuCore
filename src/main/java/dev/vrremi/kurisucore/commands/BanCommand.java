@@ -57,3 +57,6 @@ public class BanCommand extends Command {
                         Connection connection = KurisuCore.getConnectionPoolManager().getConnection();
                         try {
                             if (KurisuCore.getUserDataManager().playerExists(args[0], connection)) {
+                                UUID uuid = KurisuCore.getUserDataManager().getUUID(args[0], connection);
+                                List<Punishment> punishments =
+                                        KurisuCore.getUserDataManager().getPunishments(uuid, connection);
