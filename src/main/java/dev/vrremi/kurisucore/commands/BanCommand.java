@@ -98,3 +98,13 @@ public class BanCommand extends Command {
                             }
                             reason = reasonSB.substring(0, reasonSB.length() - 1);
                         }
+                        String finalReason = reason;
+                        if (target != null) {
+                            User user = KurisuCore.getUserManager().getUser(target);
+                            if (user != null) {
+                                user.tempBan(reason, punisher, delay);
+                                ConfigUtils.sendMessage(sender, "user-temp-banned", new HashMap<String, String>() {{
+                                    put("{player}", target.getName());
+                                    put("{reason}", finalReason.isEmpty() ? "No reason provided" : finalReason);
+                                    put("{time}", Time.millisToTime(delay + System.currentTimeMillis()));
+                                }});
