@@ -170,3 +170,7 @@ public class BanCommand extends Command {
                             ConfigUtils.sendMessage(sender, "user-unbanned", new HashMap<String, String>() {{
                                 put("{player}", target.getName());
                             }});
+                        } else {
+                            ConfigUtils.sendMessage(sender, "error-unbanning", new HashMap<String, String>() {{
+                                put("{player}", target.getName());
+                            }});
