@@ -106,6 +106,12 @@ public class GameModeCommand extends Command {
                                 put("{player}", player.getName());
                                 put("{gamemode}", finalGameMode.toString().toLowerCase());
                             }});
+                        } else {
+                            ConfigUtils.sendMessage(sender, "invalid-usage", new HashMap<String, String>() {{
+                                put("{usage}", CC.formatPlaceholders("/" + label + " <player>", "&c", "&4"));
+                            }});
+                        }
+                    }
                 }
             }
         } else {
