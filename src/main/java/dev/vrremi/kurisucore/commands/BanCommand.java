@@ -37,3 +37,5 @@ public class BanCommand extends Command {
                         for (int i = 1; i < args.length; i++) {
                             reasonSB.append(args[i]).append(" ");
                         }
+                        reason = reasonSB.substring(0, reasonSB.length() - 1);
+                    }
