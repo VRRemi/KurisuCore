@@ -60,3 +60,5 @@ public class BanCommand extends Command {
                                 UUID uuid = KurisuCore.getUserDataManager().getUUID(args[0], connection);
                                 List<Punishment> punishments =
                                         KurisuCore.getUserDataManager().getPunishments(uuid, connection);
+                                punishments.add(new Punishment(PunishmentType.BAN, reason, punisher, System.currentTimeMillis(),
+                                        Long.MAX_VALUE));
