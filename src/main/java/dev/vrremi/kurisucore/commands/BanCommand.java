@@ -72,3 +72,4 @@ public class BanCommand extends Command {
                                 ConfigUtils.sendMessage(sender, "player-doesnt-exist", new HashMap<String, String>() {{
                                     put("{player}", args[0]);
                                 }});
+                            }
