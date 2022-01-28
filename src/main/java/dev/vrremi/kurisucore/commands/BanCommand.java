@@ -187,3 +187,6 @@ public class BanCommand extends Command {
                                         Long.MAX_VALUE));
                                 KurisuCore.getUserDataManager().setPunishments(uuid, punishments, connection);
                                 String realName = KurisuCore.getUserDataManager().getName(uuid, connection);
+                                ConfigUtils.sendMessage(sender, "user-unbanned", new HashMap<String, String>() {{
+                                    put("{player}", realName);
+                                }});
