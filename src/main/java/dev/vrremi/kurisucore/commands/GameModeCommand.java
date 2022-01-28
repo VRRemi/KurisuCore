@@ -80,6 +80,8 @@ public class GameModeCommand extends Command{
                             gameMode = GameMode.SPECTATOR;
                             break;
                         case "gma":
+                            gameMode = GameMode.ADVENTURE;
+                            break;
                 }
             }
         }
