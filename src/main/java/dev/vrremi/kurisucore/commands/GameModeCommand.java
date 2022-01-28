@@ -71,6 +71,9 @@ public class GameModeCommand extends Command{
                     GameMode gameMode = null;
                     switch (label.toLowerCase()) {
                         case "gmc":
+                            gameMode = GameMode.CREATIVE;
+                            break;
+                        case "gms":
                 }
             }
         }
