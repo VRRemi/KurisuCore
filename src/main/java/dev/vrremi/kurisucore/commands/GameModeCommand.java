@@ -74,6 +74,9 @@ public class GameModeCommand extends Command{
                             gameMode = GameMode.CREATIVE;
                             break;
                         case "gms":
+                            gameMode = GameMode.SURVIVAL;
+                            break;
+                        case "gmsp":
                 }
             }
         }
