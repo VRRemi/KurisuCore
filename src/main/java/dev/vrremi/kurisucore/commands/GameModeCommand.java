@@ -36,6 +36,9 @@ public class GameModeCommand extends Command{
                                 put("{player}", player.getName());
                                 put("{gamemode}", gameMode.toString().toLowerCase());
                             }});
+                        } else {
+                            
+                        }
                     }
                 }
             }
