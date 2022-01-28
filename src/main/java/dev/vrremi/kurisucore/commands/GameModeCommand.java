@@ -49,6 +49,12 @@ public class GameModeCommand extends Command{
                                     ConfigUtils.sendMessage(sender, "player-not-online", new HashMap<String, String>() {{
                                         put("{player}", args[1]);
                                     }});
+                                } else {
+                                    ConfigUtils.sendMessage(sender, "invalid-usage", new HashMap<String, String>() {{
+                                        put("{usage}", CC.formatPlaceholders("/" + label + " <gamemode> <player>", "&c", "&4"));
+                                    }});
+                                }
+                            }
                         }
                     }
                 }
