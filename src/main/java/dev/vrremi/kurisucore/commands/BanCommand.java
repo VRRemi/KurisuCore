@@ -126,3 +126,6 @@ public class BanCommand extends Command {
                                     KurisuCore.getUserDataManager().setPunishments(uuid, punishments, connection);
                                     String realName = KurisuCore.getUserDataManager().getName(uuid, connection);
                                     ConfigUtils.sendMessage(sender, "user-temp-banned", new HashMap<String, String>() {{
+                                        put("{player}", realName);
+                                        put("{reason}", finalReason.isEmpty() ? "No reason provided" : finalReason);
+                                        put("{time}", Time.millisToTime(delay + System.currentTimeMillis()));
