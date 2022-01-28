@@ -194,3 +194,9 @@ public class BanCommand extends Command {
                                 ConfigUtils.sendMessage(sender, "player-doesnt-exist", new HashMap<String, String>() {{
                                     put("{player}", args[0]);
                                 }});
+                            }
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        } finally {
+                            ConnectionPoolManager.close(connection);
+                        }
