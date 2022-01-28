@@ -52,3 +52,4 @@ public class BanCommand extends Command {
                             ConfigUtils.sendMessage(sender, "error-banning", new HashMap<String, String>() {{
                                 put("{player}", target.getName());
                             }});
+                        }
