@@ -9,6 +9,15 @@ import dev.vrremi.kurisucore.data.utils.*;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.UUID;
+import java.util.regex.Pattern;
+
 public class BanCommand extends Command {
 
     
