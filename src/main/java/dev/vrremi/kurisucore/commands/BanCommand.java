@@ -183,3 +183,7 @@ public class BanCommand extends Command {
                                 List<Punishment> punishments =
                                         KurisuCore.getUserDataManager().getPunishments(uuid, connection);
                                 punishments.add(new Punishment(PunishmentType.UNBAN, reason, punisher,
+                                        System.currentTimeMillis(),
+                                        Long.MAX_VALUE));
+                                KurisuCore.getUserDataManager().setPunishments(uuid, punishments, connection);
+                                String realName = KurisuCore.getUserDataManager().getName(uuid, connection);
