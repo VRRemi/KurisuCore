@@ -174,3 +174,6 @@ public class BanCommand extends Command {
                             ConfigUtils.sendMessage(sender, "error-unbanning", new HashMap<String, String>() {{
                                 put("{player}", target.getName());
                             }});
+                        }
+                    } else {
+                        Connection connection = KurisuCore.getConnectionPoolManager().getConnection();
