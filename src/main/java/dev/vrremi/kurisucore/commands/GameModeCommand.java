@@ -37,7 +37,14 @@ public class GameModeCommand extends Command{
                                 put("{gamemode}", gameMode.toString().toLowerCase());
                             }});
                         } else {
-                            
+                            if (args.length > 1) {
+                                Player target = Server.getOnline(args[1]);
+                                f (target != null) {
+                                    KurisuCore.getGameModeManager().setGameMode(target, gameMode);
+                                    ConfigUtils.sendMessage(sender, "set-gamemode", new HashMap<String, String>() {{
+                                        put("{player}", target.getName());
+                                        put("{gamemode}", gameMode.toString().toLowerCase());
+                                    }});
                         }
                     }
                 }
