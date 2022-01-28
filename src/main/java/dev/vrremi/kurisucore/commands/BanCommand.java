@@ -131,3 +131,6 @@ public class BanCommand extends Command {
                                         put("{time}", Time.millisToTime(delay + System.currentTimeMillis()));
                                     }});
                                 } else {
+                                    ConfigUtils.sendMessage(sender, "player-doesnt-exist", new HashMap<String, String>() {{
+                                        put("{player}", args[0]);
+                                    }});
