@@ -56,7 +56,8 @@ public class GameModeCommand extends Command{
                                 }});
                                 }
                             }
-                        }
+                        } else {
+                        ConfigUtils.sendMessage(sender, "invalid-gamemode");
                     }
                 }
             }
