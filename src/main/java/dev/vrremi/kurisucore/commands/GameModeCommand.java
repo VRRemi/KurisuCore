@@ -39,7 +39,7 @@ public class GameModeCommand extends Command{
                         } else {
                             if (args.length > 1) {
                                 Player target = Server.getOnline(args[1]);
-                                f (target != null) {
+                                if (target != null) {
                                     KurisuCore.getGameModeManager().setGameMode(target, gameMode);
                                     ConfigUtils.sendMessage(sender, "set-gamemode", new HashMap<String, String>() {{
                                         put("{player}", target.getName());
