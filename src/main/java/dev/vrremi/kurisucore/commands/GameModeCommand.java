@@ -66,21 +66,23 @@ public class GameModeCommand extends Command {
                                                 "[player]" : "<player>"),
                                         "&c", "&4"));
                     }});
-                } else {
-                    GameMode gameMode = null;
-                    switch (label.toLowerCase()) {
-                        case "gmc":
-                            gameMode = GameMode.CREATIVE;
-                            break;
-                        case "gms":
-                            gameMode = GameMode.SURVIVAL;
-                            break;
-                        case "gmsp":
-                            gameMode = GameMode.SPECTATOR;
-                            break;
-                        case "gma":
-                            gameMode = GameMode.ADVENTURE;
-                            break;
+                }
+            } else {
+                GameMode gameMode = null;
+                switch (label.toLowerCase()) {
+                    case "gmc":
+                        gameMode = GameMode.CREATIVE;
+                        break;
+                    case "gms":
+                        gameMode = GameMode.SURVIVAL;
+                        break;
+                    case "gmsp":
+                        gameMode = GameMode.SPECTATOR;
+                        break;
+                    case "gma":
+                        gameMode = GameMode.ADVENTURE;
+                        break;
+                }
                 }
             }
         } else {
