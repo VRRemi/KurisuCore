@@ -91,3 +91,8 @@ public class BanCommand extends Command {
                         long delay = Time.timeToMillis(args[1]);
                         Player target = Server.getOnline(args[0]);
                         String reason = "";
+                        if (args.length > 2) {
+                            StringBuilder reasonSB = new StringBuilder();
+                            for (int i = 2; i < args.length; i++) {
+                                reasonSB.append(args[i]).append(" ");
+                            }
