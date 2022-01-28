@@ -16,7 +16,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.stream.Collectors;
 
-public class GameModeCommand extends Command{
+public class GameModeCommand extends Command {
 
     public GameModeCommand() {
         super("gamemode", "Gamemode command", "/gamemode", Arrays.asList("gamemode", "gmc", "gms", "gmsp", "gma"));
@@ -84,6 +84,26 @@ public class GameModeCommand extends Command{
                             break;
                 }
             }
+        } else {
+            ConfigUtils.sendMessage(sender, "no-permission");
         }
+        return true;
     }
+
+    @Override
+    public List<String> tabComplete(CommandSender sender, String label, String[] args) throws IllegalArgumentException {
+        if (label.equalsIgnoreCase("gamemode")) {
+            if (args.length == 1) {
+                return Arrays.stream(GameMode.values()).map(Enum::toString).map(String::toLowerCase).collect(Collectors.toList());
+            } else if (args.length == 2) {
+                return Bukkit.getOnlinePlayers().stream().map(Player::getName).collect(Collectors.toList());
+            }
+        } else {
+            if (args.length == 1) {
+                return Bukkit.getOnlinePlayers().stream().map(Player::getName).collect(Collectors.toList());
+            }
+        }
+        return new ArrayList<>();
+    }
+
 }
