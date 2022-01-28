@@ -153,3 +153,8 @@ public class BanCommand extends Command {
                     }});
                 }
             } else {
+                if (args.length > 0) {
+                    Player target = Server.getOnline(args[0]);
+                    String reason = "";
+                    if (args.length > 1) {
+                        StringBuilder reasonSB = new StringBuilder();
