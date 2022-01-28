@@ -25,3 +25,9 @@ public class BanCommand extends Command {
     }
 
     @Override
+    public boolean execute(CommandSender sender, String label, String[] args) {
+        if (sender.hasPermission("kurisu.ban")) {
+            String punisher = sender instanceof Player ? sender.getName() : "Console";
+            if (label.equalsIgnoreCase("ban")) {
+                if (args.length > 0) {
+                    Player target = Server.getOnline(args[0]);
