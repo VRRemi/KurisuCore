@@ -129,3 +129,5 @@ public class BanCommand extends Command {
                                         put("{player}", realName);
                                         put("{reason}", finalReason.isEmpty() ? "No reason provided" : finalReason);
                                         put("{time}", Time.millisToTime(delay + System.currentTimeMillis()));
+                                    }});
+                                } else {
