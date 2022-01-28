@@ -26,7 +26,11 @@ public class GameModeCommand extends Command{
     public boolean execute(CommandSender sender, String label, String[] args) {
         if (sender.hasPermission("kurisu.gamemode")) {
             if (label.equalsIgnoreCase("gamemode")) {
-                
+                if (args.length > 0) {
+                    if (Arrays.stream(GameMode.values()).anyMatch(gameMode -> gameMode.toString().equalsIgnoreCase(args[0]))) {
+                        GameMode gameMode = GameMode.valueOf(args[0].toUpperCase());
+                    }
+                }
             }
         }
     }
