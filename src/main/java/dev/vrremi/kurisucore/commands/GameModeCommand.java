@@ -98,6 +98,10 @@ public class GameModeCommand extends Command {
                                 put("{player}", args[0]);
                             }});
                         }
+                    } else {
+                        if (sender instanceof Player) {
+                            Player player = (Player) sender;
+                            KurisuCore.getGameModeManager().setGameMode(player, gameMode);
                 }
             }
         } else {
