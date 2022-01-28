@@ -83,6 +83,16 @@ public class GameModeCommand extends Command {
                         gameMode = GameMode.ADVENTURE;
                         break;
                 }
+                if (gameMode != null) {
+                    GameMode finalGameMode = gameMode;
+                    if (args.length > 0) {
+                        Player target = Server.getOnline(args[0]);
+                        if (target != null) {
+                            KurisuCore.getGameModeManager().setGameMode(target, gameMode);
+                            ConfigUtils.sendMessage(sender, "set-gamemode", new HashMap<String, String>() {{
+                                put("{player}", target.getName());
+                                put("{gamemode}", finalGameMode.toString().toLowerCase());
+                            }});
                 }
             }
         } else {
