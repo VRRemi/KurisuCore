@@ -54,7 +54,6 @@ public class GameModeCommand extends Command {
                                 ConfigUtils.sendMessage(sender, "invalid-usage", new HashMap<String, String>() {{
                                     put("{usage}", CC.formatPlaceholders("/" + label + " <gamemode> <player>", "&c", "&4"));
                                 }});
-                                }
                             }
                         } else {
                         ConfigUtils.sendMessage(sender, "invalid-gamemode");
