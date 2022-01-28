@@ -158,3 +158,6 @@ public class BanCommand extends Command {
                     String reason = "";
                     if (args.length > 1) {
                         StringBuilder reasonSB = new StringBuilder();
+                        for (int i = 1; i < args.length; i++) {
+                            reasonSB.append(args[i]).append(" ");
+                        }
