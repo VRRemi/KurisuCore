@@ -121,3 +121,5 @@ public class BanCommand extends Command {
                                     List<Punishment> punishments =
                                             KurisuCore.getUserDataManager().getPunishments(uuid, connection);
                                     punishments.add(new Punishment(PunishmentType.TEMP_BAN, reason, punisher,
+                                            System.currentTimeMillis(),
+                                            System.currentTimeMillis() + delay));
