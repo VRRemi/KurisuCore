@@ -68,3 +68,7 @@ public class BanCommand extends Command {
                                     put("{player}", realName);
                                     put("{reason}", finalReason.isEmpty() ? "No reason provided" : finalReason);
                                 }});
+                            } else {
+                                ConfigUtils.sendMessage(sender, "player-doesnt-exist", new HashMap<String, String>() {{
+                                    put("{player}", args[0]);
+                                }});
