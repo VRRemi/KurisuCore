@@ -1,2 +1,6 @@
-package dev.vrremi.kurisucore.commands;public class BanCommand {
+package dev.vrremi.kurisucore.commands;
+
+public class BanCommand extends Command {
+
+    
 }
