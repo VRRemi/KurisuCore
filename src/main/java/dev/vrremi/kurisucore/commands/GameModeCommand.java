@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
 public class GameModeCommand extends Command{
 
     public GameModeCommand() {
-        super("gamemode", "Gamemode")
+        super("gamemode", "Gamemode command", "/gamemode", Arrays.asList("gamemode", "gmc", "gms", "gmsp", "gma"));
     }
 
 }
