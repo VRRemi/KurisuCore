@@ -23,3 +23,5 @@ public class BanCommand extends Command {
     public BanCommand() {
         super("ban", "Ban command", "/ban", Arrays.asList("ban", "tempban", "tban", "unban"));
     }
+
+    @Override
