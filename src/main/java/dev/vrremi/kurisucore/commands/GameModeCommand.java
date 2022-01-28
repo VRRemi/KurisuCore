@@ -22,4 +22,12 @@ public class GameModeCommand extends Command{
         super("gamemode", "Gamemode command", "/gamemode", Arrays.asList("gamemode", "gmc", "gms", "gmsp", "gma"));
     }
 
+    @Override
+    public boolean execute(CommandSender sender, String label, String[] args) {
+        if (sender.hasPermission("kurisu.gamemode")) {
+            if (label.equalsIgnoreCase("gamemode")) {
+                
+            }
+        }
+    }
 }
