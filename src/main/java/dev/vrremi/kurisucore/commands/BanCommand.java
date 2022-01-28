@@ -85,3 +85,9 @@ public class BanCommand extends Command {
                                 "&4"));
                     }});
                 }
+            } else if (Args.matches(label, "tempban", "tban")) {
+                if (args.length > 1) {
+                    if (!args[1].isEmpty() && Pattern.compile("(\\d*w)?(\\d*d)?(\\d*h)?(\\d*m)?(\\d*s)?").matcher(args[1]).matches()) {
+                        long delay = Time.timeToMillis(args[1]);
+                        Player target = Server.getOnline(args[0]);
+                        String reason = "";
