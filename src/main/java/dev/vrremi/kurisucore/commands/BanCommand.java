@@ -200,3 +200,9 @@ public class BanCommand extends Command {
                         } finally {
                             ConnectionPoolManager.close(connection);
                         }
+                    }
+                } else {
+                    ConfigUtils.sendMessage(sender, "invalid-usage", new HashMap<String, String>() {{
+                        put("{usage}", CC.formatPlaceholders("/" + label + " <player> [reason]", "&c",
+                                "&4"));
+                    }});
