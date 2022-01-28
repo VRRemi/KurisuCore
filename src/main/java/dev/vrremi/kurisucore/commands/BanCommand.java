@@ -206,3 +206,8 @@ public class BanCommand extends Command {
                         put("{usage}", CC.formatPlaceholders("/" + label + " <player> [reason]", "&c",
                                 "&4"));
                     }});
+                }
+            }
+        } else {
+            ConfigUtils.sendMessage(sender, "no-permission");
+        }
