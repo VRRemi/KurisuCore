@@ -73,3 +73,9 @@ public class BanCommand extends Command {
                                     put("{player}", args[0]);
                                 }});
                             }
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        } finally {
+                            ConnectionPoolManager.close(connection);
+                        }
+                    }
