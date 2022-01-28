@@ -140,3 +140,8 @@ public class BanCommand extends Command {
                             } finally {
                                 ConnectionPoolManager.close(connection);
                             }
+                        }
+                    } else {
+                        ConfigUtils.sendMessage(sender, "invalid-format", new HashMap<String, String>() {{
+                            put("{format}", "7d24h60m60s");
+                        }});
