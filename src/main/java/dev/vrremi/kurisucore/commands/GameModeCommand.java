@@ -67,6 +67,10 @@ public class GameModeCommand extends Command{
                                                         "[player]" : "<player>"),
                                                 "&c", "&4"));)
                     }});
+                } else {
+                    GameMode gameMode = null;
+                    switch (label.toLowerCase()) {
+                        case "gmc":
                 }
             }
         }
