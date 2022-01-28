@@ -32,7 +32,7 @@ public class GameModeCommand extends Command {
                         if (sender instanceof Player) {
                             Player player = (Player) sender;
                             KurisuCore.getGameModeManager().setGameMode(player, gameMode);
-                            ConfigUtils.sendMessage(sender, "set-gamemode", new HashMap<String,String>() {{
+                            ConfigUtils.sendMessage(sender, "set-gamemode", new HashMap<String, String>() {{
                                 put("{player}", player.getName());
                                 put("{gamemode}", gameMode.toString().toLowerCase());
                             }});
