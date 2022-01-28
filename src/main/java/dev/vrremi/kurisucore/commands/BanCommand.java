@@ -48,3 +48,7 @@ public class BanCommand extends Command {
                                 put("{player}", target.getName());
                                 put("{reason}", finalReason.isEmpty() ? "No reason provided" : finalReason);
                             }});
+                        } else {
+                            ConfigUtils.sendMessage(sender, "error-banning", new HashMap<String, String>() {{
+                                put("{player}", target.getName());
+                            }});
