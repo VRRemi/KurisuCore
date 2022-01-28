@@ -53,3 +53,7 @@ public class BanCommand extends Command {
                                 put("{player}", target.getName());
                             }});
                         }
+                    } else {
+                        Connection connection = KurisuCore.getConnectionPoolManager().getConnection();
+                        try {
+                            if (KurisuCore.getUserDataManager().playerExists(args[0], connection)) {
