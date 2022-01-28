@@ -97,6 +97,7 @@ public class GameModeCommand extends Command {
                             ConfigUtils.sendMessage(sender, "player-not-online", new HashMap<String, String>() {{
                                 put("{player}", args[0]);
                             }});
+                        }
                 }
             }
         } else {
