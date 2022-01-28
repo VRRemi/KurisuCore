@@ -190,3 +190,7 @@ public class BanCommand extends Command {
                                 ConfigUtils.sendMessage(sender, "user-unbanned", new HashMap<String, String>() {{
                                     put("{player}", realName);
                                 }});
+                            } else {
+                                ConfigUtils.sendMessage(sender, "player-doesnt-exist", new HashMap<String, String>() {{
+                                    put("{player}", args[0]);
+                                }});
