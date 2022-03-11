@@ -20,7 +20,7 @@ public class TagCommand extends Command {
     public boolean execute(CommandSender sender, String label, String[] args) {
         if (sender.hasPermission("kurisu.tags")) {
             if (sender instanceof Player) {
-                User user = FubukiCore.getUserManager().getUser((Player) sender);
+                User user = KurisuCore.getUserManager().getUser((Player) sender);
                 if (user != null) {
                     if (user.getAvailableTags().size() > 0) {
                         user.openMenu(Menus.TAGS_MENU, 0, false);
