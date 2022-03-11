@@ -61,4 +61,18 @@ public class ChatManagerCommand extends Command {
         return true;
     }
 
+    private void sendHelp(CommandSender sender, String label) {
+        List<String> lines = new ArrayList<>();
+        LineUtils.addHeader(lines, sender);
+        lines.add("&bChat Manager Help:");
+        lines.add(" /{label} delay <delay>");
+        lines.add(" /{label} mute");
+        lines.add(" /{label} unmute");
+        lines.add(" /{label} clearchat");
+        LineUtils.addHeader(lines, sender);
+        for (String line : lines) {
+            sender.sendMessage(CC.color(CC.formatPlaceholders(line.replace("{label}", label), "&f", "&7")));
+        }
+    }
+
 }
